@@ -11,7 +11,7 @@ const services = [
 
 const packs = [
   { name: "Essentiel", eyebrow: "La photo complète", price: "à partir de 1 600€", features: ["Reportage photo journée complète", "300+ photos retouchées", "Galerie privée en ligne", "Droit d'impression inclus", "Livraison sous 4 semaines"], popular: false },
-  { name: "Expérience", eyebrow: "Photo + Vidéo + Animation", price: "à partir de 3 200€", features: ["Tout le pack Essentiel", "Film cinématique 4K (3-5 min)", "Magazine Box + impressions", "Album QR Code invités", "Teaser 60s réseaux sociaux"], popular: true },
+  { name: "Expérience", eyebrow: "Photo + Film + Magazine Box — le trio complet", price: "à partir de 3 200€", features: ["Tout le pack Essentiel", "Film cinématique 4K (3-5 min)", "Magazine Box + impressions", "Album QR Code invités", "Teaser 60s réseaux sociaux"], popular: true },
   { name: "Premium", eyebrow: "L'expérience complète", price: "à partir de 5 000€", features: ["Tout le pack Expérience", "Shooting engagement inclus", "Drone cinématique 4K", "2 vidéastes sur place", "Accompagnement complet"], popular: false },
 ];
 
@@ -91,6 +91,7 @@ export default function MariageContent() {
             <div style={{ width: 48, height: 1, background: "var(--or)", margin: "20px auto" }} />
             <h2 className="h2">Choisissez votre<br /><em>expérience.</em></h2>
             <p style={{ fontSize: 13, color: "var(--gris)", marginTop: 16 }}>Tarifs sur devis · Disponible partout en France · Déplacement inclus selon zone</p>
+            <p style={{ fontSize: 12, color: "var(--or)", marginTop: 12, letterSpacing: "0.05em" }}>Seul prestataire en Gironde à proposer Photo + Film + Magazine Box avec un seul artiste.</p>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
             {packs.map(p => (

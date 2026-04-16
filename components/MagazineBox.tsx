@@ -2,10 +2,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const steps = [
-  { num: "01", title: "On installe la cabine", desc: "Setup discret et élégant en 30 min." },
-  { num: "02", title: "Vos invités posent", desc: "Props, backdrops, ambiance fun. Tout le monde veut y passer." },
-  { num: "03", title: "Impression immédiate", desc: "Format magazine personnalisé. Un souvenir physique unique." },
-  { num: "04", title: "Galerie digitale", desc: "Toutes les photos en ligne sous 48h. Accès à vie." },
+  { num: "01", title: "Photos & film capturés", desc: "Votre journée entière documentée avec le regard d'un cinéaste." },
+  { num: "02", title: "Sélection éditoriale", desc: "Je choisis les images les plus fortes pour raconter votre histoire." },
+  { num: "03", title: "Mise en page magazine", desc: "Un design éditorial haut de gamme, personnalisé à votre univers." },
+  { num: "04", title: "Livraison physique", desc: "Votre magazine imprimé livré avec votre galerie et votre film." },
 ];
 
 export default function MagazineBox() {
@@ -31,7 +31,7 @@ export default function MagazineBox() {
         }}>
           {Array(6).fill(null).map((_, i) => (
             <span key={i} style={{ fontSize: 11, letterSpacing: "0.3em", textTransform: "uppercase", color: "var(--or)", opacity: 0.7, flexShrink: 0 }}>
-              Magazine Box &nbsp;·&nbsp; Photobooth Premium &nbsp;·&nbsp; Impressions Illimitées &nbsp;·&nbsp; Animation Événementielle
+              Magazine Box &nbsp;·&nbsp; Souvenir Signature &nbsp;·&nbsp; Photo + Film + Magazine &nbsp;·&nbsp; Un Seul Artiste
             </span>
           ))}
         </div>
@@ -64,7 +64,7 @@ export default function MagazineBox() {
             opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)",
             transition: "opacity 0.7s 0.15s ease, transform 0.7s 0.15s ease",
           }}>
-            L&apos;animation qui<br /><em>fait le buzz.</em>
+            Le souvenir qui<br /><em>se feuillette.</em>
           </h2>
 
           <p style={{
@@ -72,7 +72,7 @@ export default function MagazineBox() {
             opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)",
             transition: "opacity 0.7s 0.2s ease, transform 0.7s 0.2s ease",
           }}>
-            Un photobooth premium avec impressions format magazine personnalisées. Vos invités repartent avec un souvenir physique unique — et parlent de vous pendant des semaines.
+            En plus de vos photos et de votre film, chaque mariage inclut un magazine format éditorial personnalisé — les plus beaux instants de votre journée mis en page comme un numéro de presse haut de gamme.
           </p>
 
           <p style={{
@@ -80,7 +80,7 @@ export default function MagazineBox() {
             opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)",
             transition: "opacity 0.7s 0.25s ease, transform 0.7s 0.25s ease",
           }}>
-            Disponible en option mariage ou en location indépendante pour galas, EVJF, anniversaires.
+            Un objet physique que vous pouvez tenir, offrir, feuilleter. Disponible aussi en animation photobooth pour vos invités lors de galas, EVJF et anniversaires.
           </p>
 
           {/* Steps */}
@@ -153,8 +153,8 @@ export default function MagazineBox() {
             padding: "20px 28px", backdropFilter: "blur(10px)",
             animation: visible ? "float 4s ease-in-out infinite" : "none",
           }}>
-            <div style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--gris2)", marginBottom: 6 }}>Inclus dans chaque prestation</div>
-            <div style={{ fontFamily: "var(--serif)", fontSize: 20, color: "var(--blanc)" }}>Impressions <em style={{ color: "var(--or)" }}>illimitées</em></div>
+            <div style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--gris2)", marginBottom: 6 }}>Inclus dans chaque mariage</div>
+            <div style={{ fontFamily: "var(--serif)", fontSize: 20, color: "var(--blanc)" }}>Photo · Film · <em style={{ color: "var(--or)" }}>Magazine</em></div>
           </div>
 
           {/* Second image petite */}

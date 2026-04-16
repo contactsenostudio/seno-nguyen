@@ -17,7 +17,7 @@ export default function Hero() {
           L&apos;image qui<br /><em>restera.</em>
         </h1>
         <p className="hero-desc">
-          Photographe & vidéaste premium. Mariage, entreprise, événements — je transforme chaque moment en souvenir cinématique inoubliable.
+          Photo, film cinématique & Magazine Box — trois souvenirs, un seul artiste. Pour les mariés qui refusent de choisir entre la photo et la vidéo.
         </p>
         <div className="hero-actions">
           <button onClick={() => scroll("#contact")} className="btn btn-gold">

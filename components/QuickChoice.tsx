@@ -5,7 +5,7 @@ const offers = [
   {
     num: "01",
     title: "Mariage",
-    desc: "Photos & films cinématiques 4K. Un souvenir émotionnel que vous revivrez toute une vie.",
+    desc: "Photo + Film 4K + Magazine Box — un univers visuel complet capturé par un seul artiste. Cohérence totale, zéro coordination.",
     cta: "Voir les formules",
     href: "/mariage",
     img: "/images/choice-mariage.jpg",
