@@ -1,0 +1,100 @@
+"use client";
+
+const services = [
+  { num: "01", title: "Film Institutionnel", desc: "Un film qui capture l'âme de votre entreprise, ses valeurs et ses équipes. L'outil de communication le plus puissant.", img: "/images/hero-4k-1.jpg", features: ["Film 2-5 minutes", "Script & storyboard", "Tournage professionnel", "Motion design", "Livraison sous 4 semaines"] },
+  { num: "02", title: "Photo Corporate", desc: "Portraits de dirigeants, photos d'équipe et reportage de vos locaux. Une identité visuelle professionnelle et cohérente.", img: "/images/photographer.jpg", features: ["Portraits dirigeants", "Photos d'équipe", "Reportage locaux", "Livraison sous 2 semaines", "Droits commerciaux inclus"] },
+  { num: "03", title: "Soirée & Événement", desc: "Reportage photo et vidéo de vos événements corporate. Des souvenirs professionnels que vous partagerez avec fierté.", img: "/images/hero-4k-2.jpg", features: ["Couverture complète", "Photos & vidéo", "Livraison rapide", "Format réseaux sociaux", "Galerie privée en ligne"] },
+  { num: "04", title: "Contenu Social Media", desc: "Création de contenu photo & vidéo optimisé pour vos réseaux. Posts, stories, reels — un flux cohérent et premium.", img: "/images/hero-4k-3.jpg", features: ["30+ visuels par session", "Formats optimisés", "Instagram, LinkedIn, TikTok", "Livraison sous 1 semaine", "Droits d'utilisation inclus"] },
+  { num: "05", title: "Témoignages Vidéo", desc: "Films témoignages de vos clients ou collaborateurs. La forme de preuve sociale la plus convaincante.", img: "/images/hero-4k-4.jpg", features: ["Tournage interview", "Montage professionnel", "Format 16/9 et vertical", "Sous-titres inclus", "Livraison sous 2 semaines"] },
+  { num: "06", title: "Photo Produit", desc: "Photographie de produits haut de gamme. Des images qui vendent, qui séduisent, qui racontent l'histoire de votre marque.", img: "/images/wedding-flowers.jpg", features: ["Studio ou en situation", "Retouche avancée", "Fond blanc ou lifestyle", "Livraison sous 1 semaine", "Droits commerciaux inclus"] },
+];
+
+const benefits = [
+  { icon: "▲", title: "3x plus d'engagement", desc: "Une vidéo de qualité cinématique multiplie par 3 l'engagement sur vos réseaux sociaux." },
+  { icon: "◈", title: "Image premium", desc: "Des visuels haut de gamme qui positionnent votre marque au niveau des grandes entreprises." },
+  { icon: "◎", title: "ROI mesurable", desc: "Un film institutionnel bien réalisé, c'est votre meilleur commercial — disponible 24h/24." },
+];
+
+const scroll = (id: string) => document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+
+export default function EntrepriseContent() {
+  return (
+    <>
+      {/* Hero */}
+      <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/images/entreprise.jpg')", backgroundSize: "cover", backgroundPosition: "center" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(8,8,8,0.95) 0%, rgba(8,8,8,0.6) 60%, rgba(8,8,8,0.2) 100%)" }} />
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 200, background: "linear-gradient(to bottom, transparent, var(--noir2))" }} />
+        <div style={{ position: "relative", zIndex: 2, padding: "140px 60px 80px 100px", maxWidth: 800 }}>
+          <p className="label">Entreprise · Corporate · Bordeaux</p>
+          <div style={{ width: 48, height: 1, background: "var(--or)", margin: "20px 0" }} />
+          <h1 className="h1" style={{ marginBottom: 28 }}>
+            Votre image,<br /><em>votre impact.</em>
+          </h1>
+          <p style={{ fontSize: 15, lineHeight: 1.85, color: "rgba(250,248,244,0.65)", maxWidth: 440, marginBottom: 44 }}>
+            Une vidéo de qualité cinématique, c&apos;est votre meilleur outil de communication. Je travaille avec des PME, startups et grands groupes qui veulent une image premium.
+          </p>
+          <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+            <a href="#contact" className="btn btn-gold" onClick={e => { e.preventDefault(); scroll("#contact"); }}>
+              Demander un devis
+            </a>
+            <a href="#services" className="btn btn-outline" onClick={e => { e.preventDefault(); scroll("#services"); }}>
+              Voir les prestations
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <section style={{ padding: "80px 60px", background: "var(--noir2)" }}>
+        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 40 }}>
+          {benefits.map(b => (
+            <div key={b.title} style={{ textAlign: "center", padding: "40px 24px" }}>
+              <div style={{ fontFamily: "var(--serif)", fontSize: 32, color: "var(--or)", marginBottom: 20 }}>{b.icon}</div>
+              <h3 style={{ fontFamily: "var(--serif)", fontSize: 22, color: "var(--blanc)", marginBottom: 12 }}>{b.title}</h3>
+              <p style={{ fontSize: 13, lineHeight: 1.7, color: "var(--gris)" }}>{b.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Services */}
+      <section id="services" style={{ padding: "120px 60px", background: "var(--noir)" }}>
+        <div style={{ maxWidth: 1400, margin: "0 auto" }}>
+          <p className="label">Mes prestations entreprise</p>
+          <div style={{ width: 48, height: 1, background: "var(--or)", margin: "20px 0 48px" }} />
+          <h2 className="h2" style={{ marginBottom: 60 }}>Ce que je<br /><em>propose.</em></h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+            {services.map(s => (
+              <div key={s.num} style={{ background: "var(--noir2)", overflow: "hidden", border: "1px solid rgba(255,255,255,0.04)", transition: "border-color .3s, transform .3s" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(201,168,76,0.15)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.04)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; }}>
+                <div style={{ height: 200, overflow: "hidden" }}>
+                  <img src={s.img} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform .6s" }}
+                    onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.05)")}
+                    onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")} />
+                </div>
+                <div style={{ padding: "28px 24px" }}>
+                  <div style={{ fontFamily: "var(--serif)", fontSize: 36, color: "rgba(201,168,76,0.15)", lineHeight: 1, marginBottom: 12 }}>{s.num}</div>
+                  <h3 style={{ fontFamily: "var(--serif)", fontSize: 22, color: "var(--blanc)", marginBottom: 10 }}>{s.title}</h3>
+                  <p style={{ fontSize: 13, lineHeight: 1.75, color: "var(--gris)", marginBottom: 16 }}>{s.desc}</p>
+                  <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 8, marginBottom: 20 }}>
+                    {s.features.map(f => (
+                      <li key={f} style={{ display: "flex", gap: 10, alignItems: "center", fontSize: 12, color: "var(--blanc2)" }}>
+                        <span style={{ width: 16, height: 1, background: "var(--or)", flexShrink: 0, display: "inline-block" }} />{f}
+                      </li>
+                    ))}
+                  </ul>
+                  <a href="#contact" style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "var(--or)", textDecoration: "none" }}
+                    onClick={e => { e.preventDefault(); scroll("#contact"); }}>
+                    Demander un devis →
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

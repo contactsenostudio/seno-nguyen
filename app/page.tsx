@@ -1,31 +1,23 @@
-"use client";
-
-import CustomCursor from "@/components/CustomCursor";
-import Navigation from "@/components/Navigation";
+import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import AudienceSelector from "@/components/AudienceSelector";
-import Univers from "@/components/Univers";
-import Services from "@/components/Services";
-import Process from "@/components/Process";
-import Pricing from "@/components/Pricing";
-import PhotoGallery from "@/components/PhotoGallery";
+import QuickChoice from "@/components/QuickChoice";
+import MagazineBox from "@/components/MagazineBox";
 import SocialProof from "@/components/SocialProof";
+import Process from "@/components/Process";
+import BookingCTA from "@/components/BookingCTA";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
-      <CustomCursor />
-      <Navigation />
+      <Nav />
       <Hero />
-      <AudienceSelector />
-      <Univers />
-      <Services />
-      <Process />
-      <Pricing />
-      <PhotoGallery />
+      <QuickChoice />
+      <MagazineBox />
       <SocialProof />
+      <Process />
+      <BookingCTA />
       <Contact />
       <Footer />
     </>

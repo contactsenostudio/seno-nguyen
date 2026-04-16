@@ -2,26 +2,23 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
-  const { prenom, nom, email, type, date, lieu, message } = await req.json();
+  const { prenom, nom, email, tel, type, date, message } = await req.json();
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
-    auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_APP_PASSWORD,
-    },
+    auth: { user: process.env.GMAIL_USER, pass: process.env.GMAIL_APP_PASSWORD },
   });
 
   const html = `
-    <h2>Nouvelle demande de contact — Seno Studio</h2>
-    <table cellpadding="8" style="border-collapse:collapse;font-family:sans-serif;font-size:15px">
-      <tr><td><strong>Prénom</strong></td><td>${prenom}</td></tr>
-      <tr><td><strong>Nom</strong></td><td>${nom}</td></tr>
-      <tr><td><strong>Email</strong></td><td>${email}</td></tr>
-      ${type  ? `<tr><td><strong>Type d'événement</strong></td><td>${type}</td></tr>` : ""}
-      ${date  ? `<tr><td><strong>Date</strong></td><td>${date}</td></tr>` : ""}
-      ${lieu  ? `<tr><td><strong>Lieu</strong></td><td>${lieu}</td></tr>` : ""}
-      ${message ? `<tr><td><strong>Message</strong></td><td style="white-space:pre-wrap">${message}</td></tr>` : ""}
+    <h2>Nouvelle demande — Seno Studio</h2>
+    <table cellpadding="8" style="font-family:sans-serif;font-size:14px;border-collapse:collapse">
+      <tr><td><b>Prénom</b></td><td>${prenom}</td></tr>
+      <tr><td><b>Nom</b></td><td>${nom}</td></tr>
+      <tr><td><b>Email</b></td><td>${email}</td></tr>
+      ${tel ? `<tr><td><b>Téléphone</b></td><td>${tel}</td></tr>` : ""}
+      ${type ? `<tr><td><b>Type</b></td><td>${type}</td></tr>` : ""}
+      ${date ? `<tr><td><b>Date</b></td><td>${date}</td></tr>` : ""}
+      ${message ? `<tr><td><b>Message</b></td><td style="white-space:pre-wrap">${message}</td></tr>` : ""}
     </table>
   `;
 

@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
-import ServicesPage from "@/components/ServicesPage";
-import CustomCursor from "@/components/CustomCursor";
+import Nav from "@/components/Nav";
+import PrestationsContent from "@/components/PrestationsContent";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Nos Prestations — Seno Nguyen Photographe Mariage",
-  description:
-    "Découvrez toutes nos prestations : reportage photo, film cinématique, Magazine Box, album QR code, shooting engagement et drone. Une seule équipe pour une expérience complète.",
+  title: "Prestations — Magazine Box, Événements & Plus",
+  description: "Magazine Box photobooth premium, événements, EVJF, anniversaires, portrait & branding à Bordeaux. Toutes les prestations Seno Studio.",
 };
 
-export default function Prestations() {
+export default function PrestationsPage() {
   return (
     <>
-      <CustomCursor />
-      <ServicesPage />
+      <Nav />
+      <PrestationsContent />
+      <Contact />
+      <Footer />
     </>
   );
 }

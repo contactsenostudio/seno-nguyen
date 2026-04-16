@@ -1,71 +1,36 @@
-# Seno Nguyen — Photography Portfolio
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Premium photography portfolio website built with Next.js, GSAP, and Tailwind CSS.
+## Getting Started
 
-## Quick Start
+First, run the development server:
 
 ```bash
-# Install dependencies
-npm install
-
-# Start development server
 npm run dev
-# → Open http://localhost:3000
-
-# Build for production
-npm run build
-npm start
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Stack
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- **Next.js 16** (App Router)
-- **GSAP 3** — scroll animations, entrance effects, counters
-- **Lenis** — buttery smooth scroll
-- **Framer Motion** — available for additional micro-interactions
-- **Tailwind CSS** — utility-first styling
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Sections
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-| Section | Description |
-|---|---|
-| Preloader | Animated count + brand reveal, clips out into hero |
-| Navigation | Fixed header, scroll-aware, mobile overlay menu |
-| Hero | Fullscreen image, parallax on scroll, cinematic overlay |
-| Portfolio | Filterable grid (Mariage / Portrait / Événement) |
-| Wedding | Storytelling layout with parallax images + animated counters |
-| Magazine Box | Premium photo booth rental showcase with floating elements |
-| About | Photographer presentation with clip-path image reveal |
-| Testimonials | Animated slider with dot navigation |
-| Contact | Interactive form with service selector |
-| Footer | Infinite marquee + back-to-top |
+## Learn More
 
-## Customization
+To learn more about Next.js, take a look at the following resources:
 
-### Images
-Replace Unsplash URLs in each component with your own photos. The `next.config.js` allows `images.unsplash.com` by default — add your own domain if needed.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### Colors
-Edit `tailwind.config.ts`:
-```ts
-colors: {
-  gold: "#C9A84C",       // primary accent
-  cream: "#F5F0E8",      // text/light
-  charcoal: "#1A1A1A",   // dark surfaces
-}
-```
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-### Content
-- Update `app/layout.tsx` for SEO metadata
-- Edit text directly in each component
-- Replace placeholder contact info in `Contact.tsx` and `Footer.tsx`
+## Deploy on Vercel
 
-### Fonts
-Loaded via Google Fonts in `globals.css`. Swap the `@import` URL to change families.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## Performance Notes
-
-- All animations use `will-change: transform` where needed
-- Images use Next.js `<Image>` with proper `sizes` props
-- Lenis smooth scroll is initialized client-side only
-- GSAP ScrollTrigger instances are cleaned up on unmount
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
