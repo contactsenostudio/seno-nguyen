@@ -6,17 +6,17 @@ const siteUrl = "https://www.senostudio.fr";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Seno Studio — Photographe & Vidéaste Mariage Bordeaux",
+    default: "Seno Studio — Photographe & Vidéaste Mariage Bordeaux | Photo + Film + Magazine Box",
     template: "%s | Seno Studio",
   },
-  description: "Photographe et vidéaste mariage à Bordeaux. Films cinématiques 4K, reportage photo, Magazine Box, drone. Entreprise & événements. Disponible partout en France.",
-  keywords: ["photographe mariage Bordeaux","vidéaste mariage Gironde","film cinématique mariage","Magazine Box mariage","photographe corporate Bordeaux","vidéaste entreprise Bordeaux","drone mariage Bordeaux","shooting engagement Bordeaux","photographe mariage France","photographe mariage Mérignac","photographe mariage Arcachon","photographe mariage Biarritz"],
+  description: "Photographe et vidéaste mariage à Bordeaux et Gironde. Photo + film cinématique 4K + Magazine Box — trois souvenirs, un seul artiste. Seul prestataire à proposer le trio complet. Disponible partout en France.",
+  keywords: ["photographe mariage Bordeaux","vidéaste mariage Gironde","photographe vidéaste mariage Bordeaux","film cinématique mariage Bordeaux","Magazine Box mariage Bordeaux","photo film mariage Gironde","photographe vidéaste mariage Gironde","drone mariage Bordeaux","shooting engagement Bordeaux","photographe mariage France","photographe mariage Mérignac","photographe mariage Arcachon","photographe corporate Bordeaux"],
   authors: [{ name: "Seno Studio" }],
   creator: "Seno Studio",
   alternates: { canonical: siteUrl },
   openGraph: {
-    title: "Seno Studio — Photographe & Vidéaste Mariage Bordeaux",
-    description: "Films cinématiques 4K et reportages photo. Mariage, entreprise, Magazine Box. Bordeaux & France.",
+    title: "Seno Studio — Photographe & Vidéaste Mariage Bordeaux | Photo + Film + Magazine Box",
+    description: "Photo + film cinématique 4K + Magazine Box — trois souvenirs, un seul artiste. Mariage, entreprise, Bordeaux & France entière.",
     type: "website",
     url: siteUrl,
     locale: "fr_FR",

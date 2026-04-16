@@ -5,8 +5,8 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Prestations — Magazine Box, Événements & Plus",
-  description: "Magazine Box photobooth premium, événements, EVJF, anniversaires, portrait & branding à Bordeaux. Toutes les prestations Seno Studio.",
+  title: "Magazine Box & Prestations — Bordeaux Gironde",
+  description: "Magazine Box photobooth premium, shooting portrait, événements, EVJF, anniversaires à Bordeaux et Gironde. Impressions magazine personnalisées, galerie digitale.",
 };
 
 export default function PrestationsPage() {

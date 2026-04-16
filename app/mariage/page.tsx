@@ -7,8 +7,8 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Photographe & Vidéaste Mariage Bordeaux",
-  description: "Reportage photo mariage, film cinématique 4K, shooting engagement, drone, Magazine Box à Bordeaux et Gironde. Disponible partout en France.",
+  title: "Photographe & Vidéaste Mariage Bordeaux Gironde — Photo + Film + Magazine Box",
+  description: "Seul prestataire en Gironde à proposer photo + film cinématique 4K + Magazine Box avec un seul artiste. Reportage mariage Bordeaux, Gironde et France entière.",
 };
 
 export default function MariagePage() {
