@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devis — Seno Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --or: #c9a84c;
+      --or-light: #e8c97a;
+      --noir: #0d0d0d;
+      --gris: #6a6a62;
+      --gris-light: #f5f3ef;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Inter', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #fff;
+      color: var(--noir);
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 60px 80px;
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--or);
+      margin-bottom: 48px;
+    }
+
+    .logo {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--noir);
+      letter-spacing: 0.08em;
+    }
+
+    .logo span { color: var(--or); }
+
+    .doc-type {
+      text-align: right;
+    }
+
+    .doc-type h1 {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 300;
+      color: var(--noir);
+      letter-spacing: 0.04em;
+    }
+
+    .doc-meta {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gris);
+      margin-top: 6px;
+    }
+
+    .doc-meta span { color: var(--or); }
+
+    /* PARTIES */
+    .parties {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .party-block h3 {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 14px;
+    }
+
+    .party-block p {
+      font-size: 13px;
+      color: var(--noir);
+      line-height: 1.8;
+    }
+
+    .party-block .field {
+      border-bottom: 1px solid #ddd;
+      min-height: 20px;
+      margin-bottom: 4px;
+      color: #999;
+    }
+
+    /* OBJET */
+    .objet {
+      background: var(--gris-light);
+      border-left: 2px solid var(--or);
+      padding: 18px 24px;
+      margin-bottom: 40px;
+    }
+
+    .objet p { font-size: 13px; color: var(--gris); }
+    .objet strong { color: var(--noir); font-weight: 500; }
+
+    /* TABLE */
+    .table-wrap { margin-bottom: 40px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead tr {
+      background: var(--noir);
+      color: #fff;
+    }
+
+    thead th {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 12px 16px;
+      text-align: left;
+    }
+
+    thead th:last-child { text-align: right; }
+
+    tbody tr {
+      border-bottom: 1px solid #eee;
+    }
+
+    tbody tr:nth-child(even) {
+      background: var(--gris-light);
+    }
+
+    tbody td {
+      padding: 14px 16px;
+      color: var(--noir);
+      vertical-align: top;
+    }
+
+    tbody td:last-child { text-align: right; font-weight: 500; }
+
+    .td-desc { font-size: 11px; color: var(--gris); margin-top: 3px; }
+
+    /* TOTAUX */
+    .totaux {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 48px;
+    }
+
+    .totaux-block {
+      width: 280px;
+    }
+
+    .totaux-line {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 13px;
+    }
+
+    .totaux-line.total {
+      border-bottom: none;
+      border-top: 2px solid var(--or);
+      margin-top: 4px;
+      padding-top: 14px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .totaux-line .label { color: var(--gris); }
+    .totaux-line.total .label { color: var(--noir); }
+    .totaux-line .amount { color: var(--noir); }
+    .totaux-line.total .amount { color: var(--or); font-family: var(--serif); font-size: 22px; font-weight: 400; }
+
+    /* CONDITIONS */
+    .conditions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 48px;
+      padding: 28px;
+      border: 1px solid #eee;
+    }
+
+    .cond-block h4 {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 10px;
+    }
+
+    .cond-block p { font-size: 12px; color: var(--gris); line-height: 1.75; }
+
+    /* VALIDITE */
+    .validite {
+      background: var(--gris-light);
+      padding: 14px 20px;
+      font-size: 12px;
+      color: var(--gris);
+      text-align: center;
+      margin-bottom: 48px;
+      letter-spacing: 0.05em;
+    }
+
+    /* SIGNATURES */
+    .signatures {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 48px;
+    }
+
+    .sig-block h4 {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 6px;
+    }
+
+    .sig-block p { font-size: 12px; color: var(--gris); margin-bottom: 16px; }
+
+    .sig-line {
+      border-bottom: 1px solid var(--noir);
+      height: 60px;
+      position: relative;
+    }
+
+    .sig-line::after {
+      content: "Signature & date";
+      position: absolute;
+      bottom: 6px;
+      left: 0;
+      font-size: 10px;
+      color: #ccc;
+      letter-spacing: 0.1em;
+    }
+
+    .mention-bpa {
+      font-size: 10px;
+      color: var(--gris);
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* FOOTER */
+    .footer {
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer p { font-size: 10px; color: #bbb; letter-spacing: 0.1em; }
+    .footer .or { color: var(--or); }
+
+    /* PRINT */
+    @media print {
+      body { font-size: 12px; }
+      .page { padding: 40px 48px; }
+      .no-print { display: none; }
+    }
+
+    /* EDITABLE FIELDS */
+    [contenteditable] {
+      outline: none;
+      border-bottom: 1px dashed var(--or);
+      min-width: 120px;
+      display: inline-block;
+      color: var(--noir);
+    }
+
+    [contenteditable]:focus {
+      background: rgba(201,168,76,0.06);
+    }
+
+    [contenteditable]:empty::before {
+      content: attr(data-placeholder);
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">Seno <span>Studio</span></div>
+    <div class="doc-type">
+      <h1>Devis</h1>
+      <p class="doc-meta">
+        N° <span contenteditable data-placeholder="2026-001">2026-001</span>
+        &nbsp;·&nbsp; Date : <span contenteditable data-placeholder="jj/mm/aaaa">__/__/____</span>
+      </p>
+    </div>
+  </header>
+
+  <!-- PARTIES -->
+  <div class="parties">
+    <div class="party-block">
+      <h3>Prestataire</h3>
+      <p>
+        <strong>Seno Studio</strong><br />
+        Auto-entrepreneur<br />
+        Bordeaux, Gironde (33)<br />
+        contact.senostudio@gmail.com<br />
+        +33 7 68 86 85 05<br />
+        senostudio.fr
+      </p>
+    </div>
+    <div class="party-block">
+      <h3>Client</h3>
+      <p>
+        <span contenteditable data-placeholder="Prénom Nom">Prénom Nom</span><br />
+        <span contenteditable data-placeholder="Adresse">Adresse</span><br />
+        <span contenteditable data-placeholder="Code postal, Ville">Code postal, Ville</span><br />
+        <span contenteditable data-placeholder="Email">Email</span><br />
+        <span contenteditable data-placeholder="Téléphone">Téléphone</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- OBJET -->
+  <div class="objet">
+    <p>
+      <strong>Objet :</strong>&nbsp;
+      <span contenteditable data-placeholder="Ex : Prestation photo & film mariage — Le [date] à [lieu]">
+        Prestation photo &amp; film mariage — Le __/__/____ à ___________
+      </span>
+    </p>
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width:45%">Prestation</th>
+          <th style="width:30%">Détail</th>
+          <th style="width:10%; text-align:right">Qté</th>
+          <th style="width:15%; text-align:right">Montant</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <strong contenteditable data-placeholder="Nom de la prestation">Reportage photo mariage</strong>
+            <p class="td-desc" contenteditable data-placeholder="Description optionnelle">Couverture complète de la journée · Galerie en ligne privée · Fichiers HR</p>
+          </td>
+          <td contenteditable data-placeholder="Durée / options">Journée complète</td>
+          <td style="text-align:right" contenteditable data-placeholder="1">1</td>
+          <td contenteditable data-placeholder="0 €">0 €</td>
+        </tr>
+        <tr>
+          <td>
+            <strong contenteditable data-placeholder="Nom de la prestation">Film cinématique 4K</strong>
+            <p class="td-desc" contenteditable data-placeholder="Description optionnelle">Montage court (3–5 min) + version longue · Musique licenciée</p>
+          </td>
+          <td contenteditable data-placeholder="Durée / options">Journée complète</td>
+          <td style="text-align:right" contenteditable data-placeholder="1">1</td>
+          <td contenteditable data-placeholder="0 €">0 €</td>
+        </tr>
+        <tr>
+          <td>
+            <strong contenteditable data-placeholder="Nom de la prestation">Magazine Box</strong>
+            <p class="td-desc" contenteditable data-placeholder="Description optionnelle">Album magazine 21×28 cm · 40 pages · Couverture personnalisée</p>
+          </td>
+          <td contenteditable data-placeholder="Durée / options">—</td>
+          <td style="text-align:right" contenteditable data-placeholder="1">1</td>
+          <td contenteditable data-placeholder="0 €">0 €</td>
+        </tr>
+        <tr>
+          <td>
+            <strong contenteditable data-placeholder="Option supplémentaire">Option : Drone</strong>
+            <p class="td-desc" contenteditable data-placeholder="Description optionnelle">Prises de vue aériennes · Images incluses dans la galerie</p>
+          </td>
+          <td contenteditable data-placeholder="—">—</td>
+          <td style="text-align:right" contenteditable data-placeholder="1">1</td>
+          <td contenteditable data-placeholder="0 €">0 €</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- TOTAUX -->
+  <div class="totaux">
+    <div class="totaux-block">
+      <div class="totaux-line">
+        <span class="label">Sous-total HT</span>
+        <span class="amount" contenteditable data-placeholder="0 €">0 €</span>
+      </div>
+      <div class="totaux-line">
+        <span class="label">TVA (non applicable — art. 293B CGI)</span>
+        <span class="amount">0 €</span>
+      </div>
+      <div class="totaux-line total">
+        <span class="label">Total TTC</span>
+        <span class="amount" contenteditable data-placeholder="0 €">0 €</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONDITIONS -->
+  <div class="conditions">
+    <div class="cond-block">
+      <h4>Modalités de paiement</h4>
+      <p>
+        Acompte de <strong>30 %</strong> à la signature pour confirmer la réservation.<br />
+        Solde dû <strong>15 jours avant</strong> la date de la prestation.<br />
+        Règlement par virement, chèque ou espèces.
+      </p>
+    </div>
+    <div class="cond-block">
+      <h4>Délai de livraison</h4>
+      <p>
+        Photos : <strong>6 à 10 semaines</strong><br />
+        Film : <strong>8 à 12 semaines</strong><br />
+        Magazine Box : <strong>10 à 14 semaines</strong>
+      </p>
+    </div>
+    <div class="cond-block">
+      <h4>Annulation</h4>
+      <p>
+        +90 jours : acompte conservé.<br />
+        −90 jours : 100 % du montant dû.<br />
+        Force majeure : remboursement intégral.
+      </p>
+    </div>
+    <div class="cond-block">
+      <h4>Droits d'auteur</h4>
+      <p>
+        Seno Studio conserve les droits d'auteur.<br />
+        Licence d'utilisation personnelle accordée au client.<br />
+        Usage commercial sur accord écrit préalable.
+      </p>
+    </div>
+  </div>
+
+  <!-- VALIDITÉ -->
+  <div class="validite">
+    Devis valable <strong>30 jours</strong> à compter de sa date d'émission.
+    Toute commande implique l'acceptation des CGV disponibles sur senostudio.fr/cgv
+  </div>
+
+  <!-- SIGNATURES -->
+  <div class="signatures">
+    <div class="sig-block">
+      <h4>Le prestataire</h4>
+      <p>Seno Studio — Bordeaux</p>
+      <div class="sig-line"></div>
+    </div>
+    <div class="sig-block">
+      <h4>Le client</h4>
+      <p contenteditable data-placeholder="Prénom Nom">Prénom Nom</p>
+      <div class="sig-line"></div>
+      <p class="mention-bpa">Précédé de la mention « Bon pour accord »</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Seno <span class="or">Studio</span> · Bordeaux, France · senostudio.fr</p>
+    <p>contact.senostudio@gmail.com · +33 7 68 86 85 05</p>
+  </footer>
+
+</div>
+</body>
+</html>

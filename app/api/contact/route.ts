@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
-  const { prenom, nom, email, tel, type, date, message } = await req.json();
+  const { prenom, nom, email, tel, type, date, message, quiz } = await req.json();
 
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -17,7 +17,8 @@ export async function POST(req: Request) {
       <tr><td><b>Email</b></td><td>${email}</td></tr>
       ${tel ? `<tr><td><b>Téléphone</b></td><td>${tel}</td></tr>` : ""}
       ${type ? `<tr><td><b>Type</b></td><td>${type}</td></tr>` : ""}
-      ${date ? `<tr><td><b>Date</b></td><td>${date}</td></tr>` : ""}
+      ${date ? `<tr><td><b>Date souhaitée</b></td><td>${date}</td></tr>` : ""}
+      ${quiz ? `<tr><td colspan="2" style="padding-top:16px"><b style="font-size:13px;text-transform:uppercase;letter-spacing:0.05em">Récapitulatif quiz</b></td></tr><tr><td colspan="2" style="background:#f9f5ec;padding:12px 16px;border-left:3px solid #c9a84c;font-size:13px;line-height:1.8">${quiz.split(" · ").join("<br/>· ")}</td></tr>` : ""}
       ${message ? `<tr><td><b>Message</b></td><td style="white-space:pre-wrap">${message}</td></tr>` : ""}
     </table>
   `;

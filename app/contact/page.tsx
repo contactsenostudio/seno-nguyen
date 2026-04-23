@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Contact — Seno Studio",
-  description: "Contactez Seno Studio pour votre mariage, projet corporate ou prestation à Bordeaux. Réponse sous 24h.",
+  description: "Contactez Seno Studio pour votre mariage, projet corporate ou prestation à Bordeaux. Réponse sous 48h.",
 };
 
 export default function ContactPage() {

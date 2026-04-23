@@ -37,7 +37,7 @@ export default function Mariage() {
               Je capture l'émotion brute de votre mariage — les larmes, les rires, les regards. Pas des poses, des vrais moments. Un film cinématique et des photos qui racontent votre histoire.
             </p>
             <p>
-              Basé à Bordeaux, je me déplace partout en France et en Europe. Discret, attentif, invisible quand il le faut — présent quand ça compte.
+              Basé à Bordeaux, disponible en Gironde. Discret, attentif, invisible quand il le faut — présent quand ça compte.
             </p>
             <ul className="section-features">
               {features.map(f => <li key={f}>{f}</li>)}

@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 
 const steps = [
-  { num: "1", title: "Prise de contact", desc: "Un appel de 30 min pour tout clarifier. Je réponds sous 24h. Sans engagement, sans pression." },
+  { num: "1", title: "Prise de contact", desc: "Un appel de 30 min pour tout clarifier. Je réponds sous 48h. Sans engagement, sans pression." },
   { num: "2", title: "Préparation", desc: "On prépare ensemble votre projet — timing, lieux, musique, style. Je suis là à chaque étape." },
   { num: "3", title: "Shooting / Tournage", desc: "Discret et attentif. Vous vivez votre moment, je capture chaque instant qui compte vraiment." },
   { num: "4", title: "Livraison", desc: "Galerie privée et film livrés dans les délais. La première fois que vous regardez, les larmes aux yeux." },

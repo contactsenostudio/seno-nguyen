@@ -1,18 +1,51 @@
 "use client";
 
-const services = [
-  { num: "01", title: "Reportage Photo", desc: "Couverture complète de votre journée, des préparatifs aux dernières danses. 300+ photos retouchées livrées en galerie privée.", img: "/images/wedding-bride.jpg", features: ["Préparatifs → soirée", "300+ photos retouchées", "Galerie privée en ligne", "Droit d'impression inclus", "Livraison sous 4 semaines"] },
-  { num: "02", title: "Film Cinématique 4K", desc: "Un court-métrage de votre mariage. Chaque plan pensé, chaque coupe rythmée. 3-5 minutes que vous reverrez toute une vie.", img: "/images/wedding-ceremony.jpg", features: ["Film 3-5 minutes en 4K", "Teaser 60s réseaux sociaux", "Captation vœux & discours", "Bande-son licenciée", "Livraison sous 6 semaines"] },
-  { num: "03", title: "Shooting Engagement", desc: "Une séance photo en amoureux avant le mariage. On apprend à se connaître — vous serez à l'aise le Jour J.", img: "/images/wedding-couple.jpg", features: ["1h30 à 2h en extérieur", "Lieu de votre choix", "50+ photos retouchées", "Livraison sous 3 semaines", "Idéal pour faire-parts"] },
-  { num: "04", title: "Magazine Box", desc: "Un photobooth premium avec impressions magazine personnalisées. L'animation qui marque les esprits.", img: "/images/wedding-laugh.jpg", features: ["Cabine premium sur place", "Impressions format magazine", "Personnalisation mariage", "Animateur inclus", "Galerie numérique"] },
-  { num: "05", title: "Drone Cinématique", desc: "Des plans aériens 4K qui donnent une dimension épique à votre film. Le domaine et vos invités vus du ciel.", img: "/images/wedding-venue.jpg", features: ["Pilote certifié DGAC", "4K aérien", "Plans lieu & cérémonie", "Intégration au film", "Autorisation gérée"] },
-  { num: "06", title: "Album QR Code", desc: "Vos invités scannent un QR code et accèdent à leur galerie privée. Accessible à vie, aucune app requise.", img: "/images/wedding-dance.jpg", features: ["QR code personnalisé", "Galerie en ligne à vie", "Haute résolution", "Partage illimité", "Mise en ligne sous 48h"] },
+const pillars = [
+  {
+    img: "/images/wedding-new1.jpg",
+    title: "Des photos qui\nvous font revivre.",
+    benefit: "Dans 10 ans, vous ouvrez la galerie. Vous vous souvenez de chaque regard, chaque larme, chaque éclat de rire. C'est ça, un reportage photo.",
+  },
+  {
+    img: "/images/wedding-new4.jpg",
+    title: "Un film qui\nvous fait pleurer.",
+    benefit: "Pas un montage de clips. Une vraie histoire, avec votre musique, vos voix, vos émotions. Un court-métrage de votre journée en 4K.",
+  },
+  {
+    img: "/images/magazine-box1.jpg",
+    title: "Vos invités\ndans la légende.",
+    benefit: "La Magazine Box installe une cabine dans votre salle. Vos invités posent, s'amusent, repartent avec leur photo. Le souvenir devient collectif.",
+  },
 ];
 
 const packs = [
-  { name: "Essentiel", eyebrow: "La photo complète", price: "à partir de 1 600€", features: ["Reportage photo journée complète", "300+ photos retouchées", "Galerie privée en ligne", "Droit d'impression inclus", "Livraison sous 4 semaines"], popular: false },
-  { name: "Expérience", eyebrow: "Photo + Film + Magazine Box — le trio complet", price: "à partir de 3 200€", features: ["Tout le pack Essentiel", "Film cinématique 4K (3-5 min)", "Magazine Box + impressions", "Album QR Code invités", "Teaser 60s réseaux sociaux"], popular: true },
-  { name: "Premium", eyebrow: "L'expérience complète", price: "à partir de 5 000€", features: ["Tout le pack Expérience", "Shooting engagement inclus", "Drone cinématique 4K", "2 vidéastes sur place", "Accompagnement complet"], popular: false },
+  {
+    name: "Essentiel",
+    tag: null,
+    price: "à partir de 1 600€",
+    promise: "La couverture complète de votre journée en photo. Des préparatifs jusqu'à l'ouverture du bal.",
+    includes: ["Reportage photo journée complète", "300 à 500 photos retouchées", "Galerie privée + droits d'impression"],
+    cta: "Demander un devis",
+    highlight: false,
+  },
+  {
+    name: "Expérience",
+    tag: "Le plus choisi",
+    price: "à partir de 3 200€",
+    promise: "Photo + Film + Magazine Box. Trois souvenirs différents, un seul artiste, zéro coordination à gérer.",
+    includes: ["Reportage photo complet", "Film cinématique 4K", "Magazine Box en soirée"],
+    cta: "Réserver ce pack",
+    highlight: true,
+  },
+  {
+    name: "Premium",
+    tag: null,
+    price: "à partir de 5 000€",
+    promise: "Soirée intégrale, drone, shooting engagement. Chaque moment de votre histoire, sans exception.",
+    includes: ["Tout le pack Expérience", "Drone 4K + Shooting engagement", "2 artistes · Soirée sans limite"],
+    cta: "Demander un devis",
+    highlight: false,
+  },
 ];
 
 const scroll = (id: string) => document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
@@ -22,17 +55,17 @@ export default function MariageContent() {
     <>
       {/* Hero */}
       <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/images/hero-maries.jpg')", backgroundSize: "cover", backgroundPosition: "center 40%" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(8,8,8,0.95) 0%, rgba(8,8,8,0.6) 60%, rgba(8,8,8,0.2) 100%)" }} />
-        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 200, background: "linear-gradient(to bottom, transparent, #080808)" }} />
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/images/hero-4k-6.jpg')", backgroundSize: "cover", backgroundPosition: "center 30%", filter: "saturate(1.2)" }} />
+        <div className="hero-overlay hero-overlay-right" style={{ position: "absolute", inset: 0 }} />
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 200, background: "linear-gradient(to bottom, transparent, var(--noir))" }} />
         <div style={{ position: "relative", zIndex: 2, padding: "140px 60px 80px 100px", maxWidth: 800 }}>
-          <p className="label">Mariage · Bordeaux · France entière</p>
+          <p className="label">Mariage · Bordeaux · Gironde</p>
           <div style={{ width: 48, height: 1, background: "var(--or)", margin: "20px 0" }} />
           <h1 className="h1" style={{ marginBottom: 28 }}>
             Le jour le plus<br /><em>important.</em>
           </h1>
           <p style={{ fontSize: 15, lineHeight: 1.85, color: "rgba(250,248,244,0.65)", maxWidth: 440, marginBottom: 44 }}>
-            Je capture l&apos;émotion brute de votre mariage — les larmes, les rires, les regards qui parlent. Un film cinématique et des photos qui racontent votre histoire pour toujours.
+            Je capture l&apos;émotion brute de votre mariage — les larmes, les rires, les regards qui parlent. Des souvenirs que vous revivrez pour toujours.
           </p>
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
             <a href="#contact" className="btn btn-gold" onClick={e => { e.preventDefault(); scroll("#contact"); }}>
@@ -45,38 +78,76 @@ export default function MariageContent() {
         </div>
       </section>
 
-      {/* Services */}
-      <section id="prestations" style={{ padding: "120px 60px", background: "var(--noir)" }}>
-        <div style={{ maxWidth: 1400, margin: "0 auto" }}>
-          <p className="label">Mes prestations mariage</p>
-          <div style={{ width: 48, height: 1, background: "var(--or)", margin: "20px 0 48px" }} />
-          <h2 className="h2" style={{ marginBottom: 60 }}>Ce que je<br /><em>propose.</em></h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
-            {services.map(s => (
-              <div key={s.num} style={{ background: "var(--noir2)", overflow: "hidden", border: "1px solid rgba(255,255,255,0.04)", transition: "border-color .3s" }}
-                onMouseEnter={e => (e.currentTarget.style.borderColor = "rgba(201,168,76,0.15)")}
-                onMouseLeave={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.04)")}>
-                <div style={{ height: 220, overflow: "hidden" }}>
-                  <img src={s.img} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform .6s" }}
-                    onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.05)")}
-                    onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")} />
+      {/* 3 piliers */}
+      <section style={{ padding: "120px 60px", background: "var(--noir)" }}>
+        <div style={{ maxWidth: 1300, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 72 }}>
+            <p className="label">Ce que vous gardez</p>
+            <div style={{ width: 48, height: 1, background: "var(--or)", margin: "20px auto 0" }} />
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+            {pillars.map((p, i) => (
+              <div key={i} style={{ position: "relative", overflow: "hidden", minHeight: 480 }}
+                onMouseEnter={e => { const img = e.currentTarget.querySelector("img") as HTMLImageElement; if (img) img.style.transform = "scale(1.06)"; }}
+                onMouseLeave={e => { const img = e.currentTarget.querySelector("img") as HTMLImageElement; if (img) img.style.transform = "scale(1)"; }}>
+                <img src={p.img} alt={p.title} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.8s ease" }} />
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 55%, rgba(0,0,0,0.1) 100%)" }} />
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "36px 32px" }}>
+                  <h3 style={{ fontFamily: "var(--serif)", fontSize: "clamp(22px, 2vw, 30px)", fontWeight: 300, color: "var(--blanc)", lineHeight: 1.15, marginBottom: 16, whiteSpace: "pre-line" }}>
+                    {p.title}
+                  </h3>
+                  <p style={{ fontSize: 13, lineHeight: 1.8, color: "rgba(250,248,244,0.62)" }}>
+                    {p.benefit}
+                  </p>
                 </div>
-                <div style={{ padding: "28px 24px" }}>
-                  <div style={{ fontFamily: "var(--serif)", fontSize: 36, color: "rgba(201,168,76,0.15)", lineHeight: 1, marginBottom: 12 }}>{s.num}</div>
-                  <h3 style={{ fontFamily: "var(--serif)", fontSize: 22, color: "var(--blanc)", marginBottom: 10 }}>{s.title}</h3>
-                  <p style={{ fontSize: 13, lineHeight: 1.75, color: "var(--gris)", marginBottom: 16 }}>{s.desc}</p>
-                  <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 8, marginBottom: 20 }}>
-                    {s.features.map(f => (
-                      <li key={f} style={{ display: "flex", gap: 10, alignItems: "center", fontSize: 12, color: "var(--blanc2)" }}>
-                        <span style={{ width: 16, height: 1, background: "var(--or)", flexShrink: 0, display: "inline-block" }} />{f}
-                      </li>
-                    ))}
-                  </ul>
-                  <a href="#contact" style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "var(--or)", textDecoration: "none" }}
-                    onClick={e => { e.preventDefault(); scroll("#contact"); }}>
-                    Demander un devis →
-                  </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Prestations */}
+      <section style={{ padding: "100px 60px", background: "var(--noir2)" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+          <div style={{ marginBottom: 56 }}>
+            <p className="label">Ce que je propose</p>
+            <div style={{ width: 48, height: 1, background: "var(--or)", margin: "20px 0 0" }} />
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, background: "rgba(201,168,76,0.08)", overflow: "visible" }}>
+            {[
+              { num: "01", title: "Reportage Photo", desc: "De l'habillage aux dernières danses. Des images naturelles, sans mise en scène.", img: "/images/wedding-new1.jpg" },
+              { num: "02", title: "Film Cinématique 4K", desc: "Un court-métrage de votre mariage avec vos voix, vos regards, votre musique.", img: "/images/wedding-new4.jpg" },
+              { num: "03", title: "Shooting Engagement", desc: "Une séance avant le mariage pour qu'on se découvre — et que vous soyez naturels le jour J.", img: "/images/wedding-new5.jpg" },
+              { num: "04", title: "Magazine Box", desc: "Une cabine photo installée en soirée. Vos invités posent, rient, repartent avec leur photo.", img: "/images/magazine-box1.jpg" },
+              { num: "05", title: "Drone Cinématique", desc: "Le domaine et la cérémonie vus du ciel. Des plans 4K qui donnent une dimension épique.", img: "/images/wedding-new9.jpg" },
+              { num: "06", title: "Animation Photo Invités", desc: "Je shoote vos invités en animation pendant la soirée. Ils scannent un QR code et ont leurs photos en temps réel.", img: "/images/Animation fond photo.jpeg" },
+            ].map(s => (
+              <div key={s.num}
+                style={{ background: "var(--noir2)", padding: "36px 32px", position: "relative" }}
+                onMouseEnter={e => {
+                  const preview = e.currentTarget.querySelector(".img-preview") as HTMLElement;
+                  if (preview) { preview.style.opacity = "1"; preview.style.transform = "translateY(0) scale(1)"; }
+                }}
+                onMouseLeave={e => {
+                  const preview = e.currentTarget.querySelector(".img-preview") as HTMLElement;
+                  if (preview) { preview.style.opacity = "0"; preview.style.transform = "translateY(12px) scale(0.97)"; }
+                }}>
+                {/* Preview flottant au-dessus */}
+                <div className="img-preview" style={{
+                  position: "absolute", inset: 0, zIndex: 10,
+                  opacity: 0, transition: "opacity 0.4s ease",
+                  pointerEvents: "none",
+                }}>
+                  <img src={s.img} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 60%)" }} />
+                  <div style={{ position: "absolute", bottom: 28, left: 32 }}>
+                    <h3 style={{ fontFamily: "var(--serif)", fontSize: 20, fontWeight: 300, color: "var(--blanc)", marginBottom: 6 }}>{s.title}</h3>
+                    <p style={{ fontSize: 12, lineHeight: 1.7, color: "rgba(250,248,244,0.65)" }}>{s.desc}</p>
+                  </div>
                 </div>
+                <span style={{ fontFamily: "var(--serif)", fontSize: 32, color: "rgba(201,168,76,0.2)", display: "block", marginBottom: 16 }}>{s.num}</span>
+                <h3 style={{ fontFamily: "var(--serif)", fontSize: 20, fontWeight: 300, color: "var(--blanc)", marginBottom: 10 }}>{s.title}</h3>
+                <p style={{ fontSize: 13, lineHeight: 1.75, color: "var(--gris)" }}>{s.desc}</p>
               </div>
             ))}
           </div>
@@ -85,37 +156,62 @@ export default function MariageContent() {
 
       {/* Formules */}
       <section id="formules" style={{ padding: "120px 60px", background: "var(--noir2)" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 72 }}>
             <p className="label">Formules mariage</p>
-            <div style={{ width: 48, height: 1, background: "var(--or)", margin: "20px auto" }} />
+            <div style={{ width: 48, height: 1, background: "var(--or)", margin: "20px auto 24px" }} />
             <h2 className="h2">Choisissez votre<br /><em>expérience.</em></h2>
-            <p style={{ fontSize: 13, color: "var(--gris)", marginTop: 16 }}>Tarifs sur devis · Disponible partout en France · Déplacement inclus selon zone</p>
-            <p style={{ fontSize: 12, color: "var(--or)", marginTop: 12, letterSpacing: "0.05em" }}>Seul prestataire en Gironde à proposer Photo + Film + Magazine Box avec un seul artiste.</p>
+            <p style={{ fontSize: 13, color: "var(--gris)", marginTop: 20, maxWidth: 480, margin: "20px auto 0" }}>
+              Chaque formule est personnalisable. Devis gratuit, sans engagement.
+            </p>
           </div>
+
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
             {packs.map(p => (
-              <div key={p.name} style={{ background: "var(--noir)", padding: "44px 36px", position: "relative", border: p.popular ? "1px solid rgba(201,168,76,0.35)" : "1px solid rgba(255,255,255,0.04)", boxShadow: p.popular ? "0 0 40px rgba(201,168,76,0.08)" : "none", transition: "transform .3s" }}
+              <div key={p.name} style={{
+                background: "var(--noir)", padding: "44px 36px",
+                border: p.highlight ? "1px solid rgba(201,168,76,0.4)" : "1px solid rgba(255,255,255,0.05)",
+                boxShadow: p.highlight ? "0 0 48px rgba(201,168,76,0.07)" : "none",
+                display: "flex", flexDirection: "column", position: "relative",
+                transition: "transform 0.3s ease",
+              }}
                 onMouseEnter={e => (e.currentTarget.style.transform = "translateY(-4px)")}
                 onMouseLeave={e => (e.currentTarget.style.transform = "translateY(0)")}>
-                {p.popular && <div style={{ position: "absolute", top: -1, left: "50%", transform: "translateX(-50%)", background: "var(--or)", color: "var(--noir)", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", padding: "5px 20px", whiteSpace: "nowrap" }}>Le plus populaire</div>}
-                <p style={{ fontSize: 10, letterSpacing: "0.3em", textTransform: "uppercase", color: "var(--gris2)", marginBottom: 12 }}>{p.eyebrow}</p>
-                <h3 style={{ fontFamily: "var(--serif)", fontSize: 40, fontWeight: 300, color: "var(--blanc)", marginBottom: 8 }}>{p.name}</h3>
-                <p style={{ fontFamily: "var(--serif)", fontSize: 18, color: "var(--or)", marginBottom: 28, paddingBottom: 28, borderBottom: "1px solid rgba(255,255,255,0.06)" }}>{p.price}</p>
-                <ul style={{ listStyle: "none", marginBottom: 36 }}>
-                  {p.features.map(f => (
-                    <li key={f} style={{ display: "flex", gap: 10, fontSize: 13, color: "var(--gris)", padding: "8px 0", borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
-                      <span style={{ color: "var(--or)" }}>✓</span>{f}
+
+                {p.tag && (
+                  <div style={{ position: "absolute", top: -1, left: "50%", transform: "translateX(-50%)", background: "var(--or)", color: "var(--noir)", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", padding: "5px 20px", whiteSpace: "nowrap" }}>
+                    {p.tag}
+                  </div>
+                )}
+
+                <h3 style={{ fontFamily: "var(--serif)", fontSize: 36, fontWeight: 300, color: "var(--blanc)", marginBottom: 8 }}>{p.name}</h3>
+                <p style={{ fontFamily: "var(--serif)", fontSize: 20, color: "var(--or)", marginBottom: 24 }}>{p.price}</p>
+                <p style={{ fontSize: 14, lineHeight: 1.8, color: "var(--gris)", marginBottom: 32, paddingBottom: 32, borderBottom: "1px solid rgba(255,255,255,0.06)", flex: 1 }}>
+                  {p.promise}
+                </p>
+
+                <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12, marginBottom: 36 }}>
+                  {p.includes.map(item => (
+                    <li key={item} style={{ display: "flex", gap: 12, alignItems: "center", fontSize: 13, color: "var(--blanc2)" }}>
+                      <span style={{ color: "var(--or)", fontSize: 14, flexShrink: 0 }}>✓</span>
+                      {item}
                     </li>
                   ))}
                 </ul>
-                <a href="#contact" className={`btn ${p.popular ? "btn-gold" : "btn-outline"}`} style={{ width: "100%", justifyContent: "center" }}
+
+                <a href="#contact"
+                  className={`btn ${p.highlight ? "btn-gold" : "btn-outline"}`}
+                  style={{ justifyContent: "center" }}
                   onClick={e => { e.preventDefault(); scroll("#contact"); }}>
-                  {p.popular ? "Réserver ce pack" : "Demander un devis"}
+                  {p.cta}
                 </a>
               </div>
             ))}
           </div>
+
+          <p style={{ textAlign: "center", fontSize: 12, color: "var(--gris2)", marginTop: 40 }}>
+            Disponible en Gironde · Devis personnalisé gratuit · Acompte de 30% à la réservation
+          </p>
         </div>
       </section>
     </>

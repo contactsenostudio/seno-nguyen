@@ -1,12 +1,12 @@
 "use client";
 
 const services = [
-  { num: "01", title: "Film Institutionnel", desc: "Un film qui capture l'âme de votre entreprise, ses valeurs et ses équipes. L'outil de communication le plus puissant.", img: "/images/hero-4k-1.jpg", features: ["Film 2-5 minutes", "Script & storyboard", "Tournage professionnel", "Motion design", "Livraison sous 4 semaines"] },
-  { num: "02", title: "Photo Corporate", desc: "Portraits de dirigeants, photos d'équipe et reportage de vos locaux. Une identité visuelle professionnelle et cohérente.", img: "/images/photographer.jpg", features: ["Portraits dirigeants", "Photos d'équipe", "Reportage locaux", "Livraison sous 2 semaines", "Droits commerciaux inclus"] },
-  { num: "03", title: "Soirée & Événement", desc: "Reportage photo et vidéo de vos événements corporate. Des souvenirs professionnels que vous partagerez avec fierté.", img: "/images/hero-4k-2.jpg", features: ["Couverture complète", "Photos & vidéo", "Livraison rapide", "Format réseaux sociaux", "Galerie privée en ligne"] },
-  { num: "04", title: "Contenu Social Media", desc: "Création de contenu photo & vidéo optimisé pour vos réseaux. Posts, stories, reels — un flux cohérent et premium.", img: "/images/hero-4k-3.jpg", features: ["30+ visuels par session", "Formats optimisés", "Instagram, LinkedIn, TikTok", "Livraison sous 1 semaine", "Droits d'utilisation inclus"] },
-  { num: "05", title: "Témoignages Vidéo", desc: "Films témoignages de vos clients ou collaborateurs. La forme de preuve sociale la plus convaincante.", img: "/images/hero-4k-4.jpg", features: ["Tournage interview", "Montage professionnel", "Format 16/9 et vertical", "Sous-titres inclus", "Livraison sous 2 semaines"] },
-  { num: "06", title: "Photo Produit", desc: "Photographie de produits haut de gamme. Des images qui vendent, qui séduisent, qui racontent l'histoire de votre marque.", img: "/images/wedding-flowers.jpg", features: ["Studio ou en situation", "Retouche avancée", "Fond blanc ou lifestyle", "Livraison sous 1 semaine", "Droits commerciaux inclus"] },
+  { num: "01", title: "Film Institutionnel", desc: "Un film qui capture l'âme de votre entreprise, ses valeurs et ses équipes. L'outil de communication le plus puissant.", img: "/images/business3.jpg", pos: "center center", features: ["Film 2-5 minutes", "Script & storyboard", "Tournage professionnel", "Motion design", "Livraison sous 4 semaines"] },
+  { num: "02", title: "Photo Corporate", desc: "Portraits de dirigeants, photos d'équipe et reportage de vos locaux. Une identité visuelle professionnelle et cohérente.", img: "/images/corporate-portrait.jpg", pos: "center 20%", features: ["Portraits dirigeants", "Photos d'équipe", "Reportage locaux", "Livraison sous 2 semaines", "Droits commerciaux inclus"] },
+  { num: "03", title: "Soirée & Événement", desc: "Reportage photo et vidéo de vos événements corporate. Des souvenirs professionnels que vous partagerez avec fierté.", img: "/images/business1.jpg", pos: "center center", features: ["Couverture complète", "Photos & vidéo", "Livraison rapide", "Format réseaux sociaux", "Galerie privée en ligne"] },
+  { num: "04", title: "Contenu Social Media", desc: "Création de contenu photo & vidéo optimisé pour vos réseaux. Posts, stories, reels — un flux cohérent et premium.", img: "/images/business6.jpg", pos: "center center", features: ["30+ visuels par session", "Formats optimisés", "Instagram, LinkedIn, TikTok", "Livraison sous 1 semaine", "Droits d'utilisation inclus"] },
+  { num: "05", title: "Témoignages Vidéo", desc: "Films témoignages de vos clients ou collaborateurs. La forme de preuve sociale la plus convaincante.", img: "/images/business5.jpg", pos: "center center", features: ["Tournage interview", "Montage professionnel", "Format 16/9 et vertical", "Sous-titres inclus", "Livraison sous 2 semaines"] },
+  { num: "06", title: "Photo Produit", desc: "Photographie de produits haut de gamme. Des images qui vendent, qui séduisent, qui racontent l'histoire de votre marque.", img: "/images/business7.jpg", pos: "center center", features: ["Studio ou en situation", "Retouche avancée", "Fond blanc ou lifestyle", "Livraison sous 1 semaine", "Droits commerciaux inclus"] },
 ];
 
 const benefits = [
@@ -22,8 +22,8 @@ export default function EntrepriseContent() {
     <>
       {/* Hero */}
       <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/images/entreprise.jpg')", backgroundSize: "cover", backgroundPosition: "center" }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(8,8,8,0.95) 0%, rgba(8,8,8,0.6) 60%, rgba(8,8,8,0.2) 100%)" }} />
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/images/business2.jpg')", backgroundSize: "cover", backgroundPosition: "center" }} />
+        <div className="hero-overlay hero-overlay-right hero-overlay-strong" style={{ position: "absolute", inset: 0 }} />
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 200, background: "linear-gradient(to bottom, transparent, var(--noir2))" }} />
         <div style={{ position: "relative", zIndex: 2, padding: "140px 60px 80px 100px", maxWidth: 800 }}>
           <p className="label">Entreprise · Corporate · Bordeaux</p>
@@ -45,7 +45,7 @@ export default function EntrepriseContent() {
         </div>
       </section>
 
-      {/* Benefits */}
+{/* Benefits */}
       <section style={{ padding: "80px 60px", background: "var(--noir2)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 40 }}>
           {benefits.map(b => (
@@ -70,7 +70,7 @@ export default function EntrepriseContent() {
                 onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(201,168,76,0.15)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.04)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)"; }}>
                 <div style={{ height: 200, overflow: "hidden" }}>
-                  <img src={s.img} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform .6s" }}
+                  <img src={s.img} alt={s.title} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: s.pos, display: "block", transition: "transform .6s" }}
                     onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.05)")}
                     onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")} />
                 </div>

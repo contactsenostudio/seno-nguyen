@@ -100,15 +100,15 @@ export default function ContactHero() {
           Parlons de<br /><em>votre projet.</em>
         </h1>
         <p style={{ fontSize: 15, lineHeight: 1.85, color: "rgba(250,248,244,0.55)", maxWidth: 460, animation: "fadeUp 0.7s 0.25s ease both" }}>
-          Un appel de 30 minutes suffit pour tout clarifier.<br />Je réponds sous 24h et vous propose une offre sur-mesure.
+          Un appel de 30 minutes suffit pour tout clarifier.<br />Je réponds sous 48h et vous propose une offre sur-mesure.
         </p>
 
         {/* Badges */}
         <div style={{ display: "flex", gap: 16, marginTop: 36, flexWrap: "wrap", animation: "fadeUp 0.7s 0.35s ease both" }}>
           {[
             { dot: "#4ade80", text: "Disponible 2025 & 2026" },
-            { dot: "var(--or)", text: "Réponse sous 24h" },
-            { dot: "rgba(201,168,76,0.6)", text: "Bordeaux · France entière" },
+            { dot: "var(--or)", text: "Réponse sous 48h" },
+            { dot: "rgba(201,168,76,0.6)", text: "Disponible en Gironde" },
           ].map(b => (
             <div key={b.text} style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.07)", padding: "7px 14px" }}>
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: b.dot, display: "inline-block", flexShrink: 0 }} />

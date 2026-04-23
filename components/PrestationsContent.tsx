@@ -9,7 +9,7 @@ const prestations = [
     label: "Magazine Box",
     title: "L'animation qui fait le buzz.",
     desc: "Photobooth premium avec impressions format magazine personnalisées. Vos invités repartent avec un souvenir unique — disponible mariage & événement pro.",
-    img: "/images/magazine.jpg",
+    img: "/images/magbox-ref3.png",
     features: ["Impressions illimitées", "Animateur inclus", "Galerie numérique 48h", "Mariage & événement pro", "Personnalisation complète"],
     tag: "Signature",
   },
@@ -19,7 +19,7 @@ const prestations = [
     label: "Shooting Professionnel",
     title: "Vos photos, immédiatement.",
     desc: "Shooting photo premium en mariage ou événement professionnel. Récupération des photos directement sur place — vos invités repartent avec leurs images le jour même.",
-    img: "/images/wedding-couple.jpg",
+    img: "/images/Animation fond photo.jpeg",
     features: ["Photos récupérées sur place le jour J", "Retouche en direct", "QR code ou clé USB", "Mariage & événement pro", "Haute résolution"],
     tag: null,
   },
@@ -30,9 +30,9 @@ export default function PrestationsContent() {
     <>
       {/* Hero simple */}
       <section style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/images/hero-maries.jpg')", backgroundSize: "cover", backgroundPosition: "center" }} />
-        <div style={{ position: "absolute", inset: 0, background: "rgba(8,8,8,0.65)" }} />
-        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 200, background: "linear-gradient(to bottom, transparent, #080808)" }} />
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/images/prestations-hero2.jpg')", backgroundSize: "cover", backgroundPosition: "center" }} />
+        <div className="hero-overlay" style={{ position: "absolute", inset: 0 }} />
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 200, background: "linear-gradient(to bottom, transparent, var(--noir))" }} />
         <div style={{ position: "relative", zIndex: 2, padding: "140px 100px 80px" }}>
           <p className="label" style={{ marginBottom: 16 }}>Toutes les prestations</p>
           <div style={{ width: 48, height: 1, background: "var(--or)", marginBottom: 28 }} />
@@ -40,8 +40,8 @@ export default function PrestationsContent() {
         </div>
       </section>
 
-      {/* Cards */}
-      <section style={{ background: "#080808", padding: "80px 100px 120px" }}>
+{/* Cards */}
+      <section style={{ background: "var(--noir)", padding: "80px 100px 120px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", flexDirection: "column", gap: 32 }}>
           {prestations.map(p => (
             <div key={p.id} id={p.id} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", background: "var(--noir2)", border: "1px solid rgba(255,255,255,0.05)" }}>

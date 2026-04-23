@@ -1,6 +1,61 @@
 "use client";
+import { useEffect, useRef, useState } from "react";
+
+const stats = [
+  { val: "150", suffix: "+", label: "Mariages" },
+  { val: "4",   suffix: "K",  label: "Cinéma" },
+  { val: "98",  suffix: "%",  label: "Satisfaction" },
+  { val: "24",  suffix: "h",  label: "Réponse" },
+];
+
+function AnimatedStat({ target, suffix, active, delay = 0 }: { target: number; suffix: string; active: boolean; delay?: number }) {
+  const from = Math.floor(target * 0.82);
+  const [count, setCount] = useState(from);
+  const [revealed, setRevealed] = useState(false);
+
+  useEffect(() => {
+    if (!active) return;
+    const t0 = setTimeout(() => setRevealed(true), delay);
+    const t1 = setTimeout(() => {
+      let start: number | null = null;
+      const duration = 900;
+      const step = (ts: number) => {
+        if (!start) start = ts;
+        const p = Math.min((ts - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        setCount(Math.floor(from + eased * (target - from)));
+        if (p < 1) requestAnimationFrame(step);
+        else setCount(target);
+      };
+      requestAnimationFrame(step);
+    }, delay + 100);
+    return () => { clearTimeout(t0); clearTimeout(t1); };
+  }, [active, target, delay, from]);
+
+  return (
+    <span style={{
+      display: "inline-block",
+      opacity: revealed ? 1 : 0,
+      filter: revealed ? "blur(0px)" : "blur(6px)",
+      transform: revealed ? "translateY(0)" : "translateY(10px)",
+      transition: "opacity 0.7s ease, filter 0.7s ease, transform 0.7s ease",
+    }}>
+      {count}{suffix}
+    </span>
+  );
+}
+
 export default function Hero() {
   const scroll = (href: string) => document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+  const statsRef = useRef<HTMLDivElement>(null);
+  const [statsActive, setStatsActive] = useState(false);
+
+  useEffect(() => {
+    const skip = sessionStorage.getItem("skipPreloader");
+    const delay = skip ? 600 : 2900;
+    const timer = setTimeout(() => setStatsActive(true), delay);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section className="hero">
@@ -28,15 +83,12 @@ export default function Hero() {
           </button>
         </div>
 
-        <div className="hero-stats">
-          {[
-            { val: "150+", label: "Mariages" },
-            { val: "4K", label: "Cinéma" },
-            { val: "98%", label: "Satisfaction" },
-            { val: "24h", label: "Réponse" },
-          ].map(s => (
-            <div key={s.val}>
-              <div className="hero-stat-val">{s.val}</div>
+        <div className="hero-stats" ref={statsRef}>
+          {stats.map((s, i) => (
+            <div key={s.label}>
+              <div className="hero-stat-val">
+                <AnimatedStat target={parseInt(s.val)} suffix={s.suffix} active={statsActive} delay={i * 120} />
+              </div>
               <div className="hero-stat-label">{s.label}</div>
             </div>
           ))}

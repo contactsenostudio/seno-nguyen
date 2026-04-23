@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contrat de prestation — Seno Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --or: #c9a84c;
+      --noir: #0d0d0d;
+      --gris: #6a6a62;
+      --gris-light: #f5f3ef;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Inter', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #fff;
+      color: var(--noir);
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 13px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 60px 80px;
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--or);
+      margin-bottom: 48px;
+    }
+
+    .logo {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--noir);
+      letter-spacing: 0.08em;
+    }
+
+    .logo span { color: var(--or); }
+
+    .doc-type { text-align: right; }
+
+    .doc-type h1 {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 300;
+      color: var(--noir);
+      letter-spacing: 0.04em;
+    }
+
+    .doc-meta {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gris);
+      margin-top: 6px;
+    }
+
+    .doc-meta span { color: var(--or); }
+
+    /* PARTIES */
+    .parties {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+      padding: 28px;
+      border: 1px solid #eee;
+    }
+
+    .party-block h3 {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 14px;
+    }
+
+    .party-block p { font-size: 13px; color: var(--noir); line-height: 1.85; }
+
+    /* SECTION */
+    .section { margin-bottom: 36px; }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .section-num {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 300;
+      color: rgba(201,168,76,0.35);
+      line-height: 1;
+      min-width: 28px;
+    }
+
+    .section-title h2 {
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--noir);
+      letter-spacing: 0.02em;
+    }
+
+    .section-body {
+      padding-left: 42px;
+      color: var(--gris);
+      font-size: 13px;
+    }
+
+    .section-body p { margin-bottom: 8px; }
+
+    .section-body ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .section-body ul li {
+      display: flex;
+      gap: 10px;
+    }
+
+    .section-body ul li::before {
+      content: "—";
+      color: var(--or);
+      flex-shrink: 0;
+    }
+
+    .section-body strong { color: var(--noir); font-weight: 500; }
+
+    /* HIGHLIGHT BOX */
+    .highlight {
+      background: var(--gris-light);
+      border-left: 2px solid var(--or);
+      padding: 14px 18px;
+      margin: 12px 0;
+      font-size: 13px;
+    }
+
+    /* TABLE PRESTATIONS */
+    .prestation-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0;
+    }
+
+    .prestation-table th {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      text-align: left;
+      padding: 10px 14px;
+      background: var(--noir);
+      color: #fff;
+      font-weight: 400;
+    }
+
+    .prestation-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+    }
+
+    .prestation-table tr:nth-child(even) td { background: var(--gris-light); }
+
+    /* MONTANT */
+    .montant-block {
+      display: flex;
+      justify-content: flex-end;
+      margin: 16px 0;
+    }
+
+    .montant-inner {
+      border: 1px solid var(--or);
+      padding: 16px 24px;
+      text-align: right;
+    }
+
+    .montant-label {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gris);
+      margin-bottom: 4px;
+    }
+
+    .montant-val {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--or);
+    }
+
+    /* SEPARATOR */
+    .sep {
+      width: 48px;
+      height: 1px;
+      background: var(--or);
+      margin: 40px 0;
+      opacity: 0.4;
+    }
+
+    /* SIGNATURES */
+    .signatures {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid #eee;
+    }
+
+    .sig-block h4 {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--or);
+      margin-bottom: 6px;
+    }
+
+    .sig-block .sig-info {
+      font-size: 12px;
+      color: var(--gris);
+      margin-bottom: 40px;
+    }
+
+    .sig-line {
+      border-bottom: 1px solid var(--noir);
+      height: 56px;
+      position: relative;
+    }
+
+    .sig-line::after {
+      content: "Signature & date";
+      position: absolute;
+      bottom: 6px;
+      left: 0;
+      font-size: 10px;
+      color: #ccc;
+      letter-spacing: 0.1em;
+    }
+
+    .mention-bpa {
+      font-size: 10px;
+      color: var(--gris);
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* FOOTER */
+    .footer-doc {
+      border-top: 1px solid #eee;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 48px;
+    }
+
+    .footer-doc p { font-size: 10px; color: #bbb; letter-spacing: 0.1em; }
+    .footer-doc .or { color: var(--or); }
+
+    /* EDITABLE */
+    [contenteditable] {
+      outline: none;
+      border-bottom: 1px dashed var(--or);
+      min-width: 80px;
+      display: inline-block;
+      color: var(--noir);
+    }
+    [contenteditable]:focus { background: rgba(201,168,76,0.06); }
+    [contenteditable]:empty::before { content: attr(data-placeholder); color: #bbb; }
+
+    @media print {
+      body { font-size: 12px; }
+      .page { padding: 36px 48px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">Seno <span>Studio</span></div>
+    <div class="doc-type">
+      <h1>Contrat de prestation</h1>
+      <p class="doc-meta">
+        Réf. <span contenteditable data-placeholder="2026-001">2026-001</span>
+        &nbsp;·&nbsp; Établi le : <span contenteditable data-placeholder="jj/mm/aaaa">__/__/____</span>
+      </p>
+    </div>
+  </header>
+
+  <!-- PARTIES -->
+  <div class="parties">
+    <div class="party-block">
+      <h3>Le prestataire</h3>
+      <p>
+        <strong>Seno Studio</strong><br />
+        Auto-entrepreneur — SIRET : <span contenteditable data-placeholder="000 000 000 00000">___________</span><br />
+        Bordeaux, Gironde (33), France<br />
+        contact.senostudio@gmail.com<br />
+        +33 7 68 86 85 05
+      </p>
+    </div>
+    <div class="party-block">
+      <h3>Le client</h3>
+      <p>
+        <span contenteditable data-placeholder="Prénom Nom">Prénom Nom</span><br />
+        <span contenteditable data-placeholder="Adresse">Adresse</span><br />
+        <span contenteditable data-placeholder="Code postal, Ville">Code postal, Ville</span><br />
+        <span contenteditable data-placeholder="Email">Email</span><br />
+        <span contenteditable data-placeholder="Téléphone">Téléphone</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- 1. OBJET -->
+  <div class="section">
+    <div class="section-title">
+      <span class="section-num">1</span>
+      <h2>Objet du contrat</h2>
+    </div>
+    <div class="section-body">
+      <p>
+        Le présent contrat a pour objet de définir les conditions dans lesquelles Seno Studio réalisera la prestation suivante :
+      </p>
+      <div class="highlight">
+        <strong>Type d'événement :</strong> <span contenteditable data-placeholder="Mariage / Entreprise / Événement">_____________</span><br />
+        <strong>Date :</strong> <span contenteditable data-placeholder="jj/mm/aaaa">__/__/____</span><br />
+        <strong>Lieu :</strong> <span contenteditable data-placeholder="Nom du lieu, Ville">_____________</span><br />
+        <strong>Horaires :</strong> <span contenteditable data-placeholder="De __h__ à __h__">De __h__ à __h__</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. PRESTATIONS -->
+  <div class="section">
+    <div class="section-title">
+      <span class="section-num">2</span>
+      <h2>Prestations incluses</h2>
+    </div>
+    <div class="section-body">
+      <table class="prestation-table">
+        <thead>
+          <tr>
+            <th>Prestation</th>
+            <th>Détail</th>
+            <th>Livrable</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong contenteditable data-placeholder="Ex : Reportage photo">Reportage photo</strong></td>
+            <td contenteditable data-placeholder="Ex : Journée complète">Journée complète</td>
+            <td contenteditable data-placeholder="Ex : Galerie en ligne">Galerie en ligne</td>
+          </tr>
+          <tr>
+            <td><strong contenteditable data-placeholder="Ex : Film cinématique 4K">Film cinématique 4K</strong></td>
+            <td contenteditable data-placeholder="Ex : Journée complète">Journée complète</td>
+            <td contenteditable data-placeholder="Ex : Lien de téléchargement">Lien de téléchargement</td>
+          </tr>
+          <tr>
+            <td><strong contenteditable data-placeholder="Ex : Magazine Box">Magazine Box</strong></td>
+            <td contenteditable data-placeholder="Ex : 40 pages, 21×28 cm">40 pages, 21×28 cm</td>
+            <td contenteditable data-placeholder="Ex : Livraison physique">Livraison physique</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 3. TARIF -->
+  <div class="section">
+    <div class="section-title">
+      <span class="section-num">3</span>
+      <h2>Tarif et paiement</h2>
+    </div>
+    <div class="section-body">
+      <p>Seno Studio est auto-entrepreneur soumis à la franchise de TVA (art. 293B du CGI). <strong>Aucune TVA n'est applicable.</strong></p>
+
+      <div class="montant-block">
+        <div class="montant-inner">
+          <p class="montant-label">Montant total TTC</p>
+          <p class="montant-val" contenteditable data-placeholder="0 €">0 €</p>
+        </div>
+      </div>
+
+      <ul>
+        <li><strong>Acompte à la signature :</strong> <span contenteditable data-placeholder="0 €">0 €</span> (30 % du total) — conditionne la réservation de la date</li>
+        <li><strong>Solde :</strong> <span contenteditable data-placeholder="0 €">0 €</span> — à régler au plus tard 15 jours avant la prestation</li>
+        <li><strong>Modes de paiement acceptés :</strong> virement bancaire, chèque, espèces</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 4. LIVRAISON -->
+  <div class="section">
+    <div class="section-title">
+      <span class="section-num">4</span>
+      <h2>Délais de livraison</h2>
+    </div>
+    <div class="section-body">
+      <ul>
+        <li><strong>Photos :</strong> 6 à 10 semaines après la prestation</li>
+        <li><strong>Film cinématique :</strong> 8 à 12 semaines après la prestation</li>
+        <li><strong>Magazine Box :</strong> 10 à 14 semaines après validation des fichiers</li>
+      </ul>
+      <p style="margin-top:10px;">
+        Les fichiers sont transmis via une galerie privée sécurisée, disponible au téléchargement pendant <strong>6 mois</strong>. Il est fortement conseillé au client d'effectuer une sauvegarde personnelle.
+      </p>
+    </div>
+  </div>
+
+  <!-- 5. ANNULATION -->
+  <div class="section">
+    <div class="section-title">
+      <span class="section-num">5</span>
+      <h2>Annulation et report</h2>
+    </div>
+    <div class="section-body">
+      <ul>
+        <li><strong>Annulation par le client à plus de 90 jours :</strong> l'acompte reste acquis à Seno Studio à titre d'indemnité</li>
+        <li><strong>Annulation par le client à moins de 90 jours :</strong> la totalité du montant contractuel est exigible</li>
+        <li><strong>Report de date :</strong> Seno Studio fera son possible pour s'adapter. Si la nouvelle date est indisponible, les conditions d'annulation s'appliquent</li>
+        <li><strong>Annulation par Seno Studio</strong> (force majeure, maladie, accident) : remboursement intégral de l'acompte versé</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 6. DROITS D'AUTEUR -->
+  <div class="section">
+    <div class="section-title">
+      <span class="section-num">6</span>
+      <h2>Droits d'auteur et utilisation</h2>
+    </div>
+    <div class="section-body">
+      <p>
+        Seno Studio conserve l'intégralité des droits d'auteur sur l'ensemble des photographies et vidéos produites, conformément au Code de la Propriété Intellectuelle.
+      </p>
+      <p style="margin-top:8px;">
+        Le client reçoit une <strong>licence d'utilisation personnelle, non exclusive et non transférable</strong> lui permettant d'imprimer, partager et publier les fichiers à titre privé (réseaux sociaux, partage familial, impression personnelle).
+      </p>
+      <p style="margin-top:8px;">
+        Toute utilisation commerciale (publicité, revente, presse, usage professionnel) nécessite un accord écrit de Seno Studio et peut faire l'objet d'une facturation complémentaire.
+      </p>
+      <p style="margin-top:8px;">
+        Seno Studio se réserve le droit d'utiliser les images produites à des fins de communication (site web, portfolio, réseaux sociaux). Le client peut s'y opposer par <strong>écrit</strong> avant la prestation.
+      </p>
+    </div>
+  </div>
+
+  <!-- 7. RGPD -->
+  <div class="section">
+    <div class="section-title">
+      <span class="section-num">7</span>
+      <h2>Protection des données personnelles</h2>
+    </div>
+    <div class="section-body">
+      <p>
+        Les données personnelles du client (nom, prénom, email, téléphone) sont collectées dans le seul but de gérer la relation contractuelle. Elles ne sont jamais transmises à des tiers.
+        Conformément au RGPD, le client dispose d'un droit d'accès, de rectification et de suppression de ses données en contactant <strong>contact.senostudio@gmail.com</strong>.
+      </p>
+    </div>
+  </div>
+
+  <!-- 8. RESPONSABILITE -->
+  <div class="section">
+    <div class="section-title">
+      <span class="section-num">8</span>
+      <h2>Responsabilité</h2>
+    </div>
+    <div class="section-body">
+      <p>
+        Seno Studio s'engage à mettre tous les moyens en œuvre pour assurer une prestation de qualité. En cas d'incident technique indépendant de sa volonté (défaillance matérielle, force majeure), sa responsabilité sera limitée au remboursement des sommes perçues.
+      </p>
+    </div>
+  </div>
+
+  <!-- 9. DROIT APPLICABLE -->
+  <div class="section">
+    <div class="section-title">
+      <span class="section-num">9</span>
+      <h2>Droit applicable et litiges</h2>
+    </div>
+    <div class="section-body">
+      <p>
+        Le présent contrat est soumis au <strong>droit français</strong>. En cas de litige, une solution amiable sera recherchée en priorité. À défaut d'accord, le tribunal compétent sera celui de <strong>Bordeaux</strong>.
+      </p>
+    </div>
+  </div>
+
+  <div class="sep"></div>
+
+  <!-- SIGNATURES -->
+  <div class="signatures">
+    <div class="sig-block">
+      <h4>Le prestataire</h4>
+      <p class="sig-info">Seno Studio — Bordeaux<br />Lu et approuvé</p>
+      <div class="sig-line"></div>
+    </div>
+    <div class="sig-block">
+      <h4>Le client</h4>
+      <p class="sig-info" contenteditable data-placeholder="Prénom Nom">Prénom Nom<br />Lu et approuvé</p>
+      <div class="sig-line"></div>
+      <p class="mention-bpa">Précédé de la mention « Bon pour accord »</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer-doc">
+    <p>Seno <span class="or">Studio</span> · Bordeaux, France · senostudio.fr</p>
+    <p>contact.senostudio@gmail.com · +33 7 68 86 85 05</p>
+  </footer>
+
+</div>
+</body>
+</html>

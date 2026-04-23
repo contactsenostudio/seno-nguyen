@@ -1,11 +1,12 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 const steps = [
-  { num: "01", title: "Photos & film capturés", desc: "Votre journée entière documentée avec le regard d'un cinéaste." },
-  { num: "02", title: "Sélection éditoriale", desc: "Je choisis les images les plus fortes pour raconter votre histoire." },
-  { num: "03", title: "Mise en page magazine", desc: "Un design éditorial haut de gamme, personnalisé à votre univers." },
-  { num: "04", title: "Livraison physique", desc: "Votre magazine imprimé livré avec votre galerie et votre film." },
+  { num: "01", title: "Installation sur place", desc: "Je pose et habille la box aux couleurs de votre événement. Prête en quelques minutes, sans intervention pendant la soirée." },
+  { num: "02", title: "Les invités entrent", desc: "Ils poussent la porte, s'installent à l'intérieur et composent leur propre mise en scène." },
+  { num: "03", title: "Ils posent comme en couverture", desc: "Face à la vitre, chaque invité se prend en photo — avec le titre de votre événement affiché en grand, style magazine." },
+  { num: "04", title: "Le souvenir sur leur téléphone", desc: "Les photos restent directement sur leur téléphone. Rien à imprimer, rien à attendre." },
 ];
 
 export default function MagazineBox() {
@@ -24,7 +25,7 @@ export default function MagazineBox() {
     <section ref={ref} id="magazine" style={{ background: "var(--noir)", padding: "140px 0", overflow: "hidden" }}>
 
       {/* Ticker */}
-      <div style={{ overflow: "hidden", borderTop: "1px solid rgba(201,168,76,0.15)", borderBottom: "1px solid rgba(201,168,76,0.15)", padding: "14px 0", marginBottom: 100, background: "rgba(201,168,76,0.03)" }}>
+      <div aria-hidden="true" style={{ overflow: "hidden", borderTop: "1px solid rgba(201,168,76,0.15)", borderBottom: "1px solid rgba(201,168,76,0.15)", padding: "14px 0", marginBottom: 100, background: "rgba(201,168,76,0.03)" }}>
         <div style={{
           display: "flex", gap: 60, whiteSpace: "nowrap",
           animation: "ticker 18s linear infinite",
@@ -41,22 +42,34 @@ export default function MagazineBox() {
 
         {/* Left — content */}
         <div>
-          {/* Badge */}
+          {/* Magazine Box + Badge sur la même ligne */}
           <div style={{
-            display: "inline-flex", alignItems: "center", gap: 8,
-            background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.25)",
-            padding: "6px 16px", marginBottom: 28,
+            display: "flex", alignItems: "center", gap: 40, marginBottom: 0,
             opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)",
             transition: "opacity 0.7s ease, transform 0.7s ease",
           }}>
-            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--or)", display: "inline-block", animation: "pulse-dot 2s ease-in-out infinite" }} />
-            <span style={{ fontSize: 10, letterSpacing: "0.25em", textTransform: "uppercase", color: "var(--or)" }}>En vogue</span>
-          </div>
+            <p className="label" style={{ margin: 0 }}>Magazine Box</p>
 
-          <p className="label" style={{
-            opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.7s 0.1s ease, transform 0.7s 0.1s ease",
-          }}>Magazine Box</p>
+            {/* Badge — animé */}
+            <div style={{
+              display: "inline-flex", alignItems: "center", gap: 10,
+              position: "relative", overflow: "hidden",
+              background: "rgba(201,168,76,0.06)",
+              border: "1px solid rgba(201,168,76,0.35)",
+              padding: "6px 16px",
+              animation: visible ? "badge-glow 2.5s ease-in-out infinite" : "none",
+            }}>
+              <div style={{
+                position: "absolute", top: 0, left: 0, right: 0, bottom: 0,
+                background: "linear-gradient(105deg, transparent 30%, rgba(201,168,76,0.18) 50%, transparent 70%)",
+                backgroundSize: "200% 100%",
+                animation: visible ? "badge-sweep 2.2s ease-in-out infinite" : "none",
+                pointerEvents: "none",
+              }} />
+              <span style={{ width: 7, height: 7, borderRadius: "50%", background: "var(--or)", display: "inline-block", flexShrink: 0, animation: "pulse-dot 1.6s ease-in-out infinite", boxShadow: "0 0 8px rgba(201,168,76,0.6)" }} />
+              <span style={{ fontSize: 11, letterSpacing: "0.35em", textTransform: "uppercase", color: "var(--or)", fontWeight: 400, position: "relative" }}>En vogue</span>
+            </div>
+          </div>
           <div style={{ width: 48, height: 1, background: "var(--or)", margin: "20px 0" }} />
 
           <h2 className="h2" style={{
@@ -64,23 +77,15 @@ export default function MagazineBox() {
             opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)",
             transition: "opacity 0.7s 0.15s ease, transform 0.7s 0.15s ease",
           }}>
-            Le souvenir qui<br /><em>se feuillette.</em>
+            Une animation qui fait<br /><em>parler d&apos;elle.</em>
           </h2>
-
-          <p style={{
-            fontSize: 15, lineHeight: 1.9, color: "var(--gris)", marginBottom: 16,
-            opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.7s 0.2s ease, transform 0.7s 0.2s ease",
-          }}>
-            En plus de vos photos et de votre film, chaque mariage inclut un magazine format éditorial personnalisé — les plus beaux instants de votre journée mis en page comme un numéro de presse haut de gamme.
-          </p>
 
           <p style={{
             fontSize: 15, lineHeight: 1.9, color: "var(--gris)", marginBottom: 40,
             opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.7s 0.25s ease, transform 0.7s 0.25s ease",
+            transition: "opacity 0.7s 0.2s ease, transform 0.7s 0.2s ease",
           }}>
-            Un objet physique que vous pouvez tenir, offrir, feuilleter. Disponible aussi en animation photobooth pour vos invités lors de galas, EVJF et anniversaires.
+            Une cabine blanche fermée, habillée aux couleurs de votre événement — votre titre affiché en grand, style couverture de magazine. Vos invités entrent, posent, repartent avec leur photo sur le téléphone. Entièrement autonome.
           </p>
 
           {/* Steps */}
@@ -106,7 +111,7 @@ export default function MagazineBox() {
             opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(20px)",
             transition: "opacity 0.7s 0.35s ease, transform 0.7s 0.35s ease",
           }}>
-            {[{ val: "∞", label: "Impressions" }, { val: "100%", label: "Personnalisé" }, { val: "48h", label: "Galerie" }].map(s => (
+            {[{ val: "∞", label: "Invités" }, { val: "100%", label: "Sur-mesure" }, { val: "0", label: "Contrainte" }].map(s => (
               <div key={s.label}>
                 <div style={{ fontFamily: "var(--serif)", fontSize: 30, color: "var(--or)", lineHeight: 1 }}>{s.val}</div>
                 <div style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--gris)", marginTop: 6 }}>{s.label}</div>
@@ -132,10 +137,12 @@ export default function MagazineBox() {
         }}>
           {/* Image principale */}
           <div style={{ position: "relative", overflow: "hidden", height: 580 }}>
-            <img
-              src="/images/magazine.jpg"
-              alt="Magazine Box"
-              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block",
+            <Image
+              src="/images/magbox-ref2.png"
+              alt="Magazine Box — cabine photo sur-mesure"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              style={{ objectFit: "cover",
                 transform: visible ? "scale(1)" : "scale(1.08)",
                 transition: "transform 1.2s 0.2s ease",
               }}
@@ -153,22 +160,51 @@ export default function MagazineBox() {
             padding: "20px 28px", backdropFilter: "blur(10px)",
             animation: visible ? "float 4s ease-in-out infinite" : "none",
           }}>
-            <div style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--gris2)", marginBottom: 6 }}>Inclus dans chaque mariage</div>
-            <div style={{ fontFamily: "var(--serif)", fontSize: 20, color: "var(--blanc)" }}>Photo · Film · <em style={{ color: "var(--or)" }}>Magazine</em></div>
+            <div style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--gris2)", marginBottom: 6 }}>Mariages · Entreprises · Tout Événement</div>
+            <div style={{ fontFamily: "var(--serif)", fontSize: 20, color: "var(--blanc)" }}>Entre. Pose. <em style={{ color: "var(--or)" }}>Deviens la une.</em></div>
           </div>
 
           {/* Second image petite */}
           <div style={{ position: "absolute", top: -30, right: -50, width: 160, height: 200, overflow: "hidden", border: "3px solid var(--noir)" }}>
-            <img src="/images/choice-magazine.jpg" alt="Magazine Box ambiance" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+            <Image src="/images/magbox-ref1.png" alt="Magazine Box ambiance soirée" fill sizes="160px" style={{ objectFit: "cover" }} />
           </div>
         </div>
 
+      </div>
+
+      {/* Galerie magazine */}
+      <div style={{
+        maxWidth: 1300, margin: "80px auto 0", padding: "0 60px",
+        display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 8,
+        opacity: visible ? 1 : 0, transition: "opacity 1s 0.6s ease",
+      }}>
+        {["/images/magbox-gallery1.jpg", "/images/magbox-gallery2.jpg", "/images/magbox-gallery3.jpg"].map((src, i) => (
+          <div key={i} style={{ position: "relative", overflow: "hidden", height: 200 }}>
+            <Image
+              src={src}
+              alt={`Magazine Box — photo invités ${i + 2}`}
+              fill
+              sizes="(max-width: 1024px) 100vw, 33vw"
+              style={{ objectFit: "cover", transition: "transform 0.6s ease" }}
+              onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.05)")}
+              onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")}
+            />
+          </div>
+        ))}
       </div>
 
       <style>{`
         @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
         @keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+        @keyframes badge-glow {
+          0%, 100% { box-shadow: 0 0 0px rgba(201,168,76,0); border-color: rgba(201,168,76,0.35); }
+          50% { box-shadow: 0 0 18px rgba(201,168,76,0.25); border-color: rgba(201,168,76,0.7); }
+        }
+        @keyframes badge-sweep {
+          0% { background-position: 200% 0; }
+          100% { background-position: -200% 0; }
+        }
       `}</style>
     </section>
   );

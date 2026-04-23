@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { label: "Accueil", href: "/" },
@@ -31,28 +33,29 @@ export default function Nav() {
   return (
     <>
       <nav className={`nav${scrolled ? " scrolled" : ""}`}>
-        <a href="/" className="nav-logo">
+        <Link href="/" className="nav-logo" onClick={() => sessionStorage.removeItem("skipPreloader")}>
           Seno <span>Studio</span>
-        </a>
+        </Link>
 
         <ul className="nav-links">
           {links.map(l => {
             const active = l.href === "/" ? pathname === "/" : pathname.startsWith(l.href);
             return (
               <li key={l.href}>
-                <a href={l.href} onClick={e => go(e, l.href)} style={{ color: active ? "var(--or)" : undefined, position: "relative" }}>
+                <Link href={l.href} onClick={() => { if (l.href === "/") sessionStorage.setItem("skipPreloader", "1"); }} style={{ color: active ? "var(--or)" : undefined, position: "relative" }}>
                   {l.label}
                   {active && <span style={{ position: "absolute", bottom: -4, left: 0, right: 0, height: 1, background: "var(--or)", display: "block" }} />}
-                </a>
+                </Link>
               </li>
             );
           })}
         </ul>
 
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-          <a href="/contact" className="btn btn-gold" style={{ padding: "12px 28px" }}>
+          <ThemeToggle />
+          <Link href="/contact" className="btn btn-gold" style={{ padding: "12px 28px" }}>
             Réserver un appel
-          </a>
+          </Link>
           <button className="menu-toggle" onClick={() => setOpen(v => !v)} aria-label="Menu">
             <span style={{ transform: open ? "rotate(45deg) translateY(6px)" : "none", transition: "all .3s" }} />
             <span style={{ opacity: open ? 0 : 1, transition: "all .3s" }} />
@@ -72,15 +75,15 @@ export default function Nav() {
         {links.map(l => {
           const active = l.href === "/" ? pathname === "/" : pathname.startsWith(l.href);
           return (
-            <a key={l.href} href={l.href} onClick={e => go(e, l.href)}
+            <Link key={l.href} href={l.href} onClick={() => setOpen(false)}
               style={{ fontFamily: "var(--serif)", fontSize: 32, fontWeight: 300, fontStyle: "italic", color: active ? "var(--or)" : "var(--blanc)", textDecoration: "none" }}>
               {l.label}
-            </a>
+            </Link>
           );
         })}
-        <a href="/contact" className="btn btn-gold" style={{ marginTop: 16 }}>
+        <Link href="/contact" className="btn btn-gold" style={{ marginTop: 16 }} onClick={() => setOpen(false)}>
           Réserver un appel
-        </a>
+        </Link>
       </div>
     </>
   );

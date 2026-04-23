@@ -18,7 +18,7 @@ export default function BookingCTA() {
         <div className="divider divider-center" style={{ margin: "20px auto" }} />
         <h2 className="h2">Un appel suffit<br /><em>pour tout clarifier.</em></h2>
         <p>
-          30 minutes pour discuter de votre projet, vos envies, votre budget. Je vous propose une offre sur mesure sous 24h. Gratuit, sans engagement.
+          30 minutes pour discuter de votre projet, vos envies, votre budget. Je vous propose une offre sur mesure sous 48h. Gratuit, sans engagement.
         </p>
         <div className="booking-actions">
           <button
@@ -33,7 +33,7 @@ export default function BookingCTA() {
           </a>
         </div>
         <p style={{ fontSize: 12, color: "var(--gris2)", marginTop: 28 }}>
-          Réponse garantie sous 24h · Disponible 7j/7
+          Réponse garantie sous 48h · Disponible 7j/7
         </p>
       </div>
     </section>

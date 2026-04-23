@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import CustomCursor from "@/components/CustomCursor";
 
 const siteUrl = "https://www.senostudio.fr";
 
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <CustomCursor />
         {children}
       </body>
     </html>

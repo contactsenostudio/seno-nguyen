@@ -16,7 +16,7 @@ const offers = [
     desc: "Films corporate, événements, branding. Une image professionnelle qui inspire confiance.",
     cta: "Voir les prestations",
     href: "/entreprise",
-    img: "/images/choice-entreprise.jpg",
+    img: "/images/choice-corpo.jpg",
   },
   {
     num: "03",
@@ -24,7 +24,7 @@ const offers = [
     desc: "Magazine Box, portraits, événements, naissance — une expérience premium pour chaque occasion.",
     cta: "Découvrir les prestations",
     href: "/prestations",
-    img: "/images/choice-magazine.jpg",
+    img: "/images/choice-entreprise.jpg",
   },
 ];
 
