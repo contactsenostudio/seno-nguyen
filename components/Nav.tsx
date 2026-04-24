@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { label: "Accueil", href: "/" },
@@ -52,7 +51,6 @@ export default function Nav() {
         </ul>
 
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-          <ThemeToggle />
           <Link href="/contact" className="btn btn-gold" style={{ padding: "12px 28px" }}>
             Réserver un appel
           </Link>
