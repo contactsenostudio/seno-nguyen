@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function CGV() {
   return (
-    <main style={{ background: "var(--noir)", color: "var(--blanc)", minHeight: "100vh", padding: "120px 60px 80px" }}>
+    <main className="page-px-md" style={{ background: "var(--noir)", color: "var(--blanc)", minHeight: "100vh", paddingTop: 120, paddingBottom: 80 }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
 
         <p style={{ fontFamily: "var(--sans)", fontSize: 10, letterSpacing: "0.4em", textTransform: "uppercase", color: "var(--or)", marginBottom: 16 }}>

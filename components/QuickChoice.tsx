@@ -41,7 +41,7 @@ export default function QuickChoice() {
   }, []);
 
   return (
-    <section ref={ref} id="offres" style={{ background: "var(--noir2)", padding: "100px 60px" }}>
+    <section ref={ref} id="offres" className="page-px-md" style={{ background: "var(--noir2)", paddingTop: 100, paddingBottom: 100 }}>
 
       {/* Header */}
       <div style={{

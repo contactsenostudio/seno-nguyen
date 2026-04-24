@@ -25,7 +25,7 @@ export default function EntrepriseContent() {
         <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/images/business2.jpg')", backgroundSize: "cover", backgroundPosition: "center" }} />
         <div className="hero-overlay hero-overlay-right hero-overlay-strong" style={{ position: "absolute", inset: 0 }} />
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 200, background: "linear-gradient(to bottom, transparent, var(--noir2))" }} />
-        <div style={{ position: "relative", zIndex: 2, padding: "140px 60px 80px 100px", maxWidth: 800 }}>
+        <div className="page-px-md" style={{ position: "relative", zIndex: 2, paddingTop: 140, paddingBottom: 80, maxWidth: 800 }}>
           <p className="label">Entreprise · Corporate · Bordeaux</p>
           <div style={{ width: 48, height: 1, background: "var(--or)", margin: "20px 0" }} />
           <h1 className="h1" style={{ marginBottom: 28 }}>
@@ -46,8 +46,8 @@ export default function EntrepriseContent() {
       </section>
 
 {/* Benefits */}
-      <section style={{ padding: "80px 60px", background: "var(--noir2)" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 40 }}>
+      <section className="page-px-md" style={{ paddingTop: 80, paddingBottom: 80, background: "var(--noir2)" }}>
+        <div className="grid-cols-3" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gap: 40 }}>
           {benefits.map(b => (
             <div key={b.title} style={{ textAlign: "center", padding: "40px 24px" }}>
               <div style={{ fontFamily: "var(--serif)", fontSize: 32, color: "var(--or)", marginBottom: 20 }}>{b.icon}</div>
@@ -59,12 +59,12 @@ export default function EntrepriseContent() {
       </section>
 
       {/* Services */}
-      <section id="services" style={{ padding: "120px 60px", background: "var(--noir)" }}>
+      <section id="services" className="page-px-md" style={{ paddingTop: 120, paddingBottom: 120, background: "var(--noir)" }}>
         <div style={{ maxWidth: 1400, margin: "0 auto" }}>
           <p className="label">Mes prestations entreprise</p>
           <div style={{ width: 48, height: 1, background: "var(--or)", margin: "20px 0 48px" }} />
           <h2 className="h2" style={{ marginBottom: 60 }}>Ce que je<br /><em>propose.</em></h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+          <div className="grid-cols-3" style={{ display: "grid", gap: 20 }}>
             {services.map(s => (
               <div key={s.num} style={{ background: "var(--noir2)", overflow: "hidden", border: "1px solid rgba(255,255,255,0.04)", transition: "border-color .3s, transform .3s" }}
                 onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(201,168,76,0.15)"; (e.currentTarget as HTMLDivElement).style.transform = "translateY(-4px)"; }}

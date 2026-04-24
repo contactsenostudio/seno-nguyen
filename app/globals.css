@@ -228,6 +228,15 @@ em { font-style: italic; color: var(--or-light); }
 .benefit-card { text-align: center; padding: 40px 24px; transition: transform .3s; }
 .benefit-card:hover { transform: translateY(-4px); }
 
+/* ── PAGE LAYOUT UTILITIES ── */
+.page-px   { padding-left: 100px; padding-right: 100px; }
+.page-px-md { padding-left: 60px;  padding-right: 60px; }
+.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-cols-2 { grid-template-columns: 1fr 1fr; }
+.presta-card-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.presta-card-img  { overflow: hidden; height: 440px; }
+.pillar-card { min-height: 480px; }
+
 @keyframes fadeUp { from { opacity: 0; transform: translateY(36px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -263,6 +272,14 @@ em { font-style: italic; color: var(--or-light); }
   .contact-section { padding: 80px 32px; }
   .contact-inner { grid-template-columns: 1fr; gap: 60px; }
   .footer { flex-direction: column; gap: 24px; text-align: center; padding: 40px 32px; }
+  /* Page layout utilities */
+  .page-px, .page-px-md { padding-left: 32px; padding-right: 32px; }
+  .grid-cols-3 { grid-template-columns: 1fr; }
+  .grid-cols-2 { grid-template-columns: 1fr; }
+  .presta-card-grid { grid-template-columns: 1fr; }
+  .presta-card-img  { height: 260px; }
+  .pillar-card { min-height: 320px; }
+  .contact-hero-deco { display: none; }
 }
 /* ── LIGHT MODE ── */
 [data-theme="light"] {
@@ -350,5 +367,6 @@ em { font-style: italic; color: var(--or-light); }
   .process-steps { grid-template-columns: 1fr; }
   .booking-actions { flex-direction: column; width: 100%; }
   .booking-actions .btn { width: 100%; justify-content: center; }
+  .page-px, .page-px-md { padding-left: 20px; padding-right: 20px; }
 }
 

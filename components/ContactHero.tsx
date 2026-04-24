@@ -70,7 +70,7 @@ export default function ContactHero() {
   }, []);
 
   return (
-    <section style={{ position: "relative", paddingTop: 160, paddingBottom: 80, paddingLeft: 100, paddingRight: 60, background: "var(--noir2)", overflow: "hidden", minHeight: 320 }}>
+    <section className="page-px-md" style={{ position: "relative", paddingTop: 160, paddingBottom: 80, background: "var(--noir2)", overflow: "hidden", minHeight: 320 }}>
 
       {/* Canvas particles */}
       <canvas ref={canvasRef} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", display: "block" }} />
@@ -79,13 +79,13 @@ export default function ContactHero() {
       <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: 1, background: "linear-gradient(to right, transparent, rgba(201,168,76,0.5), transparent)" }} />
 
       {/* Cercle décoratif animé */}
-      <div style={{
+      <div className="contact-hero-deco" style={{
         position: "absolute", right: 120, top: "50%", transform: "translateY(-50%)",
         width: 280, height: 280, borderRadius: "50%",
         border: "1px solid rgba(201,168,76,0.08)",
         animation: "spin-slow 20s linear infinite",
       }} />
-      <div style={{
+      <div className="contact-hero-deco" style={{
         position: "absolute", right: 160, top: "50%", transform: "translateY(-50%)",
         width: 200, height: 200, borderRadius: "50%",
         border: "1px solid rgba(201,168,76,0.05)",

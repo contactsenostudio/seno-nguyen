@@ -33,7 +33,7 @@ export default function PrestationsContent() {
         <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/images/prestations-hero2.jpg')", backgroundSize: "cover", backgroundPosition: "center" }} />
         <div className="hero-overlay" style={{ position: "absolute", inset: 0 }} />
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 200, background: "linear-gradient(to bottom, transparent, var(--noir))" }} />
-        <div style={{ position: "relative", zIndex: 2, padding: "140px 100px 80px" }}>
+        <div className="page-px" style={{ position: "relative", zIndex: 2, paddingTop: 140, paddingBottom: 80 }}>
           <p className="label" style={{ marginBottom: 16 }}>Toutes les prestations</p>
           <div style={{ width: 48, height: 1, background: "var(--or)", marginBottom: 28 }} />
           <h1 className="h1">Chaque projet,<br /><em>une expérience.</em></h1>
@@ -41,12 +41,12 @@ export default function PrestationsContent() {
       </section>
 
 {/* Cards */}
-      <section style={{ background: "var(--noir)", padding: "80px 100px 120px" }}>
+      <section className="page-px" style={{ background: "var(--noir)", paddingTop: 80, paddingBottom: 120 }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", flexDirection: "column", gap: 32 }}>
           {prestations.map(p => (
-            <div key={p.id} id={p.id} style={{ display: "grid", gridTemplateColumns: "1fr 1fr", background: "var(--noir2)", border: "1px solid rgba(255,255,255,0.05)" }}>
+            <div key={p.id} id={p.id} className="presta-card-grid" style={{ background: "var(--noir2)", border: "1px solid rgba(255,255,255,0.05)" }}>
               {/* Image */}
-              <div style={{ overflow: "hidden", height: 440 }}>
+              <div className="presta-card-img">
                 <img src={p.img} alt={p.label} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform .8s" }}
                   onMouseEnter={e => (e.currentTarget.style.transform = "scale(1.04)")}
                   onMouseLeave={e => (e.currentTarget.style.transform = "scale(1)")} />
@@ -81,10 +81,10 @@ export default function PrestationsContent() {
       </section>
 
       {/* Bientôt */}
-      <section style={{ padding: "60px 100px 80px", background: "var(--noir2)", borderTop: "1px solid rgba(255,255,255,0.04)" }}>
+      <section className="page-px" style={{ paddingTop: 60, paddingBottom: 80, background: "var(--noir2)", borderTop: "1px solid rgba(255,255,255,0.04)" }}>
         <p className="label" style={{ marginBottom: 14 }}>Bientôt disponible</p>
         <div style={{ width: 40, height: 1, background: "var(--or)", marginBottom: 40 }} />
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+        <div className="grid-cols-3" style={{ display: "grid", gap: 12 }}>
           {[
             { title: "Vidéo Musicale", desc: "Clips musicaux et performances artistiques." },
             { title: "Photo Immobilière", desc: "Valorisation de biens immobiliers premium." },

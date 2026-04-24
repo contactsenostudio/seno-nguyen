@@ -58,7 +58,7 @@ export default function MariageContent() {
         <div style={{ position: "absolute", inset: 0, backgroundImage: "url('/images/hero-4k-6.jpg')", backgroundSize: "cover", backgroundPosition: "center 30%", filter: "saturate(1.2)" }} />
         <div className="hero-overlay hero-overlay-right" style={{ position: "absolute", inset: 0 }} />
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 200, background: "linear-gradient(to bottom, transparent, var(--noir))" }} />
-        <div style={{ position: "relative", zIndex: 2, padding: "140px 60px 80px 100px", maxWidth: 800 }}>
+        <div className="page-px-md" style={{ position: "relative", zIndex: 2, paddingTop: 140, paddingBottom: 80, maxWidth: 800 }}>
           <p className="label">Mariage · Bordeaux · Gironde</p>
           <div style={{ width: 48, height: 1, background: "var(--or)", margin: "20px 0" }} />
           <h1 className="h1" style={{ marginBottom: 28 }}>
@@ -79,15 +79,15 @@ export default function MariageContent() {
       </section>
 
       {/* 3 piliers */}
-      <section style={{ padding: "120px 60px", background: "var(--noir)" }}>
+      <section className="page-px-md" style={{ paddingTop: 120, paddingBottom: 120, background: "var(--noir)" }}>
         <div style={{ maxWidth: 1300, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 72 }}>
             <p className="label">Ce que vous gardez</p>
             <div style={{ width: 48, height: 1, background: "var(--or)", margin: "20px auto 0" }} />
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+          <div className="grid-cols-3" style={{ display: "grid", gap: 24 }}>
             {pillars.map((p, i) => (
-              <div key={i} style={{ position: "relative", overflow: "hidden", minHeight: 480 }}
+              <div key={i} className="pillar-card" style={{ position: "relative", overflow: "hidden" }}
                 onMouseEnter={e => { const img = e.currentTarget.querySelector("img") as HTMLImageElement; if (img) img.style.transform = "scale(1.06)"; }}
                 onMouseLeave={e => { const img = e.currentTarget.querySelector("img") as HTMLImageElement; if (img) img.style.transform = "scale(1)"; }}>
                 <img src={p.img} alt={p.title} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.8s ease" }} />
@@ -107,13 +107,13 @@ export default function MariageContent() {
       </section>
 
       {/* Prestations */}
-      <section style={{ padding: "100px 60px", background: "var(--noir2)" }}>
+      <section className="page-px-md" style={{ paddingTop: 100, paddingBottom: 100, background: "var(--noir2)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ marginBottom: 56 }}>
             <p className="label">Ce que je propose</p>
             <div style={{ width: 48, height: 1, background: "var(--or)", margin: "20px 0 0" }} />
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, background: "rgba(201,168,76,0.08)", overflow: "visible" }}>
+          <div className="grid-cols-3" style={{ display: "grid", gap: 1, background: "rgba(201,168,76,0.08)", overflow: "visible" }}>
             {[
               { num: "01", title: "Reportage Photo", desc: "De l'habillage aux dernières danses. Des images naturelles, sans mise en scène.", img: "/images/wedding-new1.jpg" },
               { num: "02", title: "Film Cinématique 4K", desc: "Un court-métrage de votre mariage avec vos voix, vos regards, votre musique.", img: "/images/wedding-new4.jpg" },
@@ -155,7 +155,7 @@ export default function MariageContent() {
       </section>
 
       {/* Formules */}
-      <section id="formules" style={{ padding: "120px 60px", background: "var(--noir2)" }}>
+      <section id="formules" className="page-px-md" style={{ paddingTop: 120, paddingBottom: 120, background: "var(--noir2)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 72 }}>
             <p className="label">Formules mariage</p>
@@ -166,7 +166,7 @@ export default function MariageContent() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+          <div className="grid-cols-3" style={{ display: "grid", gap: 20 }}>
             {packs.map(p => (
               <div key={p.name} style={{
                 background: "var(--noir)", padding: "44px 36px",
