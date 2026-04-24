@@ -170,7 +170,7 @@ export default function HeroCanvas() {
 
   useEffect(() => {
     const skip = sessionStorage.getItem("skipPreloader");
-    const t = setTimeout(() => setVisible(true), skip ? 200 : 7500);
+    const t = setTimeout(() => setVisible(true), skip ? 200 : 4800);
     return () => clearTimeout(t);
   }, []);
 

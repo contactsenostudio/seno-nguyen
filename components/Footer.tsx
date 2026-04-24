@@ -9,7 +9,7 @@ export default function Footer() {
       <nav aria-label="Liens footer" style={{ display: "flex", gap: 20, flexWrap: "wrap", justifyContent: "center" }}>
         <Link href="/mariage" className="footer-social">Mariage</Link>
         <Link href="/entreprise" className="footer-social">Entreprise</Link>
-        <Link href="/prestations" className="footer-social">Prestations</Link>
+        <Link href="/particulier" className="footer-social">Particulier</Link>
         <Link href="/contact" className="footer-social">Contact</Link>
       </nav>
       <p className="footer-copy">© 2026 Seno Studio · Bordeaux · France</p>

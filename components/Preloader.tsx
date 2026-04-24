@@ -9,18 +9,20 @@ export default function Preloader() {
       setPhase("done");
       return;
     }
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
     const t1 = setTimeout(() => setPhase("text"),  400);
     const t2 = setTimeout(() => setPhase("sub"),   900);
     const t3 = setTimeout(() => setPhase("quote"), 1600);
-    const t4 = setTimeout(() => setPhase("exit"),  6800);
+    const t4 = setTimeout(() => setPhase("exit"),  4200);
     const t5 = setTimeout(() => {
       sessionStorage.setItem("skipPreloader", "1");
       setPhase("done");
-    }, 7500);
-    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); clearTimeout(t5); };
+    }, 4900);
+    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); clearTimeout(t5); document.documentElement.style.overflow = ""; document.body.style.overflow = ""; };
   }, []);
 
-  if (phase === "done") return null;
+  if (phase === "done") { document.documentElement.style.overflow = ""; document.body.style.overflow = ""; return null; }
 
   const exiting = phase === "exit";
   const quoting = phase === "quote" || phase === "exit";
@@ -120,7 +122,7 @@ export default function Preloader() {
             letterSpacing: "0.01em", lineHeight: 1.2,
             color: "rgba(201,168,76,0.85)", margin: 0,
             transform: quoting && !exiting ? "translateY(0)" : "translateY(110%)",
-            transition: "transform 0.9s 1.6s cubic-bezier(0.16,1,0.3,1)",
+            transition: "transform 0.9s 0.5s cubic-bezier(0.16,1,0.3,1)",
           }}>
             méritent mieux qu&apos;un souvenir flou.
           </p>

@@ -5,7 +5,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Magazine Box & Prestations — Bordeaux Gironde",
+  title: "Particulier — Magazine Box & Shooting Bordeaux Gironde",
   description: "Magazine Box photobooth premium, shooting portrait, événements, EVJF, anniversaires à Bordeaux et Gironde. Impressions magazine personnalisées, galerie digitale.",
 };
 

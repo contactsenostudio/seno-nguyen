@@ -34,7 +34,7 @@ export default function PrestationsContent() {
         <div className="hero-overlay" style={{ position: "absolute", inset: 0 }} />
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: 200, background: "linear-gradient(to bottom, transparent, var(--noir))" }} />
         <div className="page-px" style={{ position: "relative", zIndex: 2, paddingTop: 140, paddingBottom: 80 }}>
-          <p className="label" style={{ marginBottom: 16 }}>Toutes les prestations</p>
+          <p className="label" style={{ marginBottom: 16 }}>Particulier</p>
           <div style={{ width: 48, height: 1, background: "var(--or)", marginBottom: 28 }} />
           <h1 className="h1">Chaque projet,<br /><em>une expérience.</em></h1>
         </div>

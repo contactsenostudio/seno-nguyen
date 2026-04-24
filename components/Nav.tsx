@@ -7,7 +7,7 @@ const links = [
   { label: "Accueil", href: "/" },
   { label: "Mariage", href: "/mariage" },
   { label: "Entreprise", href: "/entreprise" },
-  { label: "Prestations", href: "/prestations" },
+  { label: "Particulier", href: "/particulier" },
   { label: "Contact", href: "/contact" },
 ];
 
