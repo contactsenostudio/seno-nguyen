@@ -285,13 +285,15 @@ em { font-style: italic; }
 /* ── ACCUEIL façon Asix : boutons blancs empilés + icônes rondes ── */
 .btn-pill {
   display: inline-flex; align-items: center; justify-content: center;
-  min-width: 128px; height: 40px; padding: 0 24px; border-radius: 100px;
-  background: #fff; color: #0a0a0a; text-decoration: none;
-  font-family: var(--sans); font-size: 14px; font-weight: 700; letter-spacing: 0.01em;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.3);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  width: 230px; height: 46px; border-radius: 100px; box-sizing: border-box;
+  background: #f4efe7; color: #0a0a0a; border: 1px solid #f4efe7; text-decoration: none;
+  font-family: var(--sans); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.28em; text-transform: uppercase; padding-left: 0.28em;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
-.btn-pill:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,0,0,0.45); }
+.btn-pill:hover { background: #e05a2b; border-color: #e05a2b; color: #fff; transform: translateY(-2px); }
+.btn-pill-outline { background: transparent; color: rgba(244,239,231,0.85); border-color: rgba(244,239,231,0.28); }
+.btn-pill-outline:hover { background: #f4efe7; border-color: #f4efe7; color: #0a0a0a; }
 .social-round {
   width: 44px; height: 44px; border-radius: 50%;
   display: inline-flex; align-items: center; justify-content: center;

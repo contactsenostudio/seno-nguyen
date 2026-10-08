@@ -11,15 +11,6 @@ const F1_BARS = [
   { flex: 2, delay: 220 },
 ];
 
-/* Symbole du logo Seno Studio (pentagone + fenêtre orange) */
-const Mark = ({ height = 170 }: { height?: number }) => (
-  <svg width={height * 0.505} height={height} viewBox="0 0 50.5 100" fill="none" aria-hidden>
-    <rect x="27.1" y="6.3" width="19.5" height="44.3" fill="#e05a2b" />
-    <path fillRule="evenodd" fill="#f4efe7"
-      d="M 23.7,0 L 50.5,0 L 50.5,100 L 0,100 L 0,44.7 Z M 27.1,6.3 L 46.6,6.3 L 46.6,50.6 L 27.1,50.6 Z" />
-  </svg>
-);
-
 const IconInstagram = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
     <rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none" />
@@ -78,33 +69,37 @@ export default function Landing() {
         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
         textAlign: "center", padding: "56px clamp(24px, 5vw, 72px)",
       }}>
-        <div className="ld-mark" style={reveal(150)}>
-          <Mark height={170} />
+        <div style={{
+          fontFamily: "var(--sans)", fontSize: 11, fontWeight: 500,
+          letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(244,239,231,0.45)",
+          paddingLeft: "0.4em", ...reveal(150),
+        }}>
+          Photographe &amp; Vidéaste · Bordeaux
         </div>
 
-        <div style={{
-          marginTop: 26, fontFamily: "var(--sans)", fontSize: 13, fontWeight: 300,
-          letterSpacing: "0.62em", textTransform: "uppercase", color: "#cfc7b6",
-          paddingLeft: "0.62em", ...reveal(300),
+        <h1 style={{
+          margin: "22px 0 0", fontFamily: "var(--serif)", fontStyle: "italic", fontWeight: 400,
+          fontSize: "clamp(58px, 6.2vw, 92px)", lineHeight: 1, letterSpacing: "-0.025em", color: "#f4efe7",
+          ...reveal(300),
         }}>
-          Seno Studio
-        </div>
+          Seno Studio<span style={{ color: "#e05a2b" }}>.</span>
+        </h1>
 
         <p style={{
-          marginTop: 44, maxWidth: 520, fontFamily: "var(--serif)", fontWeight: 400,
-          fontSize: "clamp(17px, 1.3vw, 20px)", lineHeight: 1.45, color: "#ebe6dc",
+          marginTop: 30, maxWidth: 440, fontFamily: "var(--sans)", fontWeight: 400,
+          fontSize: "clamp(15px, 1.1vw, 17px)", lineHeight: 1.7, color: "rgba(244,239,231,0.72)",
           ...reveal(450),
         }}>
           Bienvenue sur mon site où vous pourrez retrouver mon portfolio ainsi que l&rsquo;ensemble des prestations que je propose.
         </p>
 
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 40, marginTop: 44, ...reveal(600) }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14, marginTop: 44, ...reveal(600) }}>
           <Link href="/portfolio" className="btn-pill">Mon travail</Link>
-          <Link href="/a-propos"  className="btn-pill">À propos</Link>
-          <Link href="/contact"   className="btn-pill">Contact</Link>
+          <Link href="/a-propos"  className="btn-pill btn-pill-outline">À propos</Link>
+          <Link href="/contact"   className="btn-pill btn-pill-outline">Contact</Link>
         </div>
 
-        <div style={{ display: "flex", gap: 12, marginTop: 50, ...reveal(800) }}>
+        <div style={{ display: "flex", gap: 12, marginTop: 48, ...reveal(800) }}>
           <a href="https://www.instagram.com/seno_std/" target="_blank" rel="noopener noreferrer" className="social-round" aria-label="Instagram"><IconInstagram /></a>
           <a href="mailto:contact.senostudio@gmail.com" className="social-round" aria-label="Envoyer un e-mail"><IconMail /></a>
           <a href="tel:+33768868505" className="social-round" aria-label="Appeler"><IconPhone /></a>
@@ -114,12 +109,12 @@ export default function Landing() {
       {/* ── Colonne droite : photo ── */}
       <section className="ld-right" style={{ position: "relative", minHeight: "100vh", background: "#000" }}>
         <Image
-          src="/images/A7409729.jpg"
-          alt="Seno Nguyen, photographe à Bordeaux"
+          src="/images/theme-portrait.jpg"
+          alt="Portrait réalisé par Seno Studio"
           fill priority
           sizes="(max-width: 900px) 100vw, 50vw"
           style={{
-            objectFit: "cover", objectPosition: "36% center",
+            objectFit: "cover", objectPosition: "center 28%",
             opacity: loaded ? 1 : 0, transform: loaded ? "scale(1)" : "scale(1.05)",
             transition: "opacity 1.3s ease 150ms, transform 2.2s cubic-bezier(0.16,1,0.3,1) 150ms",
           }}
@@ -139,7 +134,6 @@ export default function Landing() {
           .ld { grid-template-columns: 1fr !important; }
           .ld-right { order: -1; min-height: 50vh !important; }
           .ld-left  { padding: 48px 24px 56px !important; }
-          .ld-mark svg { height: 120px; width: 60.6px; }
         }
       `}</style>
     </main>

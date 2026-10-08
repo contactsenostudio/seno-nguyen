@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Nav from "@/components/Nav";
+import TopBar from "@/components/TopBar";
 import WhoAmI from "@/components/WhoAmI";
 import Stats from "@/components/Stats";
 import Testimonials from "@/components/Testimonials";
@@ -15,8 +15,8 @@ export default function AProposPage() {
   return (
     <>
       <Cursor />
-      <Nav />
-      <main style={{ paddingTop: 68 }}>
+      <TopBar />
+      <main>
         <WhoAmI />
         <Stats />
         <Testimonials />

@@ -34,10 +34,10 @@ export default function TopBar() {
       </nav>
 
       <Link href="/" className="tb-brand" style={{
-        fontFamily: "var(--font-nunito, var(--sans))", fontWeight: 900, fontSize: 19,
-        color: "#fff", textDecoration: "none", letterSpacing: "-0.01em", justifySelf: "center",
+        fontFamily: "var(--serif)", fontStyle: "italic", fontWeight: 400, fontSize: 24,
+        color: "#f4efe7", textDecoration: "none", letterSpacing: "-0.01em", justifySelf: "center", lineHeight: 1,
       }}>
-        Seno <span style={{ color: "#e05a2b" }}>studio</span>
+        Seno Studio<span style={{ color: "#e05a2b" }}>.</span>
       </Link>
 
       <div />

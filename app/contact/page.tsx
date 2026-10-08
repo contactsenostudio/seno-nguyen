@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Nav from "@/components/Nav";
+import TopBar from "@/components/TopBar";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Cursor from "@/components/Cursor";
@@ -13,7 +13,7 @@ export default function ContactPage() {
   return (
     <>
       <Cursor />
-      <Nav />
+      <TopBar />
       <Contact />
       <Footer />
     </>
