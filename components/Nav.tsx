@@ -4,15 +4,15 @@ import { usePathname } from "next/navigation";
 import LogoSVG from "./LogoSVG";
 
 const themes = [
-  { label: "Portrait & Lifestyle",       href: "/portfolio?theme=portrait" },
-  { label: "Mariage",                    href: "/portfolio?theme=mariage" },
-  { label: "Famille & Naissance",        href: "/portfolio?theme=famille" },
-  { label: "Gastronomie & Restauration", href: "/portfolio?theme=gastronomie" },
-  { label: "Immobilier & Architecture",  href: "/portfolio?theme=immobilier" },
-  { label: "Mode & Marque",              href: "/portfolio?theme=mode" },
-  { label: "Événementiel",               href: "/portfolio?theme=evenement" },
-  { label: "Sport & Outdoor",            href: "/portfolio?theme=sport" },
-  { label: "Vin & Terroir",              href: "/portfolio?theme=vin" },
+  { label: "Portrait & Lifestyle",       href: "/portfolio/portrait" },
+  { label: "Mariage",                    href: "/portfolio/mariage" },
+  { label: "Famille & Naissance",        href: "/portfolio/famille" },
+  { label: "Gastronomie & Restauration", href: "/portfolio/gastronomie" },
+  { label: "Immobilier & Architecture",  href: "/portfolio/immobilier" },
+  { label: "Mode & Marque",              href: "/portfolio/mode" },
+  { label: "Événementiel",               href: "/portfolio/evenement" },
+  { label: "Sport & Outdoor",            href: "/portfolio/sport" },
+  { label: "Vin & Terroir",              href: "/portfolio/vin" },
 ];
 
 export default function Nav({ dark = false }: { dark?: boolean }) {
