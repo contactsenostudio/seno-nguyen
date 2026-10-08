@@ -1,13 +1,13 @@
 import Nav from "@/components/Nav";
-import Hero from "@/components/Hero";
+import Landing from "@/components/Landing";
 import Cursor from "@/components/Cursor";
 
 export default function Home() {
   return (
     <>
       <Cursor />
-      <Nav />
-      <Hero />
+      <Nav dark />
+      <Landing />
     </>
   );
 }

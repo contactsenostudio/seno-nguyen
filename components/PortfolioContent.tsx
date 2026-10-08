@@ -96,6 +96,12 @@ export default function PortfolioContent() {
 
   useEffect(() => { setLightbox(null); setHov(null); }, [activeTheme]);
 
+  /* Filtre pré-sélectionné depuis l'accueil : /portfolio?theme=mariage */
+  useEffect(() => {
+    const wanted = new URLSearchParams(window.location.search).get("theme");
+    if (wanted && FILTERS.some(f => f.id === wanted)) setActiveTheme(wanted);
+  }, []);
+
   return (
     <>
       <div style={{ background: "#fff" }}>

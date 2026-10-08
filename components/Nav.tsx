@@ -4,21 +4,29 @@ import { usePathname } from "next/navigation";
 import LogoSVG from "./LogoSVG";
 
 const themes = [
-  { label: "Portrait & Lifestyle",       href: "/portfolio" },
-  { label: "Mariage",                    href: "/portfolio" },
-  { label: "Famille & Naissance",        href: "/portfolio" },
-  { label: "Gastronomie & Restauration", href: "/portfolio" },
-  { label: "Immobilier & Architecture",  href: "/portfolio" },
-  { label: "Mode & Marque",              href: "/portfolio" },
-  { label: "Événementiel",               href: "/portfolio" },
-  { label: "Sport & Outdoor",            href: "/portfolio" },
-  { label: "Vin & Terroir",              href: "/portfolio" },
+  { label: "Portrait & Lifestyle",       href: "/portfolio?theme=portrait" },
+  { label: "Mariage",                    href: "/portfolio?theme=mariage" },
+  { label: "Famille & Naissance",        href: "/portfolio?theme=famille" },
+  { label: "Gastronomie & Restauration", href: "/portfolio?theme=gastronomie" },
+  { label: "Immobilier & Architecture",  href: "/portfolio?theme=immobilier" },
+  { label: "Mode & Marque",              href: "/portfolio?theme=mode" },
+  { label: "Événementiel",               href: "/portfolio?theme=evenement" },
+  { label: "Sport & Outdoor",            href: "/portfolio?theme=sport" },
+  { label: "Vin & Terroir",              href: "/portfolio?theme=vin" },
 ];
 
-export default function Nav() {
+export default function Nav({ dark = false }: { dark?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen]         = useState(false);
   const pathname = usePathname();
+
+  /* Couleurs selon le fond de la page */
+  const fg      = dark ? "#f5f0eb" : "#0a0a0a";
+  const fgMuted = dark ? "rgba(245,240,235,0.5)" : "rgba(0,0,0,0.45)";
+  const navBg   = dark
+    ? (scrolled ? "rgba(7,7,7,0.85)" : "transparent")
+    : (scrolled ? "rgba(255,255,255,0.94)" : "#fff");
+  const border  = dark ? "1px solid rgba(255,255,255,0.08)" : "1px solid rgba(0,0,0,0.06)";
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 60);
@@ -40,9 +48,9 @@ export default function Nav() {
         height: scrolled ? 56 : 68,
         padding: "0 clamp(24px, 4vw, 56px)",
         display: "flex", alignItems: "center", justifyContent: "space-between",
-        background: scrolled ? "rgba(255,255,255,0.94)" : "#fff",
+        background: navBg,
         backdropFilter: scrolled ? "blur(14px)" : "none",
-        borderBottom: "1px solid rgba(0,0,0,0.06)",
+        borderBottom: dark && !scrolled ? "none" : border,
         transition: "height 0.35s ease, background 0.35s ease",
       }}>
 
@@ -55,7 +63,8 @@ export default function Nav() {
               height: scrolled ? 34 : 42,
               display: "block",
               objectFit: "contain",
-              filter: "invert(1) hue-rotate(180deg) brightness(1.5)",
+              filter: dark ? "brightness(0.6) contrast(3) brightness(1.3)" : "invert(1) hue-rotate(180deg) brightness(1.5)",
+              mixBlendMode: dark ? "screen" : "normal",
             }}
           />
         </a>
@@ -68,7 +77,7 @@ export default function Nav() {
             fontFamily: "var(--sans)", fontSize: 10.5, fontWeight: pathname === "/" ? 600 : 400,
             letterSpacing: "0.22em", textTransform: "uppercase",
             textDecoration: "none",
-            color: pathname === "/" ? "#0a0a0a" : "rgba(0,0,0,0.45)",
+            color: pathname === "/" ? fg : fgMuted,
             position: "relative", paddingBottom: 2,
             transition: "color 0.2s ease",
           }}>
@@ -83,7 +92,7 @@ export default function Nav() {
             fontFamily: "var(--sans)", fontSize: 10.5, fontWeight: pathname === "/portfolio" ? 600 : 400,
             letterSpacing: "0.22em", textTransform: "uppercase",
             textDecoration: "none",
-            color: pathname === "/portfolio" ? "#0a0a0a" : "rgba(0,0,0,0.45)",
+            color: pathname === "/portfolio" ? fg : fgMuted,
             position: "relative", paddingBottom: 2,
             transition: "color 0.2s ease",
           }}>
@@ -98,7 +107,7 @@ export default function Nav() {
             fontFamily: "var(--sans)", fontSize: 10.5, fontWeight: pathname === "/a-propos" ? 600 : 400,
             letterSpacing: "0.22em", textTransform: "uppercase",
             textDecoration: "none",
-            color: pathname === "/a-propos" ? "#0a0a0a" : "rgba(0,0,0,0.45)",
+            color: pathname === "/a-propos" ? fg : fgMuted,
             position: "relative", paddingBottom: 2,
             transition: "color 0.2s ease",
           }}>
@@ -115,17 +124,17 @@ export default function Nav() {
           <button onClick={() => setOpen(v => !v)} aria-label="Menu"
             style={{ background: "none", border: "none", cursor: "pointer", display: "flex", flexDirection: "column", gap: 5, padding: 4 }}>
             <span style={{
-              display: "block", width: 22, height: 1.5, background: "#0a0a0a", borderRadius: 2,
+              display: "block", width: 22, height: 1.5, background: open ? "#fff" : fg, borderRadius: 2,
               transition: "all .35s cubic-bezier(.77,0,.175,1)",
               transform: open ? "rotate(45deg) translateY(6.5px)" : "none",
             }} />
             <span style={{
-              display: "block", width: 22, height: 1.5, background: "#0a0a0a", borderRadius: 2,
+              display: "block", width: 22, height: 1.5, background: open ? "#fff" : fg, borderRadius: 2,
               transition: "all .35s cubic-bezier(.77,0,.175,1)",
               opacity: open ? 0 : 1, transform: open ? "scaleX(0)" : "none",
             }} />
             <span style={{
-              display: "block", width: 22, height: 1.5, background: "#0a0a0a", borderRadius: 2,
+              display: "block", width: 22, height: 1.5, background: open ? "#fff" : fg, borderRadius: 2,
               transition: "all .35s cubic-bezier(.77,0,.175,1)",
               transform: open ? "rotate(-45deg) translateY(-6.5px)" : "none",
             }} />
@@ -221,7 +230,8 @@ export default function Nav() {
       </div>
 
       <style>{`
-        .nav-link:hover { color: #0a0a0a !important; }
+        .nav-link:hover { color: ${fg} !important; }
+        @media (max-width: 820px) { .nav-link { display: none !important; } }
         .nav-cta:hover { background: #e05a2b !important; transform: translateY(-1px); }
         .menu-link:hover { color: #e05a2b !important; transform: translateX(6px); }
         .theme-link:hover { color: #fff !important; }
