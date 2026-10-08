@@ -1,6 +1,5 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import LoadingScreen from "@/components/LoadingScreen";
 import PhotoStrips from "@/components/PhotoStrips";
 import ScrollPhrase from "@/components/ScrollPhrase";
 import WhoAmI from "@/components/WhoAmI";
@@ -14,7 +13,6 @@ import Cursor from "@/components/Cursor";
 export default function Home() {
   return (
     <>
-      <LoadingScreen />
       <Cursor />
       <Nav />
       <Hero />
