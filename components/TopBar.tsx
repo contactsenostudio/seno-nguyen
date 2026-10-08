@@ -17,8 +17,10 @@ export default function TopBar() {
 
   return (
     <header className="tb" style={{
-      position: "relative", zIndex: 50,
-      background: "#1c1c1c",
+      position: "sticky", top: 0, zIndex: 50,
+      background: "rgba(28,28,28,0.94)",
+      backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)",
+      borderBottom: "1px solid rgba(255,255,255,0.06)",
       padding: "16px clamp(16px, 3vw, 44px) 14px",
       display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center",
       minHeight: 64,

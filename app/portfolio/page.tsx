@@ -18,8 +18,8 @@ export default function PortfolioPage() {
       <TopBar />
 
       <main className="pf-grid" style={{
-        display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6,
-        padding: "0 0 6px",
+        display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10,
+        padding: "28px clamp(16px, 3vw, 44px) 10px",
       }}>
         {THEMES.map((t, i) => (
           <Link key={t.id} href={`/portfolio/${t.id}`} className="pf-tile" style={{
@@ -34,18 +34,18 @@ export default function PortfolioPage() {
             />
             <div className="pf-tile-veil" style={{
               position: "absolute", inset: 0,
-              background: "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 45%, transparent 70%)",
-              opacity: 0, transition: "opacity 0.4s ease",
+              background: "linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.2) 40%, transparent 65%)",
+              transition: "opacity 0.4s ease",
             }} />
             <div className="pf-tile-title" style={{
               position: "absolute", left: 28, bottom: 24, right: 28,
-              fontFamily: "var(--sans)", fontWeight: 700, fontSize: "clamp(18px, 1.6vw, 24px)",
-              color: "#fff", letterSpacing: "0.01em",
-              opacity: 0, transform: "translateY(8px)",
-              transition: "opacity 0.4s ease, transform 0.5s cubic-bezier(0.16,1,0.3,1)",
+              fontFamily: "var(--serif)", fontStyle: "italic", fontWeight: 400,
+              fontSize: "clamp(26px, 2.4vw, 38px)", lineHeight: 1,
+              color: "#fff", letterSpacing: "-0.01em",
+              transition: "transform 0.5s cubic-bezier(0.16,1,0.3,1)",
             }}>
               {t.title}
-              <span style={{ display: "block", marginTop: 4, fontSize: 12, fontWeight: 400, color: "rgba(255,255,255,0.65)" }}>
+              <span style={{ display: "block", marginTop: 8, fontFamily: "var(--sans)", fontStyle: "normal", fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: "rgba(255,255,255,0.6)" }}>
                 {t.photos.length} photo{t.photos.length > 1 ? "s" : ""}
               </span>
             </div>
@@ -61,13 +61,9 @@ export default function PortfolioPage() {
 
       <style>{`
         .pf-tile:hover img { transform: scale(1.04); }
-        .pf-tile:hover .pf-tile-veil { opacity: 1 !important; }
-        .pf-tile:hover .pf-tile-title { opacity: 1 !important; transform: translateY(0) !important; }
-        @media (hover: none) {
-          .pf-tile .pf-tile-veil, .pf-tile .pf-tile-title { opacity: 1 !important; transform: none !important; }
-        }
+        .pf-tile:hover .pf-tile-title { transform: translateX(6px); }
         @media (max-width: 720px) {
-          .pf-grid { grid-template-columns: 1fr !important; }
+          .pf-grid { grid-template-columns: 1fr !important; padding-top: 16px !important; }
         }
       `}</style>
     </div>

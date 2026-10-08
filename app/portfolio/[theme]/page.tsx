@@ -37,25 +37,27 @@ export default async function ThemePage({ params }: { params: Params }) {
 
       <main>
         <h1 style={{
-          textAlign: "center", fontFamily: "var(--sans)", fontWeight: 700,
-          fontSize: "clamp(22px, 2.2vw, 30px)", letterSpacing: "0.01em",
-          margin: 0, padding: "56px 24px 48px", color: "#fff",
-        }}>{t.title}</h1>
+          textAlign: "center", fontFamily: "var(--serif)", fontStyle: "italic", fontWeight: 400,
+          fontSize: "clamp(38px, 4vw, 56px)", letterSpacing: "-0.02em", lineHeight: 1,
+          margin: 0, padding: "52px 24px 44px", color: "#fff",
+        }}>{t.title}<span style={{ color: "#e05a2b" }}>.</span></h1>
 
-        <ThemeGallery photos={t.photos} title={t.title} />
+        <div style={{ padding: "0 clamp(16px, 3vw, 44px)" }}>
+          <ThemeGallery photos={t.photos} title={t.title} />
+        </div>
 
         {/* Autres catégories */}
-        <section style={{ padding: "96px 0 0" }}>
-          <h2 style={{ textAlign: "center", fontFamily: "var(--sans)", fontWeight: 700, fontSize: 18, margin: "0 0 40px" }}>
+        <section style={{ padding: "96px clamp(16px, 3vw, 44px) 0" }}>
+          <h2 style={{ textAlign: "center", fontFamily: "var(--serif)", fontStyle: "italic", fontWeight: 400, fontSize: 30, margin: "0 0 36px" }}>
             Vous aimerez aussi
           </h2>
-          <div className="pf-also" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 4 }}>
+          <div className="pf-also" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10 }}>
             {also.map(a => (
-              <Link key={a.id} href={`/portfolio/${a.id}`} className="pf-tile" style={{ position: "relative", display: "block", aspectRatio: "4 / 3", overflow: "hidden", background: "#111" }}>
+              <Link key={a.id} href={`/portfolio/${a.id}`} className="pf-tile" style={{ position: "relative", display: "block", aspectRatio: "4 / 3", overflow: "hidden", background: "#111", textDecoration: "none" }}>
                 <Image src={a.cover} alt={a.title} fill sizes="(max-width: 720px) 100vw, 33vw"
                   style={{ objectFit: "cover", objectPosition: a.coverPos ?? "center", transition: "transform 1s cubic-bezier(0.25,0.46,0.45,0.94)" }} />
-                <div className="pf-tile-veil" style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.7), transparent 60%)", opacity: 0, transition: "opacity 0.4s ease" }} />
-                <div className="pf-tile-title" style={{ position: "absolute", left: 20, bottom: 18, fontFamily: "var(--sans)", fontWeight: 700, fontSize: 18, color: "#fff", opacity: 0, transition: "opacity 0.4s ease" }}>{a.title}</div>
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.72), rgba(0,0,0,0.2) 40%, transparent 65%)" }} />
+                <div className="pf-tile-title" style={{ position: "absolute", left: 22, bottom: 18, fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 26, lineHeight: 1, color: "#fff", transition: "transform 0.5s cubic-bezier(0.16,1,0.3,1)" }}>{a.title}</div>
               </Link>
             ))}
           </div>
@@ -71,9 +73,7 @@ export default async function ThemePage({ params }: { params: Params }) {
 
       <style>{`
         .pf-tile:hover img { transform: scale(1.04); }
-        .pf-tile:hover .pf-tile-veil { opacity: 1 !important; }
-        .pf-tile:hover .pf-tile-title { opacity: 1 !important; }
-        @media (hover: none) { .pf-tile .pf-tile-veil, .pf-tile .pf-tile-title { opacity: 1 !important; } }
+        .pf-tile:hover .pf-tile-title { transform: translateX(6px); }
         @media (max-width: 720px) { .pf-also { grid-template-columns: 1fr !important; } }
       `}</style>
     </div>
