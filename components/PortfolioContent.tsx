@@ -101,7 +101,7 @@ export default function PortfolioContent() {
       <div style={{ background: "#fff" }}>
 
         {/* ══ CONTENU PRINCIPAL ══ */}
-        <div style={{ marginRight: 180 }}>
+        <div className="pf-main" style={{ marginRight: 180 }}>
 
           {/* Header */}
           <section style={{
@@ -122,7 +122,7 @@ export default function PortfolioContent() {
               letterSpacing: "-0.025em", lineHeight: 0.9,
               color: "#0a0a0a", margin: 0,
             }}>
-              Portfolio<span style={{ color: "#e05a2b" }}>.</span>
+              Mon travail<span style={{ color: "#e05a2b" }}>.</span>
             </h1>
           </section>
 
@@ -191,7 +191,7 @@ export default function PortfolioContent() {
         </div>
 
         {/* ══ SIDEBAR FILTRES ══ */}
-        <div style={{
+        <div className="pf-sidebar" style={{
           position: "fixed",
           right: 0, top: 0, bottom: 0,
           width: 180,
@@ -290,6 +290,7 @@ export default function PortfolioContent() {
         }
         @media (max-width: 768px) {
           .pf-sidebar { display: none !important; }
+          .pf-main { margin-right: 0 !important; }
         }
       `}</style>
     </>

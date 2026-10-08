@@ -465,58 +465,70 @@ export default function Hero() {
         <p style={{
           fontFamily: "var(--condensed)", fontSize: 11,
           letterSpacing: "0.28em", textTransform: "uppercase",
-          color: "#888", marginTop: 40,
+          color: "#888", marginTop: 28,
           opacity: loaded ? 1 : 0,
           transform: loaded ? "translateY(0)" : "translateY(16px)",
           transition: "opacity 0.9s ease 700ms, transform 0.9s ease 700ms",
         }}>
-          Photographe indépendant · Bordeaux · France entière
+          Seno Studio · Photographe &amp; Vidéaste · Bordeaux · France entière
+        </p>
+
+        <p style={{
+          fontFamily: "var(--sans)", fontSize: "clamp(15px, 1.25vw, 18px)",
+          fontWeight: 500, lineHeight: 1.7,
+          color: "#3a3a3a", maxWidth: 560, margin: "26px auto 0",
+          opacity: loaded ? 1 : 0,
+          transform: loaded ? "translateY(0)" : "translateY(16px)",
+          transition: "opacity 0.9s ease 800ms, transform 0.9s ease 800ms",
+        }}>
+          Bienvenue sur mon site. Vous y trouverez mon portfolio ainsi que l&rsquo;ensemble des prestations que je propose&nbsp;: mariage, portrait, entreprise, immobilier, événementiel.
         </p>
 
         <div style={{
-          marginTop: 52, display: "flex", gap: 24,
-          justifyContent: "center", flexWrap: "wrap",
+          marginTop: 44, display: "flex", gap: 20,
+          justifyContent: "center", alignItems: "center", flexWrap: "wrap",
           opacity: loaded ? 1 : 0,
           transform: loaded ? "translateY(0)" : "translateY(16px)",
           transition: "opacity 0.9s ease 900ms, transform 0.9s ease 900ms",
           pointerEvents: "auto",
         }}>
-          <a href="/prestations" className="btn-arrow btn-arrow-orange">Portfolio →</a>
-          <a href="/contact" className="btn-arrow">Prendre contact →</a>
+          <a href="/portfolio" className="btn-arrow btn-arrow-orange">Mon travail →</a>
+          <a href="/a-propos" className="btn-arrow">À propos →</a>
+          <a href="/contact" className="btn-arrow">Contact →</a>
+        </div>
+
+        <div style={{
+          marginTop: 40, display: "flex", gap: 32,
+          justifyContent: "center", alignItems: "center", flexWrap: "wrap",
+          opacity: loaded ? 1 : 0,
+          transition: "opacity 1s ease 1200ms",
+          pointerEvents: "auto",
+        }}>
+          <a href="https://www.instagram.com/seno_std/" target="_blank" rel="noopener noreferrer" className="landing-social">Instagram</a>
+          <a href="mailto:contact.senostudio@gmail.com" className="landing-social">contact.senostudio@gmail.com</a>
+          <a href="tel:+33768868505" className="landing-social">07 68 86 85 05</a>
         </div>
       </div>
 
-      {/* Fondu bas — transition vers PhotoStrips */}
-      <div style={{
-        position: "absolute", bottom: 0, left: 0, right: 0,
-        height: "32vh", pointerEvents: "none", zIndex: 1,
-        background: "linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.7) 60%, #fff 100%)",
-      }} />
-
-      {/* Scroll indicator */}
-      <div style={{
-        position: "absolute", bottom: 36, left: "50%",
-        transform: "translateX(-50%)",
-        display: "flex", flexDirection: "column", alignItems: "center",
-        opacity: loaded ? 1 : 0,
-        transition: "opacity 1s ease 1200ms", zIndex: 9,
-      }}>
-        <div style={{
-          width: 1, height: 48,
-          background: "linear-gradient(to bottom, #e05a2b, transparent)",
-          animation: "scrollPulse 2s ease-in-out infinite",
-        }} />
-      </div>
-
       <style>{`
+        .landing-social {
+          font-family: var(--condensed); font-size: 10px; font-weight: 600;
+          letter-spacing: 0.28em; text-transform: uppercase;
+          color: rgba(0,0,0,0.42); text-decoration: none;
+          position: relative; padding-bottom: 3px;
+          transition: color 0.25s ease;
+        }
+        .landing-social::after {
+          content: ''; position: absolute; left: 0; bottom: 0;
+          width: 0; height: 1px; background: #e05a2b;
+          transition: width 0.35s cubic-bezier(0.77,0,0.175,1);
+        }
+        .landing-social:hover { color: #0a0a0a; }
+        .landing-social:hover::after { width: 100%; }
         @keyframes barRevealH {
           0%   { transform: skewX(-18deg) translateX(-92%); }
           44%  { transform: skewX(-18deg) translateX(0%);   }
           100% { transform: skewX(-18deg) translateX(92%);  }
-        }
-        @keyframes scrollPulse {
-          0%, 100% { opacity: 0.3; transform: scaleY(0.6); transform-origin: top; }
-          50%       { opacity: 1;   transform: scaleY(1);   transform-origin: top; }
         }
         @keyframes titleRock {
           0%   { transform: perspective(900px) rotateX(3deg)   rotateY(-1.5deg); }

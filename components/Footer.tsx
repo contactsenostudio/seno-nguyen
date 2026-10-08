@@ -27,11 +27,7 @@ export default function Footer() {
         >
           Instagram
         </a>
-        <a
-          href="#contact"
-          onClick={e => { e.preventDefault(); document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" }); }}
-          className="footer-social"
-        >
+        <a href="/contact" className="footer-social">
           Contact
         </a>
       </div>

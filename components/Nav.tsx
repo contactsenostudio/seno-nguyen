@@ -78,7 +78,7 @@ export default function Nav() {
             )}
           </a>
 
-          {/* Portfolio */}
+          {/* Mon travail */}
           <a href="/portfolio" className="nav-link" style={{
             fontFamily: "var(--sans)", fontSize: 10.5, fontWeight: pathname === "/portfolio" ? 600 : 400,
             letterSpacing: "0.22em", textTransform: "uppercase",
@@ -87,8 +87,23 @@ export default function Nav() {
             position: "relative", paddingBottom: 2,
             transition: "color 0.2s ease",
           }}>
-            Portfolio
+            Mon travail
             {pathname === "/portfolio" && (
+              <span style={{ position: "absolute", bottom: -2, left: 0, right: 0, height: 1.5, background: "#e05a2b", borderRadius: 1 }} />
+            )}
+          </a>
+
+          {/* À propos */}
+          <a href="/a-propos" className="nav-link" style={{
+            fontFamily: "var(--sans)", fontSize: 10.5, fontWeight: pathname === "/a-propos" ? 600 : 400,
+            letterSpacing: "0.22em", textTransform: "uppercase",
+            textDecoration: "none",
+            color: pathname === "/a-propos" ? "#0a0a0a" : "rgba(0,0,0,0.45)",
+            position: "relative", paddingBottom: 2,
+            transition: "color 0.2s ease",
+          }}>
+            À propos
+            {pathname === "/a-propos" && (
               <span style={{ position: "absolute", bottom: -2, left: 0, right: 0, height: 1.5, background: "#e05a2b", borderRadius: 1 }} />
             )}
           </a>
@@ -140,9 +155,10 @@ export default function Nav() {
           <div style={{ fontFamily: "var(--condensed)", fontSize: 9, letterSpacing: "0.45em", textTransform: "uppercase", color: "rgba(255,255,255,0.25)", marginBottom: 32 }}>Navigation</div>
 
           {[
-            { label: "Accueil",   href: "/" },
-            { label: "Portfolio", href: "/portfolio" },
-            { label: "Contact",   href: "/contact" },
+            { label: "Accueil",     href: "/" },
+            { label: "Mon travail", href: "/portfolio" },
+            { label: "À propos",    href: "/a-propos" },
+            { label: "Contact",     href: "/contact" },
           ].map(l => (
             <a key={l.href} href={l.href} onClick={() => setOpen(false)} style={{
               fontFamily: "var(--serif)", fontStyle: "italic", fontWeight: 300,

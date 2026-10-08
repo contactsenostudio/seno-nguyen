@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Cursor from "@/components/Cursor";
 
 export const metadata = {
-  title: "Portfolio — Seno Nguyen · Photographe Bordeaux",
+  title: "Mon travail — Seno Nguyen · Photographe Bordeaux",
   description: "Galerie de photos — Mariage, Portrait, Corporate. Photographe indépendant basé à Bordeaux.",
 };
 

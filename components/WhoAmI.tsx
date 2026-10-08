@@ -46,7 +46,6 @@ export default function WhoAmI() {
         gridTemplateColumns: "38fr 62fr",
         overflow: "hidden",
         position: "relative",
-        marginTop: -880,
       }}
     >
 
