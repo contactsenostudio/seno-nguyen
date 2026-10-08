@@ -118,7 +118,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${geist.variable} ${instrumentSerif.variable} ${nunito.variable}`}>
+    <html lang="fr" data-scroll-behavior="smooth" className={`${geist.variable} ${instrumentSerif.variable} ${nunito.variable}`}>
       <head>
       </head>
       <body>

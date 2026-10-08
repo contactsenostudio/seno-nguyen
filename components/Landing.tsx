@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import LogoSVG from "./LogoSVG";
 
 const F1_BARS = [
   { flex: 2, delay: 0   },
@@ -12,18 +11,27 @@ const F1_BARS = [
   { flex: 2, delay: 220 },
 ];
 
+/* Symbole du logo Seno Studio (pentagone + fenêtre orange) */
+const Mark = ({ height = 170 }: { height?: number }) => (
+  <svg width={height * 0.505} height={height} viewBox="0 0 50.5 100" fill="none" aria-hidden>
+    <rect x="27.1" y="6.3" width="19.5" height="44.3" fill="#e05a2b" />
+    <path fillRule="evenodd" fill="#f4efe7"
+      d="M 23.7,0 L 50.5,0 L 50.5,100 L 0,100 L 0,44.7 Z M 27.1,6.3 L 46.6,6.3 L 46.6,50.6 L 27.1,50.6 Z" />
+  </svg>
+);
+
 const IconInstagram = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
     <rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none" />
   </svg>
 );
 const IconMail = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
     <rect x="3" y="5" width="18" height="14" rx="2.5" /><path d="M3.5 7.5 12 13l8.5-5.5" />
   </svg>
 );
 const IconPhone = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
     <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" />
   </svg>
 );
@@ -40,13 +48,13 @@ export default function Landing() {
 
   const reveal = (delay: number): React.CSSProperties => ({
     opacity: loaded ? 1 : 0,
-    transform: loaded ? "translateY(0)" : "translateY(18px)",
+    transform: loaded ? "translateY(0)" : "translateY(14px)",
     transition: `opacity 0.9s ease ${delay}ms, transform 1s cubic-bezier(0.16,1,0.3,1) ${delay}ms`,
   });
 
   return (
     <main className="ld" style={{
-      minHeight: "100vh", background: "#0b0b0b", color: "#f1ede6",
+      minHeight: "100vh", background: "#0b0b0b", color: "#f4efe7",
       display: "grid", gridTemplateColumns: "1fr 1fr", position: "relative", overflow: "hidden",
     }}>
 
@@ -65,51 +73,45 @@ export default function Landing() {
         </div>
       )}
 
-      {/* ── Colonne gauche : texte ── */}
+      {/* ── Colonne gauche ── */}
       <section className="ld-left" style={{
         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-        textAlign: "center", padding: "64px clamp(24px, 5vw, 72px)", position: "relative",
+        textAlign: "center", padding: "56px clamp(24px, 5vw, 72px)",
       }}>
-        {/* Grain discret */}
-        <svg style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none", opacity: 0.05 }} aria-hidden>
-          <filter id="grain-ld"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch" /><feColorMatrix type="saturate" values="0" /></filter>
-          <rect width="100%" height="100%" filter="url(#grain-ld)" />
-        </svg>
-
-        <div className="ld-logo" style={{ position: "relative", ...reveal(200) }}>
-          <LogoSVG dark={false} height={112} />
+        <div className="ld-mark" style={reveal(150)}>
+          <Mark height={170} />
         </div>
 
         <div style={{
-          marginTop: 30, fontFamily: "var(--condensed)", fontSize: 11, fontWeight: 600,
-          letterSpacing: "0.5em", textTransform: "uppercase", color: "rgba(241,237,230,0.55)",
-          paddingLeft: "0.5em", ...reveal(350),
+          marginTop: 26, fontFamily: "var(--sans)", fontSize: 13, fontWeight: 300,
+          letterSpacing: "0.62em", textTransform: "uppercase", color: "#cfc7b6",
+          paddingLeft: "0.62em", ...reveal(300),
         }}>
-          Photographe &amp; Vidéaste · Bordeaux
+          Seno Studio
         </div>
 
         <p style={{
-          marginTop: 34, maxWidth: 520, fontFamily: "var(--sans)", fontWeight: 400,
-          fontSize: "clamp(16px, 1.25vw, 19px)", lineHeight: 1.55, color: "rgba(241,237,230,0.88)",
-          ...reveal(500),
+          marginTop: 44, maxWidth: 520, fontFamily: "var(--serif)", fontWeight: 400,
+          fontSize: "clamp(17px, 1.3vw, 20px)", lineHeight: 1.45, color: "#ebe6dc",
+          ...reveal(450),
         }}>
           Bienvenue sur mon site où vous pourrez retrouver mon portfolio ainsi que l&rsquo;ensemble des prestations que je propose.
         </p>
 
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 20, marginTop: 36, ...reveal(650) }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 40, marginTop: 44, ...reveal(600) }}>
           <Link href="/portfolio" className="btn-pill">Mon travail</Link>
           <Link href="/a-propos"  className="btn-pill">À propos</Link>
           <Link href="/contact"   className="btn-pill">Contact</Link>
         </div>
 
-        <div style={{ display: "flex", gap: 14, marginTop: 42, ...reveal(850) }}>
+        <div style={{ display: "flex", gap: 12, marginTop: 50, ...reveal(800) }}>
           <a href="https://www.instagram.com/seno_std/" target="_blank" rel="noopener noreferrer" className="social-round" aria-label="Instagram"><IconInstagram /></a>
           <a href="mailto:contact.senostudio@gmail.com" className="social-round" aria-label="Envoyer un e-mail"><IconMail /></a>
           <a href="tel:+33768868505" className="social-round" aria-label="Appeler"><IconPhone /></a>
         </div>
       </section>
 
-      {/* ── Colonne droite : photo pleine hauteur ── */}
+      {/* ── Colonne droite : photo ── */}
       <section className="ld-right" style={{ position: "relative", minHeight: "100vh", background: "#000" }}>
         <Image
           src="/images/A7409729.jpg"
@@ -118,13 +120,10 @@ export default function Landing() {
           sizes="(max-width: 900px) 100vw, 50vw"
           style={{
             objectFit: "cover", objectPosition: "36% center",
-            opacity: loaded ? 1 : 0, transform: loaded ? "scale(1)" : "scale(1.06)",
-            transition: "opacity 1.4s ease 200ms, transform 2.4s cubic-bezier(0.16,1,0.3,1) 200ms",
+            opacity: loaded ? 1 : 0, transform: loaded ? "scale(1)" : "scale(1.05)",
+            transition: "opacity 1.3s ease 150ms, transform 2.2s cubic-bezier(0.16,1,0.3,1) 150ms",
           }}
         />
-        {/* Fondu vers la colonne noire */}
-        <div className="ld-fade" style={{ position: "absolute", inset: 0, pointerEvents: "none",
-          background: "linear-gradient(90deg, rgba(11,11,11,0.55) 0%, transparent 22%)" }} />
       </section>
 
       <style>{`
@@ -138,10 +137,9 @@ export default function Landing() {
         }
         @media (max-width: 900px) {
           .ld { grid-template-columns: 1fr !important; }
-          .ld-right { order: -1; min-height: 56vh !important; }
-          .ld-left  { padding: 40px 24px 56px !important; }
-          .ld-logo  { transform: scale(0.78) !important; margin: -12px 0; }
-          .ld-fade  { background: linear-gradient(180deg, transparent 60%, #0b0b0b 100%) !important; }
+          .ld-right { order: -1; min-height: 50vh !important; }
+          .ld-left  { padding: 48px 24px 56px !important; }
+          .ld-mark svg { height: 120px; width: 60.6px; }
         }
       `}</style>
     </main>
