@@ -31,24 +31,24 @@ export default function APropos() {
             <div className="ap-titre">Comment je vois les choses</div>
             <p className="ap-texte">
               Une bonne photo ne se remarque pas par ses effets, elle se remarque parce qu&rsquo;on y reconnaît
-              quelqu&rsquo;un. Je préfère une lumière vraie, un moment qui existe, à une mise en scène qui fait catalogue.
-              Mes images sont sombres, contrastées, et laissent de la place aux gens.
+              quelqu&rsquo;un. Je préfère une lumière vraie et un moment qui existe à une mise en scène qui fait catalogue.
+              Je laisse de la place aux gens, et je prends le temps qu&rsquo;il faut pour que ça se voie.
             </p>
           </div>
           <div>
             <div className="ap-titre">Mon objectif</div>
             <p className="ap-texte">
-              Construire, autour de Bordeaux, un studio qu&rsquo;on rappelle : des commerces, des entreprises et des
-              couples qui reviennent parce que le travail a été fait vite, bien, et sans compliquer les choses.
-              Pas des coups, une relation.
+              Que vous repartiez avec des images qui vous servent vraiment, pas seulement des belles photos : des
+              images qui vous ressemblent, que vous avez envie de montrer, et qui donnent envie de vous contacter.
+              Et que travailler avec moi soit simple, du premier message à la livraison.
             </p>
           </div>
           <div>
             <div className="ap-titre">Mes compétences</div>
             <p className="ap-texte">
-              Photo et vidéo au plein format Sony, lumière de studio comme lumière de rue, retouche sur Lightroom,
-              montage de formats courts pour les réseaux. Formé au digital avant la photo, je sais à quoi vont servir
-              les images que je livre : un site, une annonce, une fiche Google, un fil Instagram.
+              Mettre les gens à l&rsquo;aise devant l&rsquo;objectif, même ceux qui n&rsquo;aiment pas ça. Écouter ce
+              dont vous avez besoin avant de sortir l&rsquo;appareil. Passer de la photo à la vidéo dans la même
+              journée. Et livrer vite, parce qu&rsquo;une image qui arrive trop tard ne sert plus à rien.
             </p>
           </div>
         </div>
