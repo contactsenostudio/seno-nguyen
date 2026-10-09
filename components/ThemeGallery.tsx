@@ -1,7 +1,7 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
-import type { Photo } from "@/lib/portfolio";
+import { thumb, type Photo } from "@/lib/portfolio";
 
 const ROW_H = 300; // hauteur de référence d'une rangée (px)
 
@@ -41,14 +41,15 @@ export default function ThemeGallery({ photos, title }: { photos: Photo[]; title
               aria-label={`${title} — photo ${i + 1}`}
               style={{
                 position: "relative", display: "block", padding: 0, border: "none",
-                background: "#111", cursor: "pointer", overflow: "hidden",
+                background: "linear-gradient(110deg, #141414 30%, #1e1e1e 50%, #141414 70%) 0 0 / 200% 100%",
+                animation: "tgShimmer 1.6s linear infinite", cursor: "pointer", overflow: "hidden",
                 flexGrow: r * 100, flexBasis: r * ROW_H, maxWidth: "100%",
               }}
             >
               <span style={{ display: "block", paddingBottom: `${(1 / r) * 100}%` }} />
               <Image
-                src={p.src} alt="" fill loading={i < 4 ? "eager" : "lazy"}
-                sizes="(max-width: 720px) 100vw, 50vw"
+                src={thumb(p.src)} alt="" fill unoptimized
+                loading={i < 6 ? "eager" : "lazy"} decoding="async"
                 style={{ objectFit: "cover", transition: "transform 1s cubic-bezier(0.25,0.46,0.45,0.94), filter 0.4s ease" }}
               />
             </button>
@@ -68,7 +69,7 @@ export default function ThemeGallery({ photos, title }: { photos: Photo[]; title
             {String(lightbox + 1).padStart(2, "0")} / {String(photos.length).padStart(2, "0")}
           </div>
           <div onClick={e => e.stopPropagation()} style={{ position: "relative", width: "min(92vw, 1600px)", height: "88vh" }}>
-            <Image src={photos[lightbox].src} alt="" fill sizes="92vw" style={{ objectFit: "contain" }} priority />
+            <Image src={photos[lightbox].src} alt="" fill unoptimized priority style={{ objectFit: "contain" }} />
           </div>
           <button onClick={e => { e.stopPropagation(); prev(); }} aria-label="Précédente" className="tg-arrow" style={{ left: 18 }}>←</button>
           <button onClick={e => { e.stopPropagation(); next(); }} aria-label="Suivante" className="tg-arrow" style={{ right: 18 }}>→</button>
@@ -77,6 +78,7 @@ export default function ThemeGallery({ photos, title }: { photos: Photo[]; title
 
       <style>{`
         .tg-item:hover img { transform: scale(1.03); filter: brightness(1.08); }
+        @keyframes tgShimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
         .tg-arrow {
           position: absolute; top: 50%; transform: translateY(-50%);
           background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);

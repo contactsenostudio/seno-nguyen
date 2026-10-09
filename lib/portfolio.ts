@@ -204,3 +204,6 @@ export const THEMES: Theme[] = [
 ];
 
 export const getTheme = (id: string) => THEMES.find(t => t.id === id);
+
+/* Vignette légère (1000 px, ~70 Ko) générée dans public/images/portfolio-thumbs ; l'original 1800 px sert à la visionneuse */
+export const thumb = (src: string) => src.replace("/images/portfolio/", "/images/portfolio-thumbs/");

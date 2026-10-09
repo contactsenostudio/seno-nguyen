@@ -6,7 +6,7 @@ import TopBar from "@/components/TopBar";
 import BackToTop from "@/components/BackToTop";
 import Cursor from "@/components/Cursor";
 import ThemeGallery from "@/components/ThemeGallery";
-import { THEMES, getTheme } from "@/lib/portfolio";
+import { THEMES, getTheme, thumb } from "@/lib/portfolio";
 
 type Params = Promise<{ theme: string }>;
 
@@ -54,7 +54,7 @@ export default async function ThemePage({ params }: { params: Params }) {
           <div className="pf-also" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10 }}>
             {also.map(a => (
               <Link key={a.id} href={`/portfolio/${a.id}`} className="pf-tile" style={{ position: "relative", display: "block", aspectRatio: "4 / 3", overflow: "hidden", background: "#111", textDecoration: "none" }}>
-                <Image src={a.cover} alt={a.title} fill sizes="(max-width: 720px) 100vw, 33vw"
+                <Image src={thumb(a.cover)} alt={a.title} fill unoptimized
                   style={{ objectFit: "cover", objectPosition: a.coverPos ?? "center", transition: "transform 1s cubic-bezier(0.25,0.46,0.45,0.94)" }} />
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.72), rgba(0,0,0,0.2) 40%, transparent 65%)" }} />
                 <div className="pf-tile-title" style={{ position: "absolute", left: 22, bottom: 18, fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 26, lineHeight: 1, color: "#fff", transition: "transform 0.5s cubic-bezier(0.16,1,0.3,1)" }}>{a.title}</div>

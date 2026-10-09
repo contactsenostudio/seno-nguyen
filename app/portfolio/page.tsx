@@ -4,7 +4,7 @@ import Image from "next/image";
 import TopBar from "@/components/TopBar";
 import BackToTop from "@/components/BackToTop";
 import Cursor from "@/components/Cursor";
-import { THEMES } from "@/lib/portfolio";
+import { THEMES, thumb } from "@/lib/portfolio";
 
 export const metadata: Metadata = {
   title: "Mon travail — Seno Nguyen · Photographe Bordeaux",
@@ -27,8 +27,7 @@ export default function PortfolioPage() {
             aspectRatio: "4 / 3", background: "#111", textDecoration: "none",
           }}>
             <Image
-              src={t.cover} alt={t.title} fill
-              sizes="(max-width: 720px) 100vw, 50vw"
+              src={thumb(t.cover)} alt={t.title} fill unoptimized
               priority={i < 4}
               style={{ objectFit: "cover", objectPosition: t.coverPos ?? "center", transition: "transform 1.1s cubic-bezier(0.25,0.46,0.45,0.94)" }}
             />

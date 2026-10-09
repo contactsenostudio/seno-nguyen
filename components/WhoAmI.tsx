@@ -79,7 +79,7 @@ export default function WhoAmI() {
           <Image
             src="/images/portfolio/divers/a7409729.jpg"
             alt="Seno Nguyen"
-            fill quality={100} priority
+            fill unoptimized priority
             style={{ objectFit: "cover", objectPosition: "center 20%" }}
             sizes="(max-width: 900px) 100vw, 195px"
           />

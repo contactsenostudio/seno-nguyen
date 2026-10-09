@@ -109,7 +109,7 @@ export default function Landing() {
       {/* ── Colonne droite : photo ── */}
       <section className="ld-right" style={{ position: "relative", minHeight: "100vh", background: "#000" }}>
         <Image
-          src="/images/portfolio/studio/dsc02538.jpg"
+          src="/images/portfolio/studio/dsc02538.jpg" unoptimized
           alt="Portrait réalisé par Seno Studio"
           fill priority
           sizes="(max-width: 900px) 100vw, 50vw"
