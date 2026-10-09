@@ -18,8 +18,8 @@ export default function PortfolioPage() {
       <TopBar />
 
       <main className="pf-grid" style={{
-        display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10,
-        padding: "28px clamp(16px, 3vw, 44px) 10px",
+        display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6,
+        padding: "28px clamp(16px, 9vw, 160px) 10px",
       }}>
         {THEMES.map((t, i) => (
           <Link key={t.id} href={`/portfolio/${t.id}`} className="pf-tile" style={{

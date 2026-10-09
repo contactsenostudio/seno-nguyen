@@ -42,7 +42,7 @@ export default async function ThemePage({ params }: { params: Params }) {
           margin: 0, padding: "52px 24px 44px", color: "#fff",
         }}>{t.title}<span style={{ color: "#e05a2b" }}>.</span></h1>
 
-        <div style={{ padding: "0 clamp(16px, 3vw, 44px)" }}>
+        <div style={{ padding: "0 clamp(16px, 9vw, 160px)" }}>
           <ThemeGallery photos={t.photos} title={t.title} />
         </div>
 

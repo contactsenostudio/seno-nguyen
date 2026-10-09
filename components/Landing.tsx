@@ -81,15 +81,15 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* ── Colonne droite : photo ── */}
+      {/* ── Colonne droite : photo (StockSnap, licence CC0 : libre d'utilisation, y compris commerciale) ── */}
       <section className="ld-right" style={{ position: "relative", minHeight: "100vh", background: "#000" }}>
         <Image
-          src="/images/portfolio/mariage/dsc05045-edit.jpg" unoptimized
-          alt="Mariage photographié par Seno Studio"
+          src="/images/accueil-appareil.jpg" unoptimized
+          alt="Photographe tenant un appareil photo"
           fill priority
           sizes="(max-width: 900px) 100vw, 50vw"
           style={{
-            objectFit: "cover", objectPosition: "center 35%",
+            objectFit: "cover", objectPosition: "center 40%",
             opacity: loaded ? 1 : 0, transform: loaded ? "scale(1)" : "scale(1.05)",
             transition: "opacity 1.3s ease 150ms, transform 2.2s cubic-bezier(0.16,1,0.3,1) 150ms",
           }}

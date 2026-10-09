@@ -30,7 +30,7 @@ export default function ThemeGallery({ photos, title }: { photos: Photo[]; title
 
   return (
     <>
-      <div className="tg" style={{ display: "flex", flexWrap: "wrap", gap: 4 }}>
+      <div className="tg" style={{ display: "flex", flexWrap: "wrap", gap: 2 }}>
         {photos.map((p, i) => {
           const r = p.w / p.h;
           return (
