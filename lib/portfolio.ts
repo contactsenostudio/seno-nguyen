@@ -7,6 +7,7 @@ export interface Theme {
   short: string;
   cover: string;
   coverPos?: string;
+  coverFilter?: string;   // réglage CSS appliqué à la vignette seulement (ex. éclaircir)
   photos: Photo[];
 }
 
@@ -30,6 +31,7 @@ export const THEMES: Theme[] = [  {
   {
     id: "immobilier", title: "Immobilier & Architecture", short: "Immobilier",
     cover: "/images/portfolio/immobilier/dsc06929-hdr.jpg", coverPos: "center",
+    coverFilter: "brightness(1.18) contrast(0.97)",
     photos: [
       { src: "/images/portfolio/immobilier/dsc06929-hdr.jpg", w: 1800, h: 1200 },
       { src: "/images/portfolio/immobilier/dsc06942.jpg", w: 1800, h: 1200 },

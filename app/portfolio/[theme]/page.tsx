@@ -55,7 +55,7 @@ export default async function ThemePage({ params }: { params: Params }) {
             {also.map(a => (
               <Link key={a.id} href={`/portfolio/${a.id}`} className="pf-tile" style={{ position: "relative", display: "block", aspectRatio: "4 / 3", overflow: "hidden", background: "#111", textDecoration: "none" }}>
                 <Image src={thumb(a.cover)} alt={a.title} fill unoptimized
-                  style={{ objectFit: "cover", objectPosition: a.coverPos ?? "center", transition: "transform 1s cubic-bezier(0.25,0.46,0.45,0.94)" }} />
+                  style={{ objectFit: "cover", objectPosition: a.coverPos ?? "center", filter: a.coverFilter, transition: "transform 1s cubic-bezier(0.25,0.46,0.45,0.94)" }} />
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.72), rgba(0,0,0,0.2) 40%, transparent 65%)" }} />
                 <div className="pf-tile-title" style={{ position: "absolute", left: 22, bottom: 18, fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 26, lineHeight: 1, color: "#fff", transition: "transform 0.5s cubic-bezier(0.16,1,0.3,1)" }}>{a.title}</div>
               </Link>

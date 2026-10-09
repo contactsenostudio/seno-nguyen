@@ -29,7 +29,7 @@ export default function PortfolioPage() {
             <Image
               src={t.cover} alt={t.title} fill unoptimized
               priority={i < 4}
-              style={{ objectFit: "cover", objectPosition: t.coverPos ?? "center", transition: "transform 1.1s cubic-bezier(0.25,0.46,0.45,0.94)" }}
+              style={{ objectFit: "cover", objectPosition: t.coverPos ?? "center", filter: t.coverFilter, transition: "transform 1.1s cubic-bezier(0.25,0.46,0.45,0.94)" }}
             />
             <div className="pf-tile-veil" style={{
               position: "absolute", inset: 0,
