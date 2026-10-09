@@ -77,7 +77,7 @@ export default function WhoAmI() {
           zIndex: 3, overflow: "hidden", borderRadius: 18,
         }}>
           <Image
-            src="/images/A7409729.jpg"
+            src="/images/portfolio/divers/a7409729.jpg"
             alt="Seno Nguyen"
             fill quality={100} priority
             style={{ objectFit: "cover", objectPosition: "center 20%" }}

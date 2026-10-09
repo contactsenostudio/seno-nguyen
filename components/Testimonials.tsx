@@ -139,13 +139,13 @@ export default function Testimonials() {
         overflow: "hidden",
       }}>
         {[
-          { src: "/images/hero-maries.jpg",       label: "Mariage"          },
-          { src: "/images/wedding-dance.jpg",      label: "Film"             },
-          { src: "/images/theme-portrait.jpg",     label: "Portrait"         },
-          { src: "/images/theme-evenement.jpg",    label: "Événementiel"     },
-          { src: "/images/magazine.jpg",           label: "Magazine Box"     },
-          { src: "/images/theme-mode.jpg",         label: "Mode"             },
-          { src: "/images/theme-gastronomie.jpg",  label: "Gastronomie"      },
+          { src: "/images/portfolio/mariage/dsc04814.jpg",      label: "Mariage"     },
+          { src: "/images/portfolio/mariage/dsc06103.jpg",      label: "Soirée"      },
+          { src: "/images/portfolio/divers/a7409729.jpg",       label: "Portrait"    },
+          { src: "/images/portfolio/entreprise/dsc06828.jpg",   label: "Entreprise"  },
+          { src: "/images/portfolio/studio/dsc01750-edit.jpg",  label: "Studio"      },
+          { src: "/images/portfolio/studio/dsc02682.jpg",       label: "Mode"        },
+          { src: "/images/portfolio/immobilier/dsc06942.jpg",   label: "Immobilier"  },
         ].map((p, i) => (
           <div key={i} style={{
             flex: 1,
