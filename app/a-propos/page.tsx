@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import TopBar from "@/components/TopBar";
-import WhoAmI from "@/components/WhoAmI";
-import Stats from "@/components/Stats";
-import Testimonials from "@/components/Testimonials";
+import APropos from "@/components/APropos";
 import Footer from "@/components/Footer";
 import Cursor from "@/components/Cursor";
 
 export const metadata: Metadata = {
   title: "À propos — Seno Nguyen · Photographe Bordeaux",
-  description: "Seno Nguyen, photographe et vidéaste indépendant à Bordeaux : parcours, chiffres clés et témoignages de clients.",
+  description: "Seno Nguyen, photographe et vidéaste indépendant à Mérignac et Bordeaux : mariage, portrait, entreprise, immobilier.",
 };
 
 export default function AProposPage() {
@@ -17,9 +15,7 @@ export default function AProposPage() {
       <Cursor />
       <TopBar />
       <main>
-        <WhoAmI />
-        <Stats />
-        <Testimonials />
+        <APropos />
       </main>
       <Footer />
     </>
