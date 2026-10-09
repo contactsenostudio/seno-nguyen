@@ -84,7 +84,7 @@ export default function Landing() {
       {/* ── Colonne droite : photo (StockSnap, licence CC0 : libre d'utilisation, y compris commerciale) ── */}
       <section className="ld-right" style={{ position: "relative", minHeight: "100vh", background: "#000" }}>
         <Image
-          src="/images/accueil-appareil.jpg" unoptimized
+          src="/images/accueil-sony-nb.jpg" unoptimized
           alt="Photographe tenant un appareil Sony"
           fill priority
           sizes="(max-width: 900px) 100vw, 50vw"
