@@ -23,7 +23,7 @@
 
   /* Accent */
   --accent: #d92323;
-  --accent-dark: #c44d22;
+  --accent-dark: #b31a1a;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
