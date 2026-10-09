@@ -89,7 +89,7 @@ export default function Landing() {
           fill priority
           sizes="(max-width: 900px) 100vw, 50vw"
           style={{
-            objectFit: "cover", objectPosition: "center 78%", filter: "grayscale(1)",
+            objectFit: "cover", objectPosition: "center 70%",
             opacity: loaded ? 1 : 0, transform: loaded ? "scale(1)" : "scale(1.05)",
             transition: "opacity 1.3s ease 150ms, transform 2.2s cubic-bezier(0.16,1,0.3,1) 150ms",
           }}
