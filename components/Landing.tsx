@@ -3,14 +3,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const F1_BARS = [
-  { flex: 2, delay: 0   },
-  { flex: 1, delay: 55  },
-  { flex: 3, delay: 110 },
-  { flex: 1, delay: 165 },
-  { flex: 2, delay: 220 },
-];
-
 const IconInstagram = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
     <rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none" />
@@ -29,12 +21,10 @@ const IconPhone = () => (
 
 export default function Landing() {
   const [loaded, setLoaded] = useState(false);
-  const [bars,   setBars]   = useState(true);
 
   useEffect(() => {
     const t1 = setTimeout(() => setLoaded(true), 150);
-    const t2 = setTimeout(() => setBars(false), 1000);
-    return () => { clearTimeout(t1); clearTimeout(t2); };
+    return () => clearTimeout(t1);
   }, []);
 
   const reveal = (delay: number): React.CSSProperties => ({
@@ -48,21 +38,6 @@ export default function Landing() {
       minHeight: "100vh", background: "#0b0b0b", color: "#f4efe7",
       display: "grid", gridTemplateColumns: "1fr 1fr", position: "relative", overflow: "hidden",
     }}>
-
-      {/* Barres orange d'entrée */}
-      {bars && (
-        <div style={{ position: "absolute", inset: 0, zIndex: 40, pointerEvents: "none", overflow: "hidden", display: "flex", flexDirection: "column", gap: 7 }}>
-          {F1_BARS.map((bar, i) => (
-            <div key={i} style={{ flex: bar.flex, position: "relative" }}>
-              <div style={{
-                position: "absolute", top: 0, bottom: 0, left: "-20%", width: "140%",
-                background: "linear-gradient(to right, #5c1505, #b03010 12%, #e05a2b 35%, #ff7040 52%, #ffac7a 62%, #e05a2b 78%, #881e08 92%, #5c1505)",
-                animation: `ldBar 0.60s cubic-bezier(0.77,0,0.175,1) ${bar.delay}ms both`,
-              }} />
-            </div>
-          ))}
-        </div>
-      )}
 
       {/* ── Colonne gauche ── */}
       <section className="ld-left" style={{
@@ -122,11 +97,6 @@ export default function Landing() {
       </section>
 
       <style>{`
-        @keyframes ldBar {
-          0%   { transform: skewX(-18deg) translateX(-92%); }
-          44%  { transform: skewX(-18deg) translateX(0%);   }
-          100% { transform: skewX(-18deg) translateX(92%);  }
-        }
         @media (prefers-reduced-motion: reduce) {
           .ld, .ld * { transition: none !important; animation: none !important; }
         }
