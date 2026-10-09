@@ -12,10 +12,10 @@ export default function APropos() {
     }}>
       <div className="apropos-photo" style={{ position: "relative", aspectRatio: "4 / 5", maxWidth: 460, width: "100%", justifySelf: "end", overflow: "hidden", borderRadius: 6 }}>
         <Image
-          src={thumb("/images/portfolio/divers/a7409729.jpg")} unoptimized
+          src={thumb("/images/portfolio/divers/a7409766-portrait.jpg")} unoptimized
           alt="Seno Nguyen, photographe à Bordeaux"
           fill priority sizes="(max-width: 900px) 100vw, 40vw"
-          style={{ objectFit: "cover", objectPosition: "center 20%" }}
+          style={{ objectFit: "cover", objectPosition: "center" }}
         />
       </div>
 
