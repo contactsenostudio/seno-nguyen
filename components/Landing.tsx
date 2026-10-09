@@ -85,11 +85,11 @@ export default function Landing() {
       <section className="ld-right" style={{ position: "relative", minHeight: "100vh", background: "#000" }}>
         <Image
           src="/images/accueil-appareil.jpg" unoptimized
-          alt="Objectif d'appareil photo en gros plan"
+          alt="Photographe de nuit en ville, appareil en main"
           fill priority
           sizes="(max-width: 900px) 100vw, 50vw"
           style={{
-            objectFit: "cover", objectPosition: "center",
+            objectFit: "cover", objectPosition: "center 30%",
             opacity: loaded ? 1 : 0, transform: loaded ? "scale(1)" : "scale(1.05)",
             transition: "opacity 1.3s ease 150ms, transform 2.2s cubic-bezier(0.16,1,0.3,1) 150ms",
           }}
