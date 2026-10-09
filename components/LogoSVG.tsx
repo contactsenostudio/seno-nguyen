@@ -13,7 +13,7 @@ interface LogoSVGProps {
 */
 export default function LogoSVG({ dark = true, height = 52 }: LogoSVGProps) {
   const ink    = dark ? "#0a0a0a" : "#ffffff";
-  const orange = "#e05a2b";
+  const orange = "#d92323";
   const iconH  = height;
   const iconW  = iconH * 0.505;
   const fs     = iconH * 0.47; // font-size par ligne (~92% total height sur 2 lignes)

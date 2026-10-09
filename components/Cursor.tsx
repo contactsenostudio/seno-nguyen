@@ -86,7 +86,7 @@ export default function Cursor() {
         buildPath();
         const g2 = ctx.createLinearGradient(tail.x, tail.y, head.x, head.y);
         g2.addColorStop(0,    "rgba(200,70,20,0)");
-        g2.addColorStop(0.25, "rgba(224,90,43,0.25)");
+        g2.addColorStop(0.25, "rgba(217,35,35,0.25)");
         g2.addColorStop(0.7,  "rgba(255,130,55,0.72)");
         g2.addColorStop(1,    `rgba(255,210,140,${headAge * 0.95})`);
         ctx.strokeStyle = g2;
@@ -149,7 +149,7 @@ export default function Cursor() {
         position: "fixed", top: 0, left: 0,
         width: 8, height: 8, borderRadius: "50%",
         background: "#fff",
-        boxShadow: "0 0 6px 2px rgba(255,255,255,0.9), 0 0 14px 4px rgba(224,90,43,0.6)",
+        boxShadow: "0 0 6px 2px rgba(255,255,255,0.9), 0 0 14px 4px rgba(217,35,35,0.6)",
         pointerEvents: "none",
         zIndex: 9999,
         willChange: "transform",

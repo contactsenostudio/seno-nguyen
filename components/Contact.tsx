@@ -89,7 +89,7 @@ export default function Contact() {
       }}>
 
         {/* Glow */}
-        <div style={{ position: "absolute", bottom: "-20%", left: "-20%", width: "80%", height: "80%", borderRadius: "50%", background: "radial-gradient(circle, rgba(224,90,43,0.07) 0%, transparent 65%)", filter: "blur(60px)", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", bottom: "-20%", left: "-20%", width: "80%", height: "80%", borderRadius: "50%", background: "radial-gradient(circle, rgba(217,35,35,0.07) 0%, transparent 65%)", filter: "blur(60px)", pointerEvents: "none" }} />
 
         {/* Ghost number */}
         <div aria-hidden style={{
@@ -113,7 +113,7 @@ export default function Contact() {
           letterSpacing: "-0.02em", lineHeight: 0.93,
           color: "#fff", margin: "0 0 32px",
         }}>
-          Parlons de<br />votre <span style={{ color: "#e05a2b" }}>projet.</span>
+          Parlons de<br />votre <span style={{ color: "#d92323" }}>projet.</span>
         </h2>
 
         <p style={{
@@ -157,17 +157,17 @@ export default function Contact() {
 
           {/* Champ 01 — Prénom + Nom */}
           <div style={{ display: "grid", gridTemplateColumns: "44px 1fr", gap: "0 20px", alignItems: "start", paddingBottom: 28, borderBottom: "1px solid rgba(255,255,255,0.07)", marginBottom: 28 }}>
-            <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 36, fontWeight: 300, color: "#e05a2b", lineHeight: 1, paddingTop: 4 }}>01</span>
+            <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 36, fontWeight: 300, color: "#d92323", lineHeight: 1, paddingTop: 4 }}>01</span>
             <div>
               <p style={{ fontFamily: "var(--sans)", fontSize: 13, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", margin: "0 0 14px" }}>Vous êtes…</p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
                 <input type="text" name="prenom" required value={form.prenom} onChange={handleChange} placeholder="Prénom"
                   style={inp}
-                  onFocus={e => (e.currentTarget.style.borderBottomColor = "#e05a2b")}
+                  onFocus={e => (e.currentTarget.style.borderBottomColor = "#d92323")}
                   onBlur={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.12)")} />
                 <input type="text" name="nom" required value={form.nom} onChange={handleChange} placeholder="Nom"
                   style={inp}
-                  onFocus={e => (e.currentTarget.style.borderBottomColor = "#e05a2b")}
+                  onFocus={e => (e.currentTarget.style.borderBottomColor = "#d92323")}
                   onBlur={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.12)")} />
               </div>
             </div>
@@ -175,17 +175,17 @@ export default function Contact() {
 
           {/* Champ 02 — Contact */}
           <div style={{ display: "grid", gridTemplateColumns: "44px 1fr", gap: "0 20px", alignItems: "start", paddingBottom: 28, borderBottom: "1px solid rgba(255,255,255,0.07)", marginBottom: 28 }}>
-            <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 36, fontWeight: 300, color: "rgba(224,90,43,0.4)", lineHeight: 1, paddingTop: 4 }}>02</span>
+            <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 36, fontWeight: 300, color: "rgba(217,35,35,0.4)", lineHeight: 1, paddingTop: 4 }}>02</span>
             <div>
               <p style={{ fontFamily: "var(--sans)", fontSize: 13, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", margin: "0 0 14px" }}>Comment vous joindre ?</p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
                 <input type="email" name="email" required value={form.email} onChange={handleChange} placeholder="Email *"
                   style={inp}
-                  onFocus={e => (e.currentTarget.style.borderBottomColor = "#e05a2b")}
+                  onFocus={e => (e.currentTarget.style.borderBottomColor = "#d92323")}
                   onBlur={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.12)")} />
                 <input type="tel" name="tel" value={form.tel} onChange={handleChange} placeholder="Téléphone"
                   style={inp}
-                  onFocus={e => (e.currentTarget.style.borderBottomColor = "#e05a2b")}
+                  onFocus={e => (e.currentTarget.style.borderBottomColor = "#d92323")}
                   onBlur={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.12)")} />
               </div>
             </div>
@@ -193,7 +193,7 @@ export default function Contact() {
 
           {/* Champ 03 — Type */}
           <div style={{ display: "grid", gridTemplateColumns: "44px 1fr", gap: "0 20px", alignItems: "start", paddingBottom: 28, borderBottom: "1px solid rgba(255,255,255,0.07)", marginBottom: 28 }}>
-            <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 36, fontWeight: 300, color: "rgba(224,90,43,0.4)", lineHeight: 1, paddingTop: 4 }}>03</span>
+            <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 36, fontWeight: 300, color: "rgba(217,35,35,0.4)", lineHeight: 1, paddingTop: 4 }}>03</span>
             <div>
               <p style={{ fontFamily: "var(--sans)", fontSize: 13, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", margin: "0 0 14px" }}>Quel type de projet ?</p>
               <select name="type" value={form.type} onChange={handleChange}
@@ -206,14 +206,14 @@ export default function Contact() {
 
           {/* Champ 04 — Message */}
           <div style={{ display: "grid", gridTemplateColumns: "44px 1fr", gap: "0 20px", alignItems: "start", paddingBottom: 28, marginBottom: 32 }}>
-            <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 36, fontWeight: 300, color: "rgba(224,90,43,0.4)", lineHeight: 1, paddingTop: 4 }}>04</span>
+            <span style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 36, fontWeight: 300, color: "rgba(217,35,35,0.4)", lineHeight: 1, paddingTop: 4 }}>04</span>
             <div>
               <p style={{ fontFamily: "var(--sans)", fontSize: 13, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "rgba(255,255,255,0.5)", margin: "0 0 14px" }}>Votre vision</p>
               <textarea name="message" value={form.message} onChange={handleChange}
                 placeholder="Décrivez votre projet, vos envies, la date si vous la connaissez…"
                 rows={3}
                 style={{ ...inp, resize: "none", lineHeight: 1.75 }}
-                onFocus={e => (e.currentTarget.style.borderBottomColor = "#e05a2b")}
+                onFocus={e => (e.currentTarget.style.borderBottomColor = "#d92323")}
                 onBlur={e => (e.currentTarget.style.borderBottomColor = "rgba(255,255,255,0.12)")} />
             </div>
           </div>

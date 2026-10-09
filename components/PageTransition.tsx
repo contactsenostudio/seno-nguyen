@@ -79,7 +79,7 @@ export default function PageTransition() {
         <div key={i} style={{ flex: bar.flex, position: "relative" }}>
           <div style={{
             position: "absolute", top: 0, bottom: 0, left: "-20%", width: "140%",
-            background: "linear-gradient(to right, #5c1505, #b03010 12%, #e05a2b 35%, #ff7040 52%, #ffac7a 62%, #e05a2b 78%, #881e08 92%, #5c1505)",
+            background: "linear-gradient(to right, #4d0606, #a81414 12%, #d92323 35%, #ff3b3b 52%, #ff9090 62%, #d92323 78%, #7a0b0b 92%, #4d0606)",
             animation: `ptBar 0.60s cubic-bezier(0.77,0,0.175,1) ${bar.delay}ms both`,
           }} />
         </div>

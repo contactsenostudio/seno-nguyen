@@ -40,7 +40,7 @@ export default async function ThemePage({ params }: { params: Params }) {
           textAlign: "center", fontFamily: "var(--serif)", fontStyle: "italic", fontWeight: 400,
           fontSize: "clamp(38px, 4vw, 56px)", letterSpacing: "-0.02em", lineHeight: 1,
           margin: 0, padding: "52px 24px 44px", color: "#fff",
-        }}>{t.title}<span style={{ color: "#e05a2b" }}>.</span></h1>
+        }}>{t.title}<span style={{ color: "#d92323" }}>.</span></h1>
 
         <div style={{ padding: "0 clamp(16px, 9vw, 160px)" }}>
           <ThemeGallery photos={t.photos} title={t.title} />

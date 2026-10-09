@@ -16,7 +16,7 @@ export default function BookingCTA() {
       <div className="booking-inner reveal">
         <p className="label">Prêt à commencer ?</p>
         <div className="divider divider-center" style={{ margin: "20px auto" }} />
-        <h2 className="h2">Un appel suffit<br /><span style={{ fontFamily: "var(--serif)", fontWeight: 300, fontStyle: "italic", textTransform: "none", fontSize: "0.88em", color: "#e05a2b" }}>pour tout clarifier.</span></h2>
+        <h2 className="h2">Un appel suffit<br /><span style={{ fontFamily: "var(--serif)", fontWeight: 300, fontStyle: "italic", textTransform: "none", fontSize: "0.88em", color: "#d92323" }}>pour tout clarifier.</span></h2>
         <p>
           30 minutes pour discuter de votre projet, vos envies, votre budget. Je vous propose une offre sur mesure sous 24h. Gratuit, sans engagement.
         </p>

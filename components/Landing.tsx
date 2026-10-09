@@ -57,7 +57,7 @@ export default function Landing() {
           fontSize: "clamp(58px, 6.2vw, 92px)", lineHeight: 1, letterSpacing: "-0.025em", color: "#f4efe7",
           ...reveal(300),
         }}>
-          Seno Studio<span style={{ color: "#e05a2b" }}>.</span>
+          Seno Studio<span style={{ color: "#d92323" }}>.</span>
         </h1>
 
         <p style={{

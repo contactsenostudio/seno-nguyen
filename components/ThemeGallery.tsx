@@ -85,7 +85,7 @@ export default function ThemeGallery({ photos, title }: { photos: Photo[]; title
           color: rgba(255,255,255,0.7); width: 48px; height: 48px; border-radius: 50%;
           font-size: 18px; cursor: pointer; transition: background 0.2s, color 0.2s;
         }
-        .tg-arrow:hover { background: #e05a2b; color: #fff; border-color: #e05a2b; }
+        .tg-arrow:hover { background: #d92323; color: #fff; border-color: #d92323; }
         @media (max-width: 720px) {
           .tg-item { flex-basis: 100% !important; }
         }

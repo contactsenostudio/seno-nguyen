@@ -24,7 +24,7 @@ export default function APropos() {
           À propos
         </div>
         <h1 style={{ margin: "18px 0 0", fontFamily: "var(--serif)", fontStyle: "italic", fontWeight: 400, fontSize: "clamp(44px, 5vw, 72px)", lineHeight: 1, letterSpacing: "-0.02em" }}>
-          Seno Nguyen<span style={{ color: "#e05a2b" }}>.</span>
+          Seno Nguyen<span style={{ color: "#d92323" }}>.</span>
         </h1>
         <p style={{ marginTop: 26, fontFamily: "var(--sans)", fontSize: "clamp(15px, 1.1vw, 17px)", lineHeight: 1.75, color: "rgba(244,239,231,0.8)" }}>
           Photographe et vidéaste indépendant à Mérignac, aux portes de Bordeaux. Je photographie les mariages,

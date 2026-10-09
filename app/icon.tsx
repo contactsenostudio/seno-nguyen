@@ -19,7 +19,7 @@ export default function Icon() {
       >
         <svg width="28" height="48" viewBox="0 0 50.5 100" fill="none">
           {/* Orange visible derrière via even-odd */}
-          <rect x="27.1" y="6.3" width="19.5" height="44.3" fill="#e05a2b" />
+          <rect x="27.1" y="6.3" width="19.5" height="44.3" fill="#d92323" />
           {/* Pentagone blanc avec trou rectangulaire */}
           <path
             fillRule="evenodd"

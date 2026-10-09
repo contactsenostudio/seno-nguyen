@@ -39,7 +39,7 @@ export default function TopBar() {
         fontFamily: "var(--serif)", fontStyle: "italic", fontWeight: 400, fontSize: 24,
         color: "#f4efe7", textDecoration: "none", letterSpacing: "-0.01em", justifySelf: "center", lineHeight: 1,
       }}>
-        Seno Studio<span style={{ color: "#e05a2b" }}>.</span>
+        Seno Studio<span style={{ color: "#d92323" }}>.</span>
       </Link>
 
       <div />
