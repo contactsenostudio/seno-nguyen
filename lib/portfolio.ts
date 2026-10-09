@@ -29,7 +29,7 @@ export const THEMES: Theme[] = [  {
   },
   {
     id: "immobilier", title: "Immobilier & Architecture", short: "Immobilier",
-    cover: "/images/portfolio/immobilier/dsc06942.jpg", coverPos: "center",
+    cover: "/images/portfolio/immobilier/dsc06929-hdr.jpg", coverPos: "center",
     photos: [
       { src: "/images/portfolio/immobilier/dsc06929-hdr.jpg", w: 1800, h: 1200 },
       { src: "/images/portfolio/immobilier/dsc06942.jpg", w: 1800, h: 1200 },
@@ -47,7 +47,7 @@ export const THEMES: Theme[] = [  {
   },
   {
     id: "mariage", title: "Mariage", short: "Mariage",
-    cover: "/images/portfolio/mariage/dsc05045-edit.jpg", coverPos: "center 30%",
+    cover: "/images/portfolio/mariage/dsc05235.jpg", coverPos: "center 40%",
     photos: [
       { src: "/images/portfolio/mariage/dsc03922.jpg", w: 1800, h: 1200 },
       { src: "/images/portfolio/mariage/dsc03940.jpg", w: 1800, h: 1200 },
@@ -113,7 +113,7 @@ export const THEMES: Theme[] = [  {
   },
   {
     id: "studio", title: "Studio & Mode", short: "Studio",
-    cover: "/images/portfolio/studio/dsc02538.jpg", coverPos: "center 20%",
+    cover: "/images/portfolio/studio/dsc02555-edit.jpg", coverPos: "center 28%",
     photos: [
       { src: "/images/portfolio/studio/dffezfezfezf.jpg", w: 884, h: 1104 },
       { src: "/images/portfolio/studio/dsc00708.jpg", w: 1440, h: 1800 },

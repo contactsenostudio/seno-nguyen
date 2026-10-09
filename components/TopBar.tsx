@@ -9,8 +9,9 @@ const LINKS = [
   { label: "Contact",     href: "/contact" },
 ];
 
-/* Barre de menu fine, façon Adobe Portfolio : liens à gauche, nom au centre */
-export default function TopBar() {
+/* Barre de menu fine, façon Adobe Portfolio : liens à gauche, nom au centre,
+   et à droite un lien de retour optionnel (ex. retour au portfolio depuis un album) */
+export default function TopBar({ back }: { back?: { href: string; label: string } }) {
   const pathname = usePathname();
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -42,12 +43,29 @@ export default function TopBar() {
         Seno Studio<span style={{ color: "#d92323" }}>.</span>
       </Link>
 
-      <div />
+      <div className="tb-right" style={{ justifySelf: "end" }}>
+        {back && (
+          <Link href={back.href} className="tb-back" style={{
+            display: "inline-flex", alignItems: "center", gap: 8,
+            fontFamily: "var(--sans)", fontSize: 12, fontWeight: 600,
+            letterSpacing: "0.18em", textTransform: "uppercase",
+            color: "#fff", textDecoration: "none", whiteSpace: "nowrap",
+            padding: "8px 16px", borderRadius: 100,
+            border: "1px solid rgba(255,255,255,0.22)",
+            transition: "background 0.25s ease, border-color 0.25s ease",
+          }}>
+            <span aria-hidden>←</span> {back.label}
+          </Link>
+        )}
+      </div>
 
       <style>{`
         .tb-link:hover { color: #fff !important; }
+        .tb-back:hover { background: #d92323; border-color: #d92323; }
         @media (max-width: 720px) {
           .tb { grid-template-columns: 1fr !important; justify-items: center; row-gap: 10px; padding-top: 14px !important; }
+          .tb-right { justify-self: center !important; }
+          .tb-right:empty { display: none; }
           .tb-brand { order: -1; }
           .tb-links { justify-content: center; max-width: 100% !important; column-gap: 18px !important; }
           .tb-links a { font-size: 13px !important; }

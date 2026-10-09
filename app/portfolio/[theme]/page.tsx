@@ -33,7 +33,7 @@ export default async function ThemePage({ params }: { params: Params }) {
   return (
     <div style={{ background: "#1c1c1c", minHeight: "100vh", color: "#fff" }}>
       <Cursor />
-      <TopBar />
+      <TopBar back={{ href: "/portfolio", label: "Retour au portfolio" }} />
 
       <main>
         <h1 style={{
