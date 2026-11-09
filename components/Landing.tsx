@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import LiensLocaux from "@/components/LiensLocaux";
 
 const IconInstagram = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -44,28 +45,28 @@ export default function Landing() {
         display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
         textAlign: "center", padding: "56px clamp(24px, 5vw, 72px)",
       }}>
-        <div style={{
-          fontFamily: "var(--sans)", fontSize: 11, fontWeight: 500,
+        <h1 style={{
+          margin: 0, fontFamily: "var(--sans)", fontSize: 11, fontWeight: 500,
           letterSpacing: "0.4em", textTransform: "uppercase", color: "rgba(244,239,231,0.45)",
           paddingLeft: "0.4em", ...reveal(150),
         }}>
           Photographe &amp; Vidéaste · Bordeaux
-        </div>
+        </h1>
 
-        <h1 style={{
+        <p style={{
           margin: "22px 0 0", fontFamily: "var(--serif)", fontStyle: "italic", fontWeight: 400,
           fontSize: "clamp(58px, 6.2vw, 92px)", lineHeight: 1, letterSpacing: "-0.025em", color: "#f4efe7",
           ...reveal(300),
         }}>
           Seno Studio<span style={{ color: "#d92323" }}>.</span>
-        </h1>
+        </p>
 
         <p style={{
           marginTop: 30, maxWidth: 440, fontFamily: "var(--sans)", fontWeight: 400,
           fontSize: "clamp(15px, 1.1vw, 17px)", lineHeight: 1.7, color: "rgba(244,239,231,0.72)",
           ...reveal(450),
         }}>
-          Bienvenue sur mon site où vous pourrez retrouver mon portfolio ainsi que l&rsquo;ensemble des prestations que je propose.
+          Photographe à Bordeaux : mariage, shooting photo en studio ou en extérieur, portrait et photos d&rsquo;entreprise. Retrouvez ici mon portfolio et mes prestations.
         </p>
 
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14, marginTop: 44, ...reveal(600) }}>
@@ -79,6 +80,8 @@ export default function Landing() {
           <a href="mailto:contact.senostudio@gmail.com" className="social-round" aria-label="Envoyer un e-mail"><IconMail /></a>
           <a href="tel:+33768868505" className="social-round" aria-label="Appeler"><IconPhone /></a>
         </div>
+
+        <div style={{ marginTop: 36, ...reveal(900) }}><LiensLocaux couleur="rgba(244,239,231,0.4)" /></div>
       </section>
 
       {/* ── Colonne droite : photo (StockSnap, licence CC0 : libre d'utilisation, y compris commerciale) ── */}

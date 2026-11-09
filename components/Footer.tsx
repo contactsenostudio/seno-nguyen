@@ -1,4 +1,5 @@
 "use client";
+import LiensLocaux from "@/components/LiensLocaux";
 export default function Footer() {
   return (
     <footer className="footer">
@@ -17,6 +18,7 @@ export default function Footer() {
       >
         Seno Studio
       </a>
+      <LiensLocaux />
       <p className="footer-copy">Bordeaux · France entière · © 2026</p>
       <div className="footer-socials">
         <a

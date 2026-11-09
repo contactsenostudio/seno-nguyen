@@ -6,6 +6,7 @@ import TopBar from "@/components/TopBar";
 import BackToTop from "@/components/BackToTop";
 import Cursor from "@/components/Cursor";
 import ThemeGallery from "@/components/ThemeGallery";
+import LiensLocaux from "@/components/LiensLocaux";
 import { THEMES, getTheme, thumb } from "@/lib/portfolio";
 
 type Params = Promise<{ theme: string }>;
@@ -18,8 +19,9 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const t = getTheme((await params).theme);
   if (!t) return {};
   return {
-    title: `${t.title} — Seno Nguyen · Photographe Bordeaux`,
+    title: `${t.title} — Photographe Bordeaux`,
     description: `Photos ${t.title.toLowerCase()} par Seno Studio, photographe indépendant à Bordeaux et partout en France.`,
+    alternates: { canonical: `/portfolio/${t.id}` },
   };
 }
 
@@ -66,6 +68,7 @@ export default async function ThemePage({ params }: { params: Params }) {
 
       <footer style={{ padding: "56px 24px 72px", textAlign: "center", fontFamily: "var(--sans)", fontSize: 12, color: "rgba(255,255,255,0.35)" }}>
         <Link href="/portfolio" style={{ color: "rgba(255,255,255,0.6)", textDecoration: "none" }}>← Toutes les catégories</Link>
+        <div style={{ marginTop: 18 }}><LiensLocaux /></div>
         <div style={{ marginTop: 18 }}>© 2026 Seno Studio · Photographe &amp; Vidéaste · Bordeaux</div>
       </footer>
 

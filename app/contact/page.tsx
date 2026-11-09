@@ -5,8 +5,9 @@ import Footer from "@/components/Footer";
 import Cursor from "@/components/Cursor";
 
 export const metadata: Metadata = {
-  title: "Contact — Seno Studio",
+  title: "Contact — Photographe Bordeaux",
   description: "Contactez Seno Studio pour votre mariage, projet corporate ou prestation à Bordeaux. Réponse sous 24h.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

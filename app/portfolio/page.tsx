@@ -5,10 +5,12 @@ import TopBar from "@/components/TopBar";
 import BackToTop from "@/components/BackToTop";
 import Cursor from "@/components/Cursor";
 import { THEMES } from "@/lib/portfolio";
+import LiensLocaux from "@/components/LiensLocaux";
 
 export const metadata: Metadata = {
-  title: "Mon travail — Seno Nguyen · Photographe Bordeaux",
-  description: "Portfolio photo de Seno Studio : mariage, portrait, mode, gastronomie, immobilier, événementiel, sport. Photographe indépendant à Bordeaux.",
+  title: "Portfolio — Photographe Bordeaux",
+  description: "Portfolio de Seno Studio, photographe à Bordeaux : mariage, shooting studio et mode, portrait, entreprise, immobilier.",
+  alternates: { canonical: "/portfolio" },
 };
 
 export default function PortfolioPage() {
@@ -53,7 +55,8 @@ export default function PortfolioPage() {
       </main>
 
       <footer style={{ padding: "56px 24px 72px", textAlign: "center", fontFamily: "var(--sans)", fontSize: 12, color: "rgba(255,255,255,0.35)" }}>
-        © 2026 Seno Studio · Photographe &amp; Vidéaste · Bordeaux
+        <LiensLocaux />
+        <div style={{ marginTop: 18 }}>© 2026 Seno Studio · Photographe &amp; Vidéaste · Bordeaux</div>
       </footer>
 
       <BackToTop />
