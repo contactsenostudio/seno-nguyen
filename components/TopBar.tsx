@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 const LINKS = [
   { label: "Accueil",     href: "/" },
   { label: "Mon travail", href: "/portfolio" },
+  { label: "Prestations", href: "/prestations" },
   { label: "À propos",    href: "/a-propos" },
   { label: "Contact",     href: "/contact" },
 ];
@@ -26,7 +27,7 @@ export default function TopBar({ back }: { back?: { href: string; label: string 
       display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center",
       minHeight: 64,
     }}>
-      <nav className="tb-links" style={{ display: "flex", flexWrap: "wrap", columnGap: 26, rowGap: 4, maxWidth: 360 }}>
+      <nav className="tb-links" style={{ display: "flex", flexWrap: "wrap", columnGap: 26, rowGap: 4, maxWidth: 480 }}>
         {LINKS.map(l => (
           <Link key={l.href} href={l.href} className="tb-link" style={{
             fontFamily: "var(--sans)", fontSize: 14, fontWeight: isActive(l.href) ? 700 : 400,

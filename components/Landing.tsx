@@ -71,6 +71,7 @@ export default function Landing() {
 
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14, marginTop: 44, ...reveal(600) }}>
           <Link href="/portfolio" className="btn-pill">Mon travail</Link>
+          <Link href="/prestations" className="btn-pill btn-pill-outline">Prestations</Link>
           <Link href="/a-propos"  className="btn-pill btn-pill-outline">À propos</Link>
           <Link href="/contact"   className="btn-pill btn-pill-outline">Contact</Link>
         </div>
