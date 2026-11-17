@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: { absolute: "Photographe Bordeaux · Portrait, mariage, entreprise | Seno Studio" },
   description: "Seno Nguyen, photographe à Bordeaux : portrait, shooting en studio, mariage, photos d'entreprise et d'immobilier. Photo et vidéo, devis gratuit sous 24 h.",
   alternates: { canonical: "/photographe-bordeaux" },
+  openGraph: { title: "Photographe Bordeaux · Portrait, mariage, entreprise | Seno Studio", description: "Seno Nguyen, photographe à Bordeaux : portrait, shooting en studio, mariage, photos d'entreprise et d'immobilier. Photo et vidéo, devis gratuit sous 24 h.", url: "/photographe-bordeaux", type: "website", locale: "fr_FR", siteName: "Seno Studio" },
 };
 
 const pris = (id: string, n: number, pas = 1) => (getTheme(id)?.photos ?? []).filter((_, i) => i % pas === 0).slice(0, n);

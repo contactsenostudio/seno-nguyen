@@ -6,9 +6,9 @@ export const metadata: Metadata = {
   title: { absolute: "Photographe mariage Bordeaux & Gironde · Photo et vidéo | Seno Studio" },
   description: "Photographe et vidéaste de mariage à Bordeaux et en Gironde : reportage photo naturel, film de mariage, des préparatifs à la soirée. Devis gratuit sous 24 h.",
   alternates: { canonical: "/photographe-mariage-bordeaux" },
+  openGraph: { title: "Photographe mariage Bordeaux & Gironde · Photo et vidéo | Seno Studio", description: "Photographe et vidéaste de mariage à Bordeaux et en Gironde : reportage photo naturel, film de mariage, des préparatifs à la soirée. Devis gratuit sous 24 h.", url: "/photographe-mariage-bordeaux", type: "website", locale: "fr_FR", siteName: "Seno Studio" },
 };
 
-const pris = (id: string, n: number, pas = 1) => (getTheme(id)?.photos ?? []).filter((_, i) => i % pas === 0).slice(0, n);
 
 export default function Page() {
   return (
@@ -21,7 +21,7 @@ export default function Page() {
       intro={[
         "Photographe et vidéaste de mariage à Bordeaux et en Gironde, je raconte votre journée telle qu'elle a été : des émotions vraies, une lumière naturelle, et des images que vous aurez envie de regarder dans vingt ans.",
       ]}
-      photos={pris("mariage", 14, 4)}
+      photos={getTheme("mariage")?.photos ?? []}
       blocs={[
         { titre: "Un reportage de mariage naturel", texte: [
           "Je préfère un moment qui existe à une mise en scène qui fait catalogue. Pendant la journée, je me fais discret pour capter les regards, les rires et les larmes ; pour les photos de couple et de groupe, je vous guide simplement pour que tout reste fluide.",

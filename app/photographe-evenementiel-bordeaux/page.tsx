@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: { absolute: "Photographe événementiel Bordeaux · Soirée, séminaire, anniversaire | Seno Studio" },
   description: "Photographe événementiel à Bordeaux : soirées d'entreprise, séminaires, conférences, lancements, anniversaires et fêtes privées. Reportage discret, photo et vidéo, livraison rapide.",
   alternates: { canonical: "/photographe-evenementiel-bordeaux" },
+  openGraph: { title: "Photographe événementiel Bordeaux · Soirée, séminaire, anniversaire | Seno Studio", description: "Photographe événementiel à Bordeaux : soirées d'entreprise, séminaires, conférences, lancements, anniversaires et fêtes privées. Reportage discret, photo et vidéo, livraison rapide.", url: "/photographe-evenementiel-bordeaux", type: "website", locale: "fr_FR", siteName: "Seno Studio" },
 };
 
 export default function Page() {

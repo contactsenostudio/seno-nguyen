@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: { absolute: "Photographe portrait Bordeaux · Photo CV, LinkedIn, portrait pro | Seno Studio" },
   description: "Photographe portrait à Bordeaux : photo CV, LinkedIn, portrait professionnel d'entrepreneur ou d'équipe, en studio, en extérieur ou sur votre lieu de travail. Devis sous 24 h.",
   alternates: { canonical: "/photographe-portrait-bordeaux" },
+  openGraph: { title: "Photographe portrait Bordeaux · Photo CV, LinkedIn, portrait pro | Seno Studio", description: "Photographe portrait à Bordeaux : photo CV, LinkedIn, portrait professionnel d'entrepreneur ou d'équipe, en studio, en extérieur ou sur votre lieu de travail. Devis sous 24 h.", url: "/photographe-portrait-bordeaux", type: "website", locale: "fr_FR", siteName: "Seno Studio" },
 };
 
 export default function Page() {

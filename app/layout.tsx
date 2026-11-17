@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Instrument_Serif, Nunito } from "next/font/google";
 import "./globals.css";
 import PageTransition from "@/components/PageTransition";
+import { PAGES_LOCALES } from "@/components/LiensLocaux";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -54,8 +55,10 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": `${siteUrl}/#seno-studio`,
   name: "Seno Studio",
-  description: "Photographe et vidéaste à Bordeaux : photographe mariage, shooting photo en studio, portrait, entreprise et immobilier en Gironde. Disponible partout en France.",
+  description: "Seno Studio (Seno Nguyen), photographe et vidéaste à Bordeaux : mariage, famille, couple et love session, shooting entre amis, mode et book, portrait professionnel, entreprise, immobilier, produits et packshot, événementiel. Bordeaux, Gironde et partout en France.",
+  knowsAbout: ["Photographie de mariage", "Photographie de famille", "Shooting couple", "Book mannequin", "Portrait professionnel", "Photographie d'entreprise", "Photographie immobilière", "Packshot", "Photographie événementielle", "Vidéo"],
   founder: { "@type": "Person", name: "Seno Nguyen", jobTitle: "Photographe et vidéaste" },
   url: siteUrl,
   telephone: "+33768868505",
@@ -83,13 +86,8 @@ const jsonLd = {
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Prestations photo & vidéo mariage",
-    itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Photographe mariage Bordeaux et Gironde", url: `${siteUrl}/photographe-mariage-bordeaux` } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Film cinématique mariage 4K" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Shooting photo en studio à Bordeaux", url: `${siteUrl}/shooting-photo-bordeaux` } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Photographe portrait et entreprise à Bordeaux", url: `${siteUrl}/photographe-bordeaux` } },
-    ],
+    name: "Prestations photo et vidéo à Bordeaux",
+    itemListElement: PAGES_LOCALES.map(p => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: p.label, url: `${siteUrl}${p.href}`, areaServed: "Bordeaux" } })),
   },
   sameAs: [
     "https://www.instagram.com/seno_std/",

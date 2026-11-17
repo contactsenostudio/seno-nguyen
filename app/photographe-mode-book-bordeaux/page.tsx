@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: { absolute: "Photographe mode Bordeaux · Book mannequin, polas, comédien | Seno Studio" },
   description: "Photographe mode à Bordeaux : book mannequin, polas pour agences, book comédien ou artiste, shooting éditorial en studio ou en extérieur. Retouches adaptées à votre usage.",
   alternates: { canonical: "/photographe-mode-book-bordeaux" },
+  openGraph: { title: "Photographe mode Bordeaux · Book mannequin, polas, comédien | Seno Studio", description: "Photographe mode à Bordeaux : book mannequin, polas pour agences, book comédien ou artiste, shooting éditorial en studio ou en extérieur. Retouches adaptées à votre usage.", url: "/photographe-mode-book-bordeaux", type: "website", locale: "fr_FR", siteName: "Seno Studio" },
 };
 
 export default function Page() {

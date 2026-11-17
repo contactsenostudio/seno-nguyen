@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: { absolute: "Shooting photo couple Bordeaux · Love session | Seno Studio" },
   description: "Shooting photo couple et love session à Bordeaux, en studio ou en extérieur : fiançailles, anniversaire, save the date. Séance guidée et intime, photos retouchées en HD.",
   alternates: { canonical: "/shooting-photo-couple-bordeaux" },
+  openGraph: { title: "Shooting photo couple Bordeaux · Love session | Seno Studio", description: "Shooting photo couple et love session à Bordeaux, en studio ou en extérieur : fiançailles, anniversaire, save the date. Séance guidée et intime, photos retouchées en HD.", url: "/shooting-photo-couple-bordeaux", type: "website", locale: "fr_FR", siteName: "Seno Studio" },
 };
 
 export default function Page() {

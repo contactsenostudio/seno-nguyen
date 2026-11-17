@@ -53,7 +53,7 @@ export default function APropos() {
           </div>
         </div>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 14, marginTop: 36 }}>
-          <Link href="/portfolio" className="btn-pill">Mon travail</Link>
+          <Link href="/prestations" className="btn-pill">Mes prestations</Link>
           <Link href="/contact" className="btn-pill btn-pill-outline">Me contacter</Link>
         </div>
       </div>

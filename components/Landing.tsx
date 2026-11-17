@@ -66,12 +66,11 @@ export default function Landing() {
           fontSize: "clamp(15px, 1.1vw, 17px)", lineHeight: 1.7, color: "rgba(244,239,231,0.72)",
           ...reveal(450),
         }}>
-          Photographe à Bordeaux : mariage, shooting photo en studio ou en extérieur, portrait et photos d&rsquo;entreprise. Retrouvez ici mon portfolio et mes prestations.
+          Photographe à Bordeaux : mariage, shooting photo en studio ou en extérieur, portrait et photos d&rsquo;entreprise. Retrouvez ici toutes mes prestations.
         </p>
 
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 14, marginTop: 44, ...reveal(600) }}>
-          <Link href="/portfolio" className="btn-pill">Mon travail</Link>
-          <Link href="/prestations" className="btn-pill btn-pill-outline">Prestations</Link>
+          <Link href="/prestations" className="btn-pill">Prestations</Link>
           <Link href="/a-propos"  className="btn-pill btn-pill-outline">À propos</Link>
           <Link href="/contact"   className="btn-pill btn-pill-outline">Contact</Link>
         </div>

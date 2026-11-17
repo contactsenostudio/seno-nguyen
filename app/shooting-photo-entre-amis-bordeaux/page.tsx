@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: { absolute: "Shooting photo entre amis ou seul(e) à Bordeaux | Seno Studio" },
   description: "Shooting photo seul(e) ou entre amis à Bordeaux, en studio ou en ville : une expérience fun et guidée, des photos uniques retouchées en HD. Idéal en cadeau. Devis sous 24 h.",
   alternates: { canonical: "/shooting-photo-entre-amis-bordeaux" },
+  openGraph: { title: "Shooting photo entre amis ou seul(e) à Bordeaux | Seno Studio", description: "Shooting photo seul(e) ou entre amis à Bordeaux, en studio ou en ville : une expérience fun et guidée, des photos uniques retouchées en HD. Idéal en cadeau. Devis sous 24 h.", url: "/shooting-photo-entre-amis-bordeaux", type: "website", locale: "fr_FR", siteName: "Seno Studio" },
 };
 
 export default function Page() {

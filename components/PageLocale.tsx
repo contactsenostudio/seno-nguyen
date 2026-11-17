@@ -28,7 +28,7 @@ export default function PageLocale({
       serviceType: nomService,
       url: site + chemin,
       areaServed: [{ "@type": "City", name: "Bordeaux" }, { "@type": "AdministrativeArea", name: "Gironde" }],
-      provider: { "@type": "ProfessionalService", name: "Seno Studio", url: site, telephone: "+33768868505" },
+      provider: { "@type": "ProfessionalService", "@id": site + "/#seno-studio", name: "Seno Studio", url: site, telephone: "+33768868505", address: { "@type": "PostalAddress", addressLocality: "Bordeaux", postalCode: "33000", addressCountry: "FR" } },
     },
     {
       "@context": "https://schema.org",
@@ -61,7 +61,7 @@ export default function PageLocale({
           {intro.map((p, i) => <p key={i} className="pl-texte" style={{ marginTop: i ? 14 : 26 }}>{p}</p>)}
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 14, marginTop: 34 }}>
             <Link href="/contact" className="btn-pill">Demander un devis</Link>
-            <Link href="/portfolio" className="btn-pill btn-pill-outline">Voir mon travail</Link>
+            <Link href="/prestations" className="btn-pill btn-pill-outline">Toutes les prestations</Link>
           </div>
         </header>
 

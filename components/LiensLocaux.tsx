@@ -13,6 +13,8 @@ export const PAGES_LOCALES = [
   { href: "/photographe-portrait-bordeaux", label: "Photographe portrait Bordeaux" },
   { href: "/photographe-produit-packshot-bordeaux", label: "Photographe produit Bordeaux" },
   { href: "/photographe-evenementiel-bordeaux", label: "Photographe événementiel Bordeaux" },
+  { href: "/photographe-entreprise-bordeaux", label: "Photographe entreprise Bordeaux" },
+  { href: "/photographe-immobilier-bordeaux", label: "Photographe immobilier Bordeaux" },
 ];
 
 export default function LiensLocaux({ couleur = "rgba(255,255,255,0.55)" }: { couleur?: string }) {

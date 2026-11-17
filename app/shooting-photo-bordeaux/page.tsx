@@ -6,9 +6,9 @@ export const metadata: Metadata = {
   title: { absolute: "Shooting photo Bordeaux · Shooting studio, portrait, couple | Seno Studio" },
   description: "Shooting photo à Bordeaux en studio ou en extérieur : portrait, mode, couple, book, photo professionnelle. Séance guidée, photos retouchées, devis gratuit sous 24 h.",
   alternates: { canonical: "/shooting-photo-bordeaux" },
+  openGraph: { title: "Shooting photo Bordeaux · Shooting studio, portrait, couple | Seno Studio", description: "Shooting photo à Bordeaux en studio ou en extérieur : portrait, mode, couple, book, photo professionnelle. Séance guidée, photos retouchées, devis gratuit sous 24 h.", url: "/shooting-photo-bordeaux", type: "website", locale: "fr_FR", siteName: "Seno Studio" },
 };
 
-const pris = (id: string, n: number, pas = 1) => (getTheme(id)?.photos ?? []).filter((_, i) => i % pas === 0).slice(0, n);
 
 export default function Page() {
   return (
@@ -21,7 +21,7 @@ export default function Page() {
       intro={[
         "Un shooting photo à Bordeaux, en studio ou en extérieur, pour vous, votre couple, votre book ou votre image professionnelle. Je vous guide du début à la fin : pas besoin de savoir poser.",
       ]}
-      photos={[...pris("studio", 10, 6), ...pris("portrait", 2, 3)]}
+      photos={[...(getTheme("studio")?.photos ?? []), ...(getTheme("portrait")?.photos ?? [])]}
       blocs={[
         { titre: "Le shooting en studio", texte: [
           "Le studio permet une lumière maîtrisée, un fond neutre et un rendu net et élégant : idéal pour un portrait, un book mannequin, une photo de profil professionnelle, une séance mode ou des photos pour vos réseaux sociaux.",

@@ -19,18 +19,29 @@ const PRESTATIONS = [
   { href: "/photographe-mariage-bordeaux", titre: "Mariage", ligne: "Photo et vidéo, des préparatifs à la soirée", cover: P + "mariage/dsc05235.jpg", pos: "center 40%" },
   { href: "/photographe-famille-bordeaux", titre: "Famille", ligne: "Parents, enfants, grands-parents", cover: P + "prestations/famille/05474.jpg", pos: "center 40%" },
   { href: "/shooting-photo-couple-bordeaux", titre: "Couple & love session", ligne: "Fiançailles, save the date, anniversaire", cover: P + "mariage/dsc05045-edit.jpg", pos: "center 35%" },
-  { href: "/shooting-photo-entre-amis-bordeaux", titre: "Seul(e) ou entre amis", ligne: "Un shooting fun, en studio ou en ville", cover: P + "prestations/amis/n00255.jpg", pos: "center 30%" },
+  { href: "/shooting-photo-entre-amis-bordeaux", titre: "Seul(e) ou entre amis", ligne: "Un shooting fun, en studio ou en ville", cover: P + "prestations/amis/n00255.jpg", pos: "center 62%" },
   { href: "/photographe-mode-book-bordeaux", titre: "Mode & book", ligne: "Book mannequin, polas, comédiens, artistes", cover: P + "studio/dsc02555-edit.jpg", pos: "center 25%" },
+  { href: "/photographe-bordeaux", titre: "Photographe à Bordeaux", ligne: "Photo et vidéo, particuliers et pros", cover: P + "studio/dsc02784.jpg", pos: "center 30%" },
   { href: "/photographe-portrait-bordeaux", titre: "Portrait pro", ligne: "Photo CV, LinkedIn, équipes", cover: P + "entreprise/dsc06800.jpg", pos: "center 20%" },
   { href: "/shooting-photo-bordeaux", titre: "Shooting studio", ligne: "Lumière maîtrisée, rendu magazine", cover: P + "studio/dsc02133.jpg", pos: "center 25%" },
   { href: "/photographe-evenementiel-bordeaux", titre: "Événements", ligne: "Soirées, séminaires, anniversaires", cover: P + "prestations/evenement/n00388.jpg", pos: "center 40%" },
   { href: "/photographe-produit-packshot-bordeaux", titre: "Produits & packshot", ligne: "E-commerce, réseaux, catalogues", cover: P + "prestations/illustration/a9292161.jpg", pos: "center" },
-  { href: "/photographe-bordeaux", titre: "Entreprise & immobilier", ligne: "Vos locaux, votre activité, vos biens", cover: P + "immobilier/dsc06929-hdr.jpg", pos: "center" },
+  { href: "/photographe-entreprise-bordeaux", titre: "Entreprise & corporate", ligne: "Reportage, équipes, dirigeants", cover: P + "entreprise/dsc06828.jpg", pos: "center" },
+  { href: "/photographe-immobilier-bordeaux", titre: "Immobilier", ligne: "Agences, Airbnb, hôtels", cover: P + "immobilier/dsc06929-hdr.jpg", pos: "center" },
 ];
+
+const SITE = "https://www.senostudio.fr";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Prestations de Seno Studio, photographe à Bordeaux",
+  itemListElement: PRESTATIONS.map((p, i) => ({ "@type": "ListItem", position: i + 1, name: p.titre + " à Bordeaux", url: SITE + p.href })),
+};
 
 export default function PrestationsPage() {
   return (
     <div style={{ background: "#1c1c1c", minHeight: "100vh", color: "#fff" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Cursor />
       <TopBar />
 

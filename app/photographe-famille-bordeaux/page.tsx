@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: { absolute: "Photographe famille Bordeaux · Séance photo en famille | Seno Studio" },
   description: "Séance photo famille à Bordeaux, en studio, dans un parc ou chez vous : parents, enfants, grands-parents. Une séance détendue et guidée, photos retouchées en HD. Devis sous 24 h.",
   alternates: { canonical: "/photographe-famille-bordeaux" },
+  openGraph: { title: "Photographe famille Bordeaux · Séance photo en famille | Seno Studio", description: "Séance photo famille à Bordeaux, en studio, dans un parc ou chez vous : parents, enfants, grands-parents. Une séance détendue et guidée, photos retouchées en HD. Devis sous 24 h.", url: "/photographe-famille-bordeaux", type: "website", locale: "fr_FR", siteName: "Seno Studio" },
 };
 
 export default function Page() {

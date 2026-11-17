@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: { absolute: "Photographe produit Bordeaux · Packshot, e-commerce | Seno Studio" },
   description: "Photographe produit et packshot à Bordeaux : fond blanc, fond couleur ou mise en scène, pour votre site e-commerce, vos réseaux et vos catalogues. Retouche et formats adaptés.",
   alternates: { canonical: "/photographe-produit-packshot-bordeaux" },
+  openGraph: { title: "Photographe produit Bordeaux · Packshot, e-commerce | Seno Studio", description: "Photographe produit et packshot à Bordeaux : fond blanc, fond couleur ou mise en scène, pour votre site e-commerce, vos réseaux et vos catalogues. Retouche et formats adaptés.", url: "/photographe-produit-packshot-bordeaux", type: "website", locale: "fr_FR", siteName: "Seno Studio" },
 };
 
 export default function Page() {
