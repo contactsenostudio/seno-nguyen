@@ -20,7 +20,7 @@ export default function Page() {
       intro={[
         "Une séance photo en famille, c'est un moment passé ensemble dont il reste de belles images. Parents, enfants, grands-parents, frères et sœurs, et même le chien : je vous photographie à Bordeaux, en studio, dans un parc ou chez vous, dans une ambiance simple et détendue.",
       ]}
-      photos={[...choisis("mariage", ["dsc04880","dsc05362","dsc04963","dsc05023","dsc04647","dsc04689"]), ...choisis("studio", ["dsc00787-edit-3","dffezfezfezf","dsc02480","dsc04729-edit"])]}
+      photos={[...choisis("mariage", ["dsc04880", "dsc05362", "dsc03922", "dsc04963", "dsc05023", "dsc04344", "dsc04647", "dsc04689", "dsc05292", "dsc04149"])]}
       blocs={[
         { titre: "Des photos de famille qui vous ressemblent", texte: [
           "Je ne cherche pas la photo figée où tout le monde regarde l'objectif en souriant. Je cherche les vrais moments : un fou rire, un regard entre deux frères, un enfant sur les épaules de son père. Je propose quelques photos posées pour le souvenir de groupe, puis je laisse la place au naturel.",
