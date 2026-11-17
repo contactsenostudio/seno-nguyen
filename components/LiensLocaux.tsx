@@ -1,11 +1,18 @@
 import Link from "next/link";
 
-/* Liens vers les pages de référencement local, en bas de page (09/11/2026) :
+/* Liens vers les pages de référencement local, en bas de page (09/11/2026, 7 pages ajoutées le 17/11/2026) :
    Google suit ces liens et comprend que ces pages comptent. */
 export const PAGES_LOCALES = [
   { href: "/photographe-bordeaux", label: "Photographe Bordeaux" },
   { href: "/shooting-photo-bordeaux", label: "Shooting photo & studio Bordeaux" },
   { href: "/photographe-mariage-bordeaux", label: "Photographe mariage Bordeaux" },
+  { href: "/photographe-famille-bordeaux", label: "Photographe famille Bordeaux" },
+  { href: "/shooting-photo-couple-bordeaux", label: "Shooting couple Bordeaux" },
+  { href: "/shooting-photo-entre-amis-bordeaux", label: "Shooting entre amis Bordeaux" },
+  { href: "/photographe-mode-book-bordeaux", label: "Photographe mode & book Bordeaux" },
+  { href: "/photographe-portrait-bordeaux", label: "Photographe portrait Bordeaux" },
+  { href: "/photographe-produit-packshot-bordeaux", label: "Photographe produit Bordeaux" },
+  { href: "/photographe-evenementiel-bordeaux", label: "Photographe événementiel Bordeaux" },
 ];
 
 export default function LiensLocaux({ couleur = "rgba(255,255,255,0.55)" }: { couleur?: string }) {

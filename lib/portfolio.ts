@@ -208,3 +208,7 @@ export const getTheme = (id: string) => THEMES.find(t => t.id === id);
 
 /* Vignette légère (1000 px, ~70 Ko) générée dans public/images/portfolio-thumbs ; l'original 1800 px sert à la visionneuse */
 export const thumb = (src: string) => src.replace("/images/portfolio/", "/images/portfolio-thumbs/");
+
+/* Photos choisies par nom de fichier (sans .jpg) dans une catégorie : pour les pages de référencement local (17/11/2026) */
+export const choisis = (id: string, noms: string[]): Photo[] =>
+  noms.map(n => getTheme(id)?.photos.find(p => p.src.endsWith("/" + n + ".jpg"))).filter((p): p is Photo => !!p);
