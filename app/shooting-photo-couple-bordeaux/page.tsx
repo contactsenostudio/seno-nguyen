@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageLocale from "@/components/PageLocale";
 import { choisis } from "@/lib/portfolio";
+import { PHOTOS_PRESTA } from "@/lib/prestations-photos";
 
 /* Page de référencement local (17/11/2026), générée avec le même gabarit que /photographe-bordeaux */
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ export default function Page() {
       intro={[
         "Une love session, c'est un moment rien qu'à vous deux, pour garder des images de votre histoire. Fiançailles, anniversaire de rencontre, save the date avant le mariage ou simplement l'envie de belles photos ensemble : je vous photographie à Bordeaux, en studio ou en extérieur.",
       ]}
-      photos={[...choisis("mariage", ["dsc05045-edit","dsc05023","dsc04963","dsc05097","dsc04440","dsc05156","dsc05235"]), ...choisis("studio", ["dsc01092","dsc01108","dsc00961"])]}
+      photos={[...choisis("mariage", ["dsc05045-edit"]), ...PHOTOS_PRESTA.couple, ...choisis("studio", ["dsc01092"])]}
       blocs={[
         { titre: "Des photos naturelles, pas des poses figées", texte: [
           "La plupart des couples me disent « on n'est pas à l'aise devant l'objectif ». C'est normal, et c'est mon travail de vous mettre à l'aise. Je vous propose des situations simples (marcher, se parler, rire d'un souvenir) plutôt que des poses compliquées. Le résultat : des images où l'on voit votre complicité, pas un couple qui attend la photo.",

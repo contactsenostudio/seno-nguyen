@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageLocale from "@/components/PageLocale";
 import { choisis } from "@/lib/portfolio";
+import { PHOTOS_PRESTA } from "@/lib/prestations-photos";
 
 /* Page de référencement local (17/11/2026), générée avec le même gabarit que /photographe-bordeaux */
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ export default function Page() {
       intro={[
         "Envie de vivre une vraie séance photo, seul(e) ou avec vos ami(e)s ? Un shooting à Bordeaux, en studio ou dans les rues de la ville, pour s'amuser devant l'objectif et repartir avec des photos qui ont du style.",
       ]}
-      photos={[...choisis("studio", ["dsc00787-edit-3","dsc00796","dsc02431-2","dsc02507","dsc04729-edit","dffezfezfezf","dsc00961","dsc09686-edit-edit"]), ...choisis("portrait", ["dsc00306","dsc00341","dsc000941","dsc00096"])]}
+      photos={[...PHOTOS_PRESTA.amis, ...choisis("studio", ["dsc02431-2", "dsc00787-edit-3"])]}
       blocs={[
         { titre: "Une expérience avant tout", texte: [
           "Un shooting entre amis, ce n'est pas une séance sérieuse et figée : on met de la musique, on essaie des poses, des tenues, des idées un peu folles. Je vous dirige pour que chaque photo soit réussie, mais l'ambiance reste celle d'un bon moment passé ensemble.",

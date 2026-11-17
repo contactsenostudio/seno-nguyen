@@ -13,10 +13,11 @@ export interface Bloc { titre: string; texte: string[] }
 export interface Question { q: string; r: string }
 
 export default function PageLocale({
-  surtitre, titre, intro, photos, altPhotos, blocs, faq, chemin, nomService,
+  surtitre, titre, intro, photos, altPhotos, blocs, faq, chemin, nomService, note,
 }: {
   surtitre: string; titre: string; intro: string[]; photos: Photo[]; altPhotos: string;
   blocs: Bloc[]; faq: Question[]; chemin: string; nomService: string;
+  note?: string;   // petite mention sous la galerie (ex. photos d'illustration)
 }) {
   const site = "https://www.senostudio.fr";
   const jsonLd = [
@@ -66,6 +67,7 @@ export default function PageLocale({
 
         <div style={{ padding: "0 clamp(16px, 9vw, 160px)" }}>
           <ThemeGallery photos={photos} title={altPhotos} />
+          {note && <p style={{ margin: "14px 0 0", textAlign: "center", fontFamily: "var(--sans)", fontSize: 12, color: "rgba(244,239,231,0.45)" }}>{note}</p>}
         </div>
 
         <section style={{ maxWidth: 760, margin: "0 auto", padding: "80px 24px 0" }}>

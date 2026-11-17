@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageLocale from "@/components/PageLocale";
 import { choisis } from "@/lib/portfolio";
+import { PHOTOS_PRESTA, ILLUSTRATION_PRODUIT } from "@/lib/prestations-photos";
 
 /* Page de référencement local (17/11/2026), générée avec le même gabarit que /photographe-bordeaux */
 export const metadata: Metadata = {
@@ -20,7 +21,8 @@ export default function Page() {
       intro={[
         "Des photos de produits qui donnent envie d'acheter. Packshot sur fond blanc pour votre boutique en ligne, fond de couleur à votre charte ou mise en scène pour vos réseaux : je photographie vos produits à Bordeaux, en studio ou dans vos locaux.",
       ]}
-      photos={[...choisis("mariage", ["dsc05806","dsc05812","dsc05814","dsc05993","dsc05998","dsc06451"]), ...choisis("entreprise", ["dsc06828","dsc06845"]), ...choisis("studio", ["dsc02682","dsc02784"])]}
+      photos={[...ILLUSTRATION_PRODUIT, ...PHOTOS_PRESTA.produit]}
+      note="Les photos de produits sur fond blanc et en mise en scène sont des images d’illustration libres de droits ; les photos de pièce montée, de fleurs et de table sont de Seno Studio."
       blocs={[
         { titre: "Packshot sur fond blanc", texte: [
           "Le format attendu par la plupart des sites e-commerce et des places de marché : un produit net, détouré, bien éclairé, avec des couleurs fidèles. Je réalise plusieurs angles (face, profil, détail, dos) pour que vos clients voient ce qu'ils achètent.",

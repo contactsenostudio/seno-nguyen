@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageLocale from "@/components/PageLocale";
 import { choisis } from "@/lib/portfolio";
+import { PHOTOS_PRESTA } from "@/lib/prestations-photos";
 
 /* Page de référencement local (17/11/2026), générée avec le même gabarit que /photographe-bordeaux */
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ export default function Page() {
       intro={[
         "Soirée d'entreprise, séminaire, conférence, inauguration, anniversaire ou fête de famille : je photographie votre événement à Bordeaux et en Gironde pour que vous puissiez en profiter sans vous soucier des photos.",
       ]}
-      photos={[...choisis("mariage", ["dsc06088","dsc06103","dsc06328","dsc06511","dsc06395","dsc04880"]), ...choisis("portrait", ["dsc000941","dsc00096","dsc00341"]), ...choisis("entreprise", ["dsc06841","dsc06828"])]}
+      photos={[...PHOTOS_PRESTA.evenement, ...choisis("mariage", ["dsc06511"])]}
       blocs={[
         { titre: "Événements professionnels", texte: [
           "Séminaires, conférences, salons, lancements de produit, soirées clients ou d'équipe : je couvre les temps forts (prises de parole, échanges, ambiance), les portraits des intervenants et les photos de groupe. Des images utiles pour votre communication interne, vos réseaux, la presse et votre prochain événement.",
